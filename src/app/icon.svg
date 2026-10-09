@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 136">
+  <!-- Orange / Coral: Left -->
+  <path d="M 0 32 H 64 V 64 H 32 V 96 H 0 Z" fill="#FF8A65" />
+  
+  <!-- Blue: Top Right -->
+  <path d="M 72 0 H 104 V 32 H 136 V 64 H 72 Z" fill="#0E7293" />
+  
+  <!-- Teal: Bottom Right -->
+  <path d="M 104 72 H 136 V 136 H 72 V 104 H 104 Z" fill="#22C195" />
+</svg>
