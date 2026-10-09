@@ -10,11 +10,9 @@ import {
   Factory,
   Users,
   Building2,
-  CheckCircle2,
   MapPin,
   TrendingUp,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 
 export default function OurReach() {
@@ -251,19 +249,7 @@ export default function OurReach() {
             })}
           </StaggerReveal>
 
-          {/* ── Summary Callout ── */}
-          <Reveal direction="up" delay={0.2} className="mt-8 sm:mt-12">
-            <div className="p-6 sm:p-8 rounded-2xl bg-neutral-50 border border-cluster-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-cluster-blue/10 text-cluster-blue flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-5 h-5 stroke-[2.2]" />
-                </div>
-                <p className="text-sm sm:text-base text-cluster-text font-medium leading-relaxed">
-                  With an established presence across both states, we continue to expand our distribution network and strengthen our relationships with retail partners.
-                </p>
-              </div>
-            </div>
-          </Reveal>
+
         </Container>
       </section>
 
@@ -273,90 +259,87 @@ export default function OurReach() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 sm:py-28 lg:py-32 bg-white">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch max-w-7xl mx-auto">
+          <div className="flex flex-col gap-10 sm:gap-14 max-w-7xl mx-auto">
             
-            {/* ──── LEFT BOX: 25,000+ Monthly Customers (Reference Image Big & Aesthetic Style) ──── */}
-            <Reveal direction="right" duration={0.8} className="lg:col-span-6 h-full">
-              <div className="h-full rounded-3xl bg-[#0A0D12] border border-white/10 text-white p-8 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden flex flex-col justify-between group">
+            {/* ──── ROW 1: 25,000+ Monthly Customers (Brand Oceanic Blue Hero Box) ──── */}
+            <Reveal direction="up" duration={0.8} className="w-full">
+              <div className="w-full rounded-3xl bg-gradient-to-br from-cluster-blue via-[#0c5e79] to-[#08455a] border border-white/20 text-white p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden flex flex-col justify-between group">
                 
-                {/* Directional ambient top-right spotlight matching reference image */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-white/[0.08] via-transparent to-transparent pointer-events-none" />
-                <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-cluster-blue/10 rounded-full blur-3xl pointer-events-none" />
+                {/* Ambient glow highlights in brand tones */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-white/[0.12] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-cluster-teal/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-cluster-coral/10 rounded-full blur-3xl pointer-events-none" />
 
-                {/* Top Row: [ METRIC · 01 ] on left, THE REACH »»»» on right */}
-                <div className="relative z-10 flex items-center justify-between mb-8 sm:mb-12">
-                  <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
-                    [ METRIC · 01 ]
-                  </span>
-                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] font-mono font-light tracking-[0.28em] text-neutral-300 uppercase">
-                    <span>THE REACH</span>
-                    <span className="font-bold text-white tracking-tighter text-sm sm:text-base">»»»»</span>
-                  </div>
-                </div>
+                {/* Main Content: Monumental 25,000+ Focus (Brand Styling) */}
+                <div className="relative z-10 py-4 sm:py-6 lg:py-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    {/* Left Side: Editorial Context & Normal Text Heading */}
+                    <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
+                      
+                      {/* Floating Chevron & Brand Marker */}
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl sm:text-2xl font-mono font-bold tracking-widest text-cluster-coral select-none">
+                          »
+                        </span>
+                        <span className="text-xs font-mono tracking-[0.25em] text-white/70 uppercase select-none">
+                          CLUSTER RETAIL ECOSYSTEM
+                        </span>
+                      </div>
 
-                {/* Center: Monumental Aesthetic Typography Matching Reference */}
-                <div className="relative z-10 my-auto py-2">
-                  
-                  {/* Top line with chevron and ghosted horizontal number */}
-                  <div className="flex items-center justify-between pl-1 pr-4 mb-2">
-                    <span className="text-sm sm:text-base font-mono font-bold tracking-widest text-neutral-400 select-none">
-                      »
-                    </span>
-                    <span className="text-xs font-mono tracking-[0.2em] text-neutral-600 uppercase select-none">
-                      CLUSTER OUTFITS
-                    </span>
-                  </div>
+                      {/* Normal Text: Monthly Customers (No Box, No Braces) */}
+                      <div>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-white">
+                          Monthly Customers
+                        </h3>
+                      </div>
 
-                  {/* Intersecting Tape: { M O N T H L Y   C U S T O M E R S } */}
-                  <div className="relative z-20 inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-sm bg-[#0A0D12] border border-white/25 shadow-xl mb-4 sm:mb-6">
-                    <span className="text-base sm:text-lg text-neutral-400 font-mono font-light select-none">&#123;</span>
-                    <span className="text-[10px] sm:text-[11.5px] md:text-[12.5px] font-mono font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-white">
-                      M O N T H L Y
-                    </span>
-                    <span className="inline-flex flex-col items-center justify-center text-[7px] text-cluster-coral font-bold leading-none px-0.5 select-none">
-                      <span>▲</span>
-                      <span>▼</span>
-                    </span>
-                    <span className="text-[10px] sm:text-[11.5px] md:text-[12.5px] font-mono font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-white">
-                      C U S T O M E R S
-                    </span>
-                    <span className="text-base sm:text-lg text-neutral-400 font-mono font-light select-none">&#125;</span>
-                  </div>
+                      {/* Context Description */}
+                      <p className="text-sm sm:text-base text-white/90 font-normal leading-relaxed max-w-md">
+                        Connecting with over <span className="text-white font-bold">25,000+ active shoppers</span> every single month through our vast retail footprint across South India.
+                      </p>
 
-                  {/* The Monumental Big Aesthetic Number (Metallic Silver Gradient Fill) */}
-                  <div className="relative flex items-baseline">
-                    {/* Ghost watermark behind number */}
-                    <div className="absolute -left-3 -top-8 text-8xl sm:text-9xl md:text-[11rem] font-black font-manrope text-white/[0.04] select-none pointer-events-none tracking-tighter leading-none -z-10">
-                      25K
+                      {/* Geographic Network Status */}
+                      <div className="flex items-center gap-4 pt-1">
+                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono text-white uppercase tracking-wider">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal animate-pulse" />
+                          Kerala &amp; Tamil Nadu
+                        </span>
+                      </div>
+
                     </div>
 
-                    <div className="text-[clamp(4.2rem,8.2vw,7.8rem)] font-black font-manrope tracking-tighter leading-none bg-gradient-to-b from-[#FFFFFF] via-[#E2E8F0] to-[#718096] bg-clip-text text-transparent drop-shadow-[0_12px_32px_rgba(255,255,255,0.12)]">
-                      <Counter to={25000} suffix="+" />
+                    {/* Right Side: Colossal 25,000+ Number Display */}
+                    <div className="lg:col-span-7 flex flex-col items-start lg:items-end justify-center relative">
+                      
+                      {/* Ghost Watermark in Background for Cinematic Depth */}
+                      <div className="absolute right-0 -top-10 sm:-top-16 text-8xl sm:text-[11rem] md:text-[14rem] lg:text-[16rem] font-black font-manrope text-white/[0.08] select-none pointer-events-none tracking-tighter leading-none -z-10">
+                        25K
+                      </div>
+
+                      {/* Monumental White Number */}
+                      <div className="relative">
+                        <div className="text-[clamp(4.8rem,13vw,10.5rem)] font-black font-manrope tracking-tighter leading-none text-white drop-shadow-[0_16px_36px_rgba(0,0,0,0.35)]">
+                          <Counter to={25000} suffix="+" />
+                        </div>
+                        <div className="mt-2 text-right">
+                          <span className="text-xs sm:text-sm font-mono tracking-[0.3em] text-white/70 uppercase">
+                            ACTIVE CONSUMERS / MO
+                          </span>
+                        </div>
+                      </div>
+
                     </div>
-                  </div>
 
-                </div>
-
-                {/* Bottom Section: Clean, aesthetic details */}
-                <div className="relative z-10 mt-8 pt-5 border-t border-white/10 flex flex-col gap-2.5">
-                  <p className="text-xs sm:text-[13px] text-neutral-400 font-normal leading-relaxed">
-                    Connecting with over 25,000+ active shoppers every month across South India.
-                  </p>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 uppercase tracking-wider pt-1">
-                    <span>Kerala &amp; Tamil Nadu</span>
-                    <span className="inline-flex items-center gap-1.5 text-cluster-teal font-semibold font-manrope">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal animate-pulse" />
-                      Active Network
-                    </span>
                   </div>
                 </div>
 
               </div>
             </Reveal>
 
-            {/* ──── RIGHT BOX: Built to Reach Further ──── */}
-            <Reveal direction="left" duration={0.8} delay={0.1} className="lg:col-span-6 h-full">
-              <div className="h-full rounded-3xl bg-white border border-cluster-border/80 p-8 sm:p-10 lg:p-12 shadow-sm flex flex-col justify-between">
+            {/* ──── ROW 2: Built to Reach Further (Comes Below Box 1) ──── */}
+            <Reveal direction="up" duration={0.8} delay={0.1} className="w-full">
+              <div className="w-full rounded-3xl bg-white border border-cluster-border/80 p-8 sm:p-12 lg:p-16 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
@@ -365,57 +348,47 @@ export default function OurReach() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-cluster-text leading-tight mb-5">
-                    Built to Reach Further<span className="text-cluster-coral">.</span>
-                  </h3>
-
-                  <p className="text-base sm:text-lg text-cluster-muted leading-relaxed font-normal mb-8">
-                    Our manufacturing capabilities, dedicated workforce and expanding retail partnerships form the foundation of our growth. As we continue to strengthen our presence across South India, we remain focused on delivering quality apparel and building lasting relationships with our retail partners and customers.
-                  </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline mb-10">
+                    <h3 className="lg:col-span-5 text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-cluster-text leading-tight">
+                      Built to Reach Further<span className="text-cluster-coral">.</span>
+                    </h3>
+                    <p className="lg:col-span-7 text-base sm:text-lg text-cluster-muted leading-relaxed font-normal">
+                      Our manufacturing capabilities, dedicated workforce and expanding retail partnerships form the foundation of our growth. As we continue to strengthen our presence across South India, we remain focused on delivering quality apparel and building lasting relationships with our retail partners and customers.
+                    </p>
+                  </div>
 
                   {/* 3 Foundation Highlight Pillars */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-cluster-border">
-                    <div className="p-4 rounded-2xl bg-neutral-50 border border-cluster-border/60">
-                      <Factory className="w-5 h-5 text-cluster-blue mb-2" />
-                      <h4 className="text-sm font-bold text-cluster-text mb-1">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-cluster-border">
+                    <div className="p-6 rounded-2xl bg-neutral-50/80 border border-cluster-border/60 hover:border-cluster-blue/30 transition-all">
+                      <Factory className="w-6 h-6 text-cluster-blue mb-3" />
+                      <h4 className="text-base font-bold text-cluster-text mb-1.5">
                         Manufacturing
                       </h4>
-                      <p className="text-xs text-cluster-muted">
-                        Dual facilities with automated precision cutting
+                      <p className="text-sm text-cluster-muted leading-relaxed">
+                        Dual facilities with automated precision cutting and scalable textile infrastructure.
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-neutral-50 border border-cluster-border/60">
-                      <Users className="w-5 h-5 text-cluster-coral mb-2" />
-                      <h4 className="text-sm font-bold text-cluster-text mb-1">
+                    <div className="p-6 rounded-2xl bg-neutral-50/80 border border-cluster-border/60 hover:border-cluster-coral/30 transition-all">
+                      <Users className="w-6 h-6 text-cluster-coral mb-3" />
+                      <h4 className="text-base font-bold text-cluster-text mb-1.5">
                         Dedicated Workforce
                       </h4>
-                      <p className="text-xs text-cluster-muted">
-                        350+ master artisans and garment craftsmen
+                      <p className="text-sm text-cluster-muted leading-relaxed">
+                        350+ master artisans and garment craftsmen ensuring supreme stitch quality and fit.
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-neutral-50 border border-cluster-border/60">
-                      <Store className="w-5 h-5 text-cluster-teal mb-2" />
-                      <h4 className="text-sm font-bold text-cluster-text mb-1">
+                    <div className="p-6 rounded-2xl bg-neutral-50/80 border border-cluster-border/60 hover:border-cluster-teal/30 transition-all">
+                      <Store className="w-6 h-6 text-cluster-teal mb-3" />
+                      <h4 className="text-base font-bold text-cluster-text mb-1.5">
                         Retail Partnerships
                       </h4>
-                      <p className="text-xs text-cluster-muted">
-                        9,000+ active store counters across 2 states
+                      <p className="text-sm text-cluster-muted leading-relaxed">
+                        9,000+ active store counters spanning high-traffic destinations across Kerala &amp; Tamil Nadu.
                       </p>
                     </div>
                   </div>
-                </div>
-
-                {/* Bottom Link to Partner With Us */}
-                <div className="mt-8 pt-6 border-t border-cluster-border flex items-center justify-between">
-                  <span className="text-xs text-cluster-muted font-manrope">
-                    Expanding across South Indian retail destinations
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cluster-blue uppercase tracking-wider font-manrope">
-                    <span>Continuous Growth</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
                 </div>
               </div>
             </Reveal>
