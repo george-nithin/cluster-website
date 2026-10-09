@@ -273,70 +273,76 @@ export default function OurReach() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 sm:py-28 lg:py-32 bg-white">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch max-w-7xl mx-auto">
             
-            {/* ──── LEFT BOX: 25,000+ Monthly Customers (Rich Oceanic Color Box with Typographic Layout) ──── */}
-            <Reveal direction="right" duration={0.8} className="lg:col-span-5 h-full">
-              <div className="h-full rounded-3xl bg-gradient-to-br from-cluster-blue via-[#0c5e79] to-[#08455a] text-white p-8 sm:p-10 lg:p-11 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            {/* ──── LEFT BOX: 25,000+ Monthly Customers (Reference Image Big & Aesthetic Style) ──── */}
+            <Reveal direction="right" duration={0.8} className="lg:col-span-6 h-full">
+              <div className="h-full rounded-3xl bg-[#0A0D12] border border-white/10 text-white p-8 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden flex flex-col justify-between group">
                 
-                {/* Subtle blueprint grid texture overlay matching original design */}
-                <div 
-                  className="absolute inset-0 opacity-15 pointer-events-none"
-                  style={{
-                    backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)",
-                    backgroundSize: "24px 24px"
-                  }}
-                />
+                {/* Directional ambient top-right spotlight matching reference image */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-white/[0.08] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-cluster-blue/10 rounded-full blur-3xl pointer-events-none" />
 
-                {/* Ambient glow in top corner */}
-                <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 blur-3xl pointer-events-none" />
-
-                {/* Top Row: Tag on left, Technical kicker on right */}
-                <div className="relative z-10 flex items-center justify-between mb-8 sm:mb-10">
-                  <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.22em] text-white/60 uppercase font-semibold">
+                {/* Top Row: [ METRIC · 01 ] on left, THE REACH »»»» on right */}
+                <div className="relative z-10 flex items-center justify-between mb-8 sm:mb-12">
+                  <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
                     [ METRIC · 01 ]
                   </span>
-                  <div className="flex items-center gap-1 text-[11px] sm:text-xs font-mono font-medium tracking-[0.25em] text-white/80 uppercase">
-                    <span>CUSTOMER REACH</span>
-                    <span className="text-cluster-coral font-bold tracking-tighter">»»»»</span>
+                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] font-mono font-light tracking-[0.28em] text-neutral-300 uppercase">
+                    <span>THE REACH</span>
+                    <span className="font-bold text-white tracking-tighter text-sm sm:text-base">»»»»</span>
                   </div>
                 </div>
 
-                {/* Center: Massive Number + Intersecting { MONTHLY CUSTOMERS } Tape */}
-                <div className="relative z-10 my-auto py-4">
-                  {/* Faint ghosted watermark behind */}
-                  <div className="absolute -left-2 -top-6 text-7xl sm:text-8xl md:text-9xl font-black font-manrope text-white/10 select-none pointer-events-none tracking-tighter leading-none -z-10">
-                    25K
+                {/* Center: Monumental Aesthetic Typography Matching Reference */}
+                <div className="relative z-10 my-auto py-2">
+                  
+                  {/* Top line with chevron and ghosted horizontal number */}
+                  <div className="flex items-center justify-between pl-1 pr-4 mb-2">
+                    <span className="text-sm sm:text-base font-mono font-bold tracking-widest text-neutral-400 select-none">
+                      »
+                    </span>
+                    <span className="text-xs font-mono tracking-[0.2em] text-neutral-600 uppercase select-none">
+                      CLUSTER OUTFITS
+                    </span>
                   </div>
 
-                  {/* Main Giant White Number */}
+                  {/* Intersecting Tape: { M O N T H L Y   C U S T O M E R S } */}
+                  <div className="relative z-20 inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-sm bg-[#0A0D12] border border-white/25 shadow-xl mb-4 sm:mb-6">
+                    <span className="text-base sm:text-lg text-neutral-400 font-mono font-light select-none">&#123;</span>
+                    <span className="text-[10px] sm:text-[11.5px] md:text-[12.5px] font-mono font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-white">
+                      M O N T H L Y
+                    </span>
+                    <span className="inline-flex flex-col items-center justify-center text-[7px] text-cluster-coral font-bold leading-none px-0.5 select-none">
+                      <span>▲</span>
+                      <span>▼</span>
+                    </span>
+                    <span className="text-[10px] sm:text-[11.5px] md:text-[12.5px] font-mono font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-white">
+                      C U S T O M E R S
+                    </span>
+                    <span className="text-base sm:text-lg text-neutral-400 font-mono font-light select-none">&#125;</span>
+                  </div>
+
+                  {/* The Monumental Big Aesthetic Number (Metallic Silver Gradient Fill) */}
                   <div className="relative flex items-baseline">
-                    <div className="text-6xl sm:text-7xl md:text-8xl lg:text-[5.4rem] xl:text-[6rem] font-black font-manrope text-white tracking-tight leading-none drop-shadow-sm">
+                    {/* Ghost watermark behind number */}
+                    <div className="absolute -left-3 -top-8 text-8xl sm:text-9xl md:text-[11rem] font-black font-manrope text-white/[0.04] select-none pointer-events-none tracking-tighter leading-none -z-10">
+                      25K
+                    </div>
+
+                    <div className="text-[clamp(4.2rem,8.2vw,7.8rem)] font-black font-manrope tracking-tighter leading-none bg-gradient-to-b from-[#FFFFFF] via-[#E2E8F0] to-[#718096] bg-clip-text text-transparent drop-shadow-[0_12px_32px_rgba(255,255,255,0.12)]">
                       <Counter to={25000} suffix="+" />
                     </div>
                   </div>
 
-                  {/* Floating Chevron Accent */}
-                  <div className="flex items-center gap-1.5 mt-5 mb-2 pl-1">
-                    <span className="text-xs font-mono font-bold tracking-widest text-cluster-coral">»</span>
-                  </div>
-
-                  {/* Intersecting Tape: { M O N T H L Y   C U S T O M E R S } */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white/15 backdrop-blur-md border border-white/20 shadow-sm">
-                    <span className="text-sm sm:text-base font-mono font-light text-white/70 select-none">&#123;</span>
-                    <span className="text-[10px] sm:text-[11.5px] md:text-[12.5px] font-mono font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-white">
-                      M O N T H L Y &nbsp; C U S T O M E R S
-                    </span>
-                    <span className="text-sm sm:text-base font-mono font-light text-white/70 select-none">&#125;</span>
-                  </div>
                 </div>
 
-                {/* Bottom Section: Small, clean details without excessive clutter */}
-                <div className="relative z-10 mt-8 pt-5 border-t border-white/15 flex flex-col gap-2.5">
-                  <p className="text-xs sm:text-[13px] text-white/85 font-normal leading-relaxed">
+                {/* Bottom Section: Clean, aesthetic details */}
+                <div className="relative z-10 mt-8 pt-5 border-t border-white/10 flex flex-col gap-2.5">
+                  <p className="text-xs sm:text-[13px] text-neutral-400 font-normal leading-relaxed">
                     Connecting with over 25,000+ active shoppers every month across South India.
                   </p>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-white/70 uppercase tracking-wider pt-1">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 uppercase tracking-wider pt-1">
                     <span>Kerala &amp; Tamil Nadu</span>
                     <span className="inline-flex items-center gap-1.5 text-cluster-teal font-semibold font-manrope">
                       <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal animate-pulse" />
@@ -349,7 +355,7 @@ export default function OurReach() {
             </Reveal>
 
             {/* ──── RIGHT BOX: Built to Reach Further ──── */}
-            <Reveal direction="left" duration={0.8} delay={0.1} className="lg:col-span-7 h-full">
+            <Reveal direction="left" duration={0.8} delay={0.1} className="lg:col-span-6 h-full">
               <div className="h-full rounded-3xl bg-white border border-cluster-border/80 p-8 sm:p-10 lg:p-12 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-4">

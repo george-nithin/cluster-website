@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Mail,
   Phone,
@@ -27,38 +26,24 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-const FOOTER_COLUMNS = {
-  shop: {
-    title: "SHOP & BRANDS",
-    links: [
-      { name: "Cluster Studio", href: "/brands" },
-      { name: "Matrutva Maternity", href: "/brands" },
-      { name: "Everyday Tops & Bottoms", href: "/brands" },
-      { name: "Feeding Wear & Nighties", href: "/brands" },
-      { name: "Latest Lookbooks", href: "/brands" },
-    ],
-  },
-  about: {
-    title: "ABOUT US",
-    links: [
-      { name: "Our Story", href: "/about" },
-      { name: "Texvia Manufacturing", href: "/manufacturing" },
-      { name: "Retail Network & Reach", href: "/our-reach" },
-      { name: "350+ Master Artisans", href: "/about" },
-      { name: "Sustainability & Ethics", href: "/about" },
-    ],
-  },
-  help: {
-    title: "HELP & SUPPORT",
-    links: [
-      { name: "Wholesale & Dealerships", href: "/contact" },
-      { name: "Supply Chain & Logistics", href: "/distribution" },
-      { name: "Track Order Inquiries", href: "/contact" },
-      { name: "Press & Media", href: "/about" },
-      { name: "Contact Us", href: "/contact" },
-    ],
-  },
-};
+/**
+ * Only authentic pages and links that exist in the Cluster platform
+ */
+const EXISTING_PAGES = [
+  { name: "Home", href: "/" },
+  { name: "Brands", href: "/brands" },
+  { name: "Manufacturing", href: "/manufacturing" },
+  { name: "Distribution", href: "/distribution" },
+  { name: "Our Reach", href: "/our-reach" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+const EXISTING_BRANDS = [
+  { name: "Cluster Studio", href: "/brands" },
+  { name: "Matrutva Maternity", href: "/brands" },
+  { name: "Texiva Manufacturing", href: "/manufacturing" },
+];
 
 const SOCIAL_LINKS = [
   {
@@ -105,21 +90,22 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white text-cluster-text border-t border-neutral-200 relative overflow-hidden select-none font-sans">
+    <footer className="bg-white text-cluster-text border-t border-neutral-200/80 relative overflow-hidden select-none font-sans">
       {/* ─────────────────────────────────────────────────────────────
-          TOP SECTION: Clean Editorial Layout Matching Reference Image 1
+          TOP SECTION: Editorial Header Matching Reference Image 1
+          (Only authentic site pages and real brand entities)
       ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-6 sm:pb-8">
+      <div className="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12 pt-14 sm:pt-20 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           
           {/* Column 1: Brand Info & Direct Contacts (Leftmost) */}
-          <div className="lg:col-span-3 flex flex-col gap-5">
+          <div className="lg:col-span-4 flex flex-col gap-5">
             <Link href="/" className="inline-block group">
               <Logo className="transition-opacity group-hover:opacity-80" />
             </Link>
 
-            <p className="text-[13.5px] text-cluster-muted leading-relaxed font-normal max-w-xs">
-              Designing apparel experiences that connect manufacturing, brand incubation, and retail distribution across South India.
+            <p className="text-[13.5px] text-cluster-muted leading-relaxed font-normal max-w-sm">
+              Designing apparel experiences that connect manufacturing excellence, brand incubation, and retail distribution across South India.
             </p>
 
             {/* Direct Contact Metadata Matching Reference Image */}
@@ -153,17 +139,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: SHOP / BRANDS */}
-          <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-bold tracking-[0.22em] text-[#111111] uppercase font-manrope mb-4 sm:mb-6">
-              {FOOTER_COLUMNS.shop.title}
+          {/* Column 2: PAGES (Existing Site Navigation) */}
+          <div className="lg:col-span-3 lg:pl-6">
+            <h4 className="text-[11px] font-bold tracking-[0.24em] text-[#111111] uppercase font-manrope mb-4 sm:mb-6">
+              PAGES
             </h4>
             <ul className="space-y-3">
-              {FOOTER_COLUMNS.shop.links.map((link) => (
+              {EXISTING_PAGES.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[13px] text-cluster-muted hover:text-cluster-blue transition-colors duration-200 inline-block font-normal hover:translate-x-0.5"
+                    className="text-[13.5px] text-cluster-muted hover:text-cluster-blue transition-colors duration-200 inline-block font-normal hover:translate-x-0.5"
                   >
                     {link.name}
                   </Link>
@@ -172,17 +158,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: ABOUT US */}
+          {/* Column 3: OUR BRANDS (Existing Brand Divisions) */}
           <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-bold tracking-[0.22em] text-[#111111] uppercase font-manrope mb-4 sm:mb-6">
-              {FOOTER_COLUMNS.about.title}
+            <h4 className="text-[11px] font-bold tracking-[0.24em] text-[#111111] uppercase font-manrope mb-4 sm:mb-6">
+              OUR BRANDS
             </h4>
             <ul className="space-y-3">
-              {FOOTER_COLUMNS.about.links.map((link) => (
+              {EXISTING_BRANDS.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[13px] text-cluster-muted hover:text-cluster-blue transition-colors duration-200 inline-block font-normal hover:translate-x-0.5"
+                    className="text-[13.5px] text-cluster-muted hover:text-cluster-blue transition-colors duration-200 inline-block font-normal hover:translate-x-0.5"
                   >
                     {link.name}
                   </Link>
@@ -191,32 +177,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: HELP & SUPPORT */}
-          <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-bold tracking-[0.22em] text-[#111111] uppercase font-manrope mb-4 sm:mb-6">
-              {FOOTER_COLUMNS.help.title}
-            </h4>
-            <ul className="space-y-3">
-              {FOOTER_COLUMNS.help.links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-[13px] text-cluster-muted hover:text-cluster-blue transition-colors duration-200 inline-block font-normal hover:translate-x-0.5"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 5: NEWSLETTER (Rightmost) */}
+          {/* Column 4: NEWSLETTER (Rightmost) */}
           <div className="lg:col-span-3 flex flex-col gap-3">
-            <h4 className="text-[11px] font-bold tracking-[0.22em] text-[#111111] uppercase font-manrope mb-1">
+            <h4 className="text-[11px] font-bold tracking-[0.24em] text-[#111111] uppercase font-manrope mb-1">
               NEWSLETTER
             </h4>
             <p className="text-[13px] text-cluster-muted leading-relaxed font-normal">
-              Subscribe to get updates on seasonal collections, wholesale inquiries &amp; manufacturing insights.
+              Subscribe to get updates on new collections, stories &amp; exclusive offers.
             </p>
 
             {subscribed ? (
@@ -238,7 +205,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     aria-label="Subscribe to newsletter"
-                    className="bg-[#141414] hover:bg-black text-white px-4 sm:px-5 flex items-center justify-center transition-colors shrink-0 group cursor-pointer"
+                    className="bg-[#0E7293] hover:bg-[#08455A] text-white px-4 sm:px-5 flex items-center justify-center transition-colors shrink-0 group cursor-pointer"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </button>
@@ -251,41 +218,9 @@ export default function Footer() {
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          MIDDLE SECTION: Panoramic Sewing Thread Rolls Illustration
-          (Fine line-art woodcut engraving of wooden thread rolls, 
-           bobbins, needles, and flowing colorful threads)
-      ───────────────────────────────────────────────────────────── */}
-      <div className="relative w-full border-t border-b border-neutral-100 bg-white overflow-hidden py-3 sm:py-6">
-        
-        {/* Soft edge blend masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
-          <div className="relative w-full h-[180px] sm:h-[230px] md:h-[280px] lg:h-[320px]">
-            <Image
-              src="/sewing-threads-footer.png"
-              alt="Cluster Sewing Thread Rolls, Wooden Bobbins & Embroidery Needles Editorial Panorama"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1440px"
-              priority
-              className="object-contain object-center select-none drop-shadow-xs"
-            />
-          </div>
-        </div>
-
-        {/* Ambient Subtle Weaving Caption Watermark */}
-        <div className="text-center mt-1">
-          <span className="text-[10px] sm:text-[11px] font-manrope font-bold uppercase tracking-[0.3em] text-neutral-400 select-none">
-            From Spool to Seam · Textile Engineering &amp; Apparel Craftsmanship
-          </span>
-        </div>
-      </div>
-
-      {/* ─────────────────────────────────────────────────────────────
           BOTTOM BAR: Social Media Icons (Left) & Legal Links (Right)
       ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12 py-6 sm:py-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-neutral-100">
         
         {/* Social Media Icons (Facebook, Instagram, YouTube, LinkedIn, WhatsApp) */}
         <div className="flex items-center gap-2.5 sm:gap-3">
@@ -298,7 +233,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-200 bg-white hover:bg-[#141414] hover:border-[#141414] text-neutral-600 hover:text-white flex items-center justify-center transition-all duration-200 shadow-2xs hover:scale-105 active:scale-95"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-200 bg-white hover:bg-[#0E7293] hover:border-[#0E7293] text-neutral-600 hover:text-white flex items-center justify-center transition-all duration-200 shadow-2xs hover:scale-105 active:scale-95"
               >
                 <Icon className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
               </a>
@@ -306,7 +241,7 @@ export default function Footer() {
           })}
         </div>
 
-        {/* Legal Links & Copyright on Right */}
+        {/* Legal Links & Copyright on Right (Matching Reference Image 1) */}
         <div className="flex flex-col sm:flex-row items-center sm:items-end gap-3 sm:gap-6 text-[12px] text-cluster-muted">
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-cluster-blue transition-colors">
