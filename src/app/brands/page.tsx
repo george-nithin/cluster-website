@@ -55,6 +55,9 @@ export default function Brands() {
             </Reveal>
             <Reveal direction="left" duration={0.85} delay={0.1} className="w-full md:w-1/2 flex flex-col items-start">
               <div>
+                <div className="relative h-12 sm:h-14 w-48 sm:w-56 mb-6 sm:mb-8">
+                  <Image src="/logos/cluster-outfits-transparent.png" alt="Cluster Logo" fill className="object-contain object-left" />
+                </div>
                 <span className="uppercase tracking-[0.2em] text-cluster-blue text-xs font-bold mb-3 sm:mb-4 block">Womenswear</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-gray-900 mb-4 sm:mb-6 tracking-tight leading-none">
                   CLUSTER<span className="text-cluster-blue">.</span>
