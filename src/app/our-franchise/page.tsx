@@ -138,65 +138,60 @@ export default function OurFranchisePage() {
       {/* ─────────────────────────────────────────────────────────────
           2. CONCEPT OVERVIEW: A NEW OPPORTUNITY IN WOMEN'S FASHION
       ───────────────────────────────────────────────────────────── */}
-      {/* ─────────────────────────────────────────────────────────────
-          2. CONCEPT OVERVIEW: A NEW OPPORTUNITY IN WOMEN'S FASHION
-      ───────────────────────────────────────────────────────────── */}
       <section id="concept-overview" className="py-16 sm:py-24 md:py-28 bg-white border-b border-cluster-border relative overflow-hidden">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <Reveal direction="up" duration={0.6}>
-              <div className="rounded-[32px] sm:rounded-[44px] bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border border-slate-200/80 p-8 sm:p-14 md:p-18 shadow-sm relative overflow-hidden text-center flex flex-col items-center">
-                {/* Subtle luxury ambient glow */}
-                <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-cluster-coral/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <Reveal direction="up" duration={0.6}>
+            <div className="w-full rounded-[32px] sm:rounded-[44px] bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border border-slate-200/80 p-8 sm:p-14 md:p-20 shadow-sm relative overflow-hidden text-center flex flex-col items-center">
+              {/* Subtle luxury ambient glow */}
+              <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cluster-coral/5 rounded-full blur-3xl pointer-events-none" />
 
-                {/* 1. THE HIGHLIGHT: Big Centered Crew-D Logo */}
-                <div className="relative z-10 w-full flex justify-center mb-6 sm:mb-8">
-                  <div className="relative w-64 sm:w-80 md:w-[460px] lg:w-[500px] aspect-[1148/473] transition-transform duration-500 hover:scale-[1.02]">
-                    <Image
-                      src="/logos/crew-d-logo-clean.png"
-                      alt="Crew-D – Together We Create. Fashion"
-                      fill
-                      priority
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Subheading / Kicker */}
-                <div className="relative z-10 flex items-center justify-center gap-3 mb-5">
-                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
-                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
-                    A New Opportunity in Women&apos;s Fashion Retail
-                  </span>
-                </div>
-
-                {/* 2. THE TITLE */}
-                <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-slate-900 tracking-tight leading-[1.14] mb-6 font-sans uppercase max-w-3xl">
-                  Bring Everyday Fashion &amp; Maternity Wear Together Under One Roof.
-                </h2>
-
-                {/* 3. THE DESCRIPTION */}
-                <div className="relative z-10 max-w-2xl sm:max-w-3xl mx-auto space-y-4 text-slate-600 text-base sm:text-lg md:text-[19px] leading-relaxed font-normal">
-                  <p>
-                    <strong className="text-slate-900 font-bold">Crew-D</strong> is a multi-brand women&apos;s fashion retail concept by{" "}
-                    <strong className="text-slate-900 font-bold">Cluster Outfits Private Limited</strong>, bringing everyday fashion and maternity wear together under one roof through our brands,{" "}
-                    <span className="text-cluster-teal font-bold">Cluster</span> and{" "}
-                    <span className="text-cluster-coral font-bold">Matrutva</span>.
-                  </p>
-                  <p>
-                    With a focus on <strong className="text-slate-900 font-bold">style, comfort, quality, and affordability</strong>, Crew-D aims to create a convenient shopping destination for women while building a growing retail network across South India.
-                  </p>
-                  <div className="pt-3">
-                    <p className="inline-block text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 py-3.5 rounded-2xl text-sm sm:text-base leading-relaxed">
-                      <strong className="text-slate-900 font-bold">Interested in owning a Crew-D franchise?</strong> We invite entrepreneurs, aspiring business owners, and retail partners to connect with us and explore the opportunity.
-                    </p>
-                  </div>
+              {/* 1. THE HIGHLIGHT: Big Centered Crew-D Logo */}
+              <div className="relative z-10 w-full flex justify-center mb-6 sm:mb-8">
+                <div className="relative w-64 sm:w-80 md:w-[480px] lg:w-[560px] aspect-[1148/473] transition-transform duration-500 hover:scale-[1.02]">
+                  <Image
+                    src="/logos/crew-d-logo-clean.png"
+                    alt="Crew-D – Together We Create. Fashion"
+                    fill
+                    priority
+                    className="object-contain"
+                  />
                 </div>
               </div>
-            </Reveal>
-          </div>
-        </Container>
+
+              {/* Subheading / Kicker */}
+              <div className="relative z-10 flex items-center justify-center gap-3 mb-5">
+                <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                  A New Opportunity in Women&apos;s Fashion Retail
+                </span>
+              </div>
+
+              {/* 2. THE TITLE */}
+              <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.12] mb-6 font-sans uppercase max-w-5xl">
+                Bring Everyday Fashion &amp; Maternity Wear Together Under One Roof.
+              </h2>
+
+              {/* 3. THE DESCRIPTION */}
+              <div className="relative z-10 max-w-3xl sm:max-w-4xl mx-auto space-y-4 text-slate-600 text-base sm:text-lg md:text-[19px] leading-relaxed font-normal">
+                <p>
+                  <strong className="text-slate-900 font-bold">Crew-D</strong> is a multi-brand women&apos;s fashion retail concept by{" "}
+                  <strong className="text-slate-900 font-bold">Cluster Outfits Private Limited</strong>, bringing everyday fashion and maternity wear together under one roof through our brands,{" "}
+                  <span className="text-cluster-teal font-bold">Cluster</span> and{" "}
+                  <span className="text-cluster-coral font-bold">Matrutva</span>.
+                </p>
+                <p>
+                  With a focus on <strong className="text-slate-900 font-bold">style, comfort, quality, and affordability</strong>, Crew-D aims to create a convenient shopping destination for women while building a growing retail network across South India.
+                </p>
+                <div className="pt-3">
+                  <p className="inline-block text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base leading-relaxed max-w-3xl">
+                    <strong className="text-slate-900 font-bold">Interested in owning a Crew-D franchise?</strong> We invite entrepreneurs, aspiring business owners, and retail partners to connect with us and explore the opportunity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
