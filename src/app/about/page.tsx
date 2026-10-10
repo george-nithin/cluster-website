@@ -22,7 +22,6 @@ import { Counter, Reveal, StaggerReveal } from "@/components/anim";
 import { STATS } from "@/lib/data";
 import PartnerCta from "@/components/ui/PartnerCta";
 import TriangleHero from "@/components/ui/TriangleHero";
-import Button from "@/components/ui/Button";
 import CompanyJourney from "@/components/about/CompanyJourney";
 
 /* ─────────────────────────────────────────────────────────────
@@ -393,9 +392,9 @@ export default function About() {
 
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
-              {/* Left Column: Photo Card with Overlaid Text & CTA */}
+              {/* Left Column: Photo Card */}
               <Reveal direction="up" duration={0.85} className="lg:col-span-6 w-full">
-                <div className="relative min-h-[460px] sm:min-h-[500px] lg:min-h-[520px] rounded-[28px] sm:rounded-[36px] overflow-hidden p-8 sm:p-10 md:p-12 flex flex-col justify-end shadow-2xl border border-white/15 group">
+                <div className="relative min-h-[460px] sm:min-h-[500px] lg:min-h-[520px] rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-2xl border border-white/15 group">
                   <Image
                     src="/stitching.jpg"
                     alt="Cluster Outfits Master Artisans at Work"
@@ -403,33 +402,6 @@ export default function About() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  {/* Dark Gradient Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/30" />
-
-                  {/* Overlaid Content */}
-                  <div className="relative z-10 flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
-                      <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
-                      <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-cluster-coral font-manrope">
-                        People &amp; Culture
-                      </span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight font-manrope">
-                      EMPOWERING THE HANDS THAT <br className="hidden sm:block" />
-                      <span className="text-cluster-coral">CRAFT EVERY SEAM.</span>
-                    </h3>
-                    <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed max-w-md">
-                      Dignified, safe, and air-filtered manufacturing facilities where 350+ skilled artisans craft apparel with pride.
-                    </p>
-                    <div className="pt-2">
-                      <Button
-                        variant="coral"
-                        href="/contact"
-                      >
-                        Contact Our Team
-                      </Button>
-                    </div>
-                  </div>
                 </div>
               </Reveal>
 
