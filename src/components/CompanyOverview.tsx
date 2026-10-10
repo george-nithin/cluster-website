@@ -112,11 +112,11 @@ export default function CompanyOverview() {
                     className={`
                       relative group flex-1 md:flex-none flex items-center justify-center
                       min-w-[140px] md:min-w-0 h-[100px] sm:h-[115px] md:h-[130px] px-5 py-4
-                      rounded-2xl transition-all duration-300 text-left outline-hidden cursor-pointer
+                      rounded-2xl transition-all duration-300 text-left outline-hidden cursor-pointer bg-white
                       ${
                         isActive
-                          ? "bg-white border-2 border-cluster-text shadow-[0_12px_36px_rgba(0,0,0,0.08)] scale-[1.02]"
-                          : "bg-white/70 border border-cluster-border/80 hover:bg-white hover:border-cluster-border hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)] opacity-50 hover:opacity-90"
+                          ? "border-2 border-cluster-text shadow-[0_12px_36px_rgba(0,0,0,0.08)] scale-[1.02]"
+                          : "border border-cluster-border hover:border-cluster-text/50 hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)]"
                       }
                     `}
                     aria-label={`Select ${company.title}`}
@@ -138,8 +138,8 @@ export default function CompanyOverview() {
                         height={60}
                         className={`
                           max-h-10 sm:max-h-12 md:max-h-14 w-auto object-contain
-                          transition-all duration-300
-                          ${isActive ? "scale-105 filter-none" : "grayscale-[30%] group-hover:grayscale-0"}
+                          transition-all duration-300 filter-none opacity-100
+                          ${isActive ? "scale-105" : "group-hover:scale-102"}
                         `}
                         priority={idx === 0}
                       />
