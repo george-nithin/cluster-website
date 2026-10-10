@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import {
   Sparkles,
-  ArrowRight,
   Factory,
   Truck,
   Leaf,
@@ -163,82 +161,35 @@ export default function About() {
             {/* Main Rounded Feature Card */}
             <div className="rounded-[32px] sm:rounded-[40px] bg-gradient-to-br from-[#F8F9FA] via-[#F2F4F7] to-[#E9ECEF] border border-slate-200/90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-                {/* ──── Left Column: Leadership Story & Metrics ──── */}
-                <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between h-full">
-                  <div>
-                    {/* Eyebrow / Kicker */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
-                      <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
-                        Founder’s Journey
-                      </span>
-                    </div>
-
-                    {/* Headline */}
-                    <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black uppercase text-slate-900 tracking-tight leading-[1.06] mb-2 font-sans">
-                      Devan S
-                    </h2>
-                    <div className="text-base sm:text-lg font-bold text-cluster-coral uppercase tracking-wider mb-6 font-manrope">
-                      Managing Director
-                    </div>
-
-                    {/* Story Narrative */}
-                    <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal mb-8">
-                      <p>
-                        Following <strong className="text-slate-900 font-semibold">14 years of distinguished service in the Indian Air Force</strong>, Devan S took voluntary retirement in 2022 to formally take over and establish <strong className="text-slate-900 font-semibold">Cluster Outfits</strong> as a proprietorship.
-                      </p>
-                      <p>
-                        Through disciplined operational planning and rapid retail network expansion across South India, the enterprise grew into an industrial manufacturing powerhouse, culminating in its incorporation as <strong className="text-slate-900 font-semibold">Cluster Outfits Private Limited in 2025</strong>.
-                      </p>
-                      <p className="text-slate-800 font-medium border-l-2 border-cluster-teal pl-4 py-0.5 bg-cluster-teal/[0.04] rounded-r-lg">
-                        Committed to women’s employment, grassroots entrepreneurship, and inclusive growth in the garment industry.
-                      </p>
-                    </div>
-
-                    {/* Action Buttons (Reference Pill Style) */}
-                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
-                      <Link
-                        href="/contact"
-                        className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-slate-900 hover:bg-black text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-lg shadow-black/15 flex items-center gap-2 group"
-                      >
-                        <span>Get in touch</span>
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
-                      <a
-                        href="#mission"
-                        className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold tracking-wider uppercase border border-slate-200 transition-all duration-200 shadow-xs"
-                      >
-                        <span>Our Mission</span>
-                      </a>
-                    </div>
+                {/* ──── Left Column: Leadership Story ──── */}
+                <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+                  {/* Eyebrow / Kicker */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                      Founder’s Journey
+                    </span>
                   </div>
 
-                  {/* 3 Metric Columns (Reference Format) */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-slate-200/80">
-                    <div>
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black font-manrope text-slate-900 block leading-none">
-                        14 Yrs
-                      </span>
-                      <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1.5 leading-snug">
-                        Indian Air Force Service
-                      </span>
-                    </div>
-                    <div>
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black font-manrope text-cluster-blue block leading-none">
-                        2022
-                      </span>
-                      <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1.5 leading-snug">
-                        Cluster Proprietorship
-                      </span>
-                    </div>
-                    <div>
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black font-manrope text-cluster-teal block leading-none">
-                        2025
-                      </span>
-                      <span className="text-[11px] sm:text-xs text-slate-500 font-medium block mt-1.5 leading-snug">
-                        Incorporated Pvt. Ltd.
-                      </span>
-                    </div>
+                  {/* Headline */}
+                  <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black uppercase text-slate-900 tracking-tight leading-[1.06] mb-2 font-sans">
+                    Devan S
+                  </h2>
+                  <div className="text-base sm:text-lg font-bold text-cluster-coral uppercase tracking-wider mb-6 font-manrope">
+                    Managing Director
+                  </div>
+
+                  {/* Story Narrative */}
+                  <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                    <p>
+                      Following <strong className="text-slate-900 font-semibold">14 years of distinguished service in the Indian Air Force</strong>, Devan S took voluntary retirement in 2022 to formally take over and establish <strong className="text-slate-900 font-semibold">Cluster Outfits</strong> as a proprietorship.
+                    </p>
+                    <p>
+                      Through disciplined operational planning and rapid retail network expansion across South India, the enterprise grew into an industrial manufacturing powerhouse, culminating in its incorporation as <strong className="text-slate-900 font-semibold">Cluster Outfits Private Limited in 2025</strong>.
+                    </p>
+                    <p className="text-slate-800 font-medium border-l-2 border-cluster-teal pl-4 py-0.5 bg-cluster-teal/[0.04] rounded-r-lg">
+                      Committed to women’s employment, grassroots entrepreneurship, and inclusive growth in the garment industry.
+                    </p>
                   </div>
                 </div>
 
@@ -283,30 +234,6 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Bottom Milestone & Brand Emblem Strip (Matches Reference Bottom Logo Bar) */}
-            <div className="mt-8 pt-6 border-t border-slate-200/60 flex flex-wrap items-center justify-between gap-4 sm:gap-8 px-4 text-xs font-bold text-slate-500 uppercase tracking-widest font-manrope">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cluster-blue" />
-                Indian Air Force Veteran
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cluster-coral" />
-                Cluster Outfits Pvt. Ltd.
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal" />
-                Matrutva Maternity
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                Texvia by Cluster
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                Kerala &amp; Tamil Nadu
-              </span>
             </div>
           </Reveal>
         </Container>
