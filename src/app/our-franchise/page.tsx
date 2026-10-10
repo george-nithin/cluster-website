@@ -714,7 +714,7 @@ export default function OurFranchisePage() {
                         size="lg"
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full justify-center tracking-widest uppercase font-bold text-xs sm:text-sm !rounded-[18px] py-4"
+                        className="w-full justify-center tracking-widest uppercase font-bold text-xs sm:text-sm py-4"
                       >
                         {isSubmitting ? (
                           "Submitting..."
@@ -855,22 +855,19 @@ export default function OurFranchisePage() {
 
                 {/* Buttons matching Reference Image */}
                 <div className="flex flex-wrap items-center gap-4">
-                  <button
+                  <Button
+                    variant="coral"
                     onClick={scrollToEnquiry}
-                    className="inline-flex items-center gap-3 px-8 sm:px-9 py-4 rounded-xl bg-cluster-coral hover:bg-cluster-coral-hover text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-200 shadow-xl shadow-cluster-coral/30 group cursor-pointer font-manrope"
                   >
-                    <span>Become a Franchise Partner</span>
-                    <span className="w-6 h-6 rounded-full bg-white/25 flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                    </span>
-                  </button>
+                    Become a Franchise Partner
+                  </Button>
 
-                  <Link
+                  <Button
+                    variant="outline-white"
                     href="/contact"
-                    className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/20 backdrop-blur-md transition-all duration-200 font-manrope"
                   >
                     Contact Management
-                  </Link>
+                  </Button>
                 </div>
               </div>
 

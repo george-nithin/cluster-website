@@ -194,7 +194,7 @@ export default function Footer() {
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="mt-2">
-                <div className="flex rounded-[2px] overflow-hidden border border-neutral-300 focus-within:border-black transition-all bg-white shadow-2xs">
+                <div className="flex rounded-none overflow-hidden border border-neutral-300 focus-within:border-black transition-all bg-white shadow-2xs">
                   <input
                     type="email"
                     required

@@ -70,7 +70,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     // Base structural styling
     const baseClasses =
-      'group inline-flex items-center justify-center font-manrope font-bold uppercase tracking-[0.18em] transition-all duration-200 select-none active:scale-[0.98] cursor-pointer rounded-[2px]';
+      'group inline-flex items-center justify-center font-manrope font-bold uppercase tracking-[0.18em] transition-all duration-200 select-none active:scale-[0.98] cursor-pointer rounded-none';
 
     // Size variants
     const sizeClasses: Record<ButtonSize, string> = {
