@@ -7,6 +7,7 @@ export type ButtonVariant =
   | 'dark'          // Alias for primary
   | 'blue'          // Solid brand blue with right arrow (Image 2 left)
   | 'coral'         // Solid brand coral with right arrow
+  | 'teal'          // Solid brand teal/green with right arrow
   | 'white'         // Solid white with dark text
   | 'outline-white' // Crisp white border on dark bg, hover white fill
   | 'outline-dark'  // Crisp outline on light surface, dark text (Image 1 right)
@@ -62,6 +63,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       variant === 'dark' ||
       variant === 'blue' ||
       variant === 'coral' ||
+      variant === 'teal' ||
       variant === 'white';
 
     const shouldShowArrow = showArrow !== undefined ? showArrow : isSolid;
@@ -87,6 +89,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         'bg-cluster-blue hover:bg-[#0a5670] text-white border border-cluster-blue shadow-sm hover:shadow-md',
       coral:
         'bg-cluster-coral hover:bg-[#c93920] text-white border border-cluster-coral shadow-sm hover:shadow-md',
+      teal:
+        'bg-cluster-teal hover:bg-[#1aa67f] text-white border border-cluster-teal shadow-sm hover:shadow-md',
       white:
         'bg-white hover:bg-neutral-100 text-[#141414] border border-white shadow-sm hover:shadow-md',
       'outline-white':

@@ -531,18 +531,18 @@ export default function OurFranchisePage() {
             {/* Master Card with Split Layout - Max Width */}
             <div className="w-full rounded-[32px] sm:rounded-[40px] bg-white p-4 sm:p-6 lg:p-8 shadow-xl border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-stretch">
               
-              {/* Left Column: Vibrant Blue Gradient Panel */}
-              <div className="lg:col-span-7 bg-gradient-to-br from-[#2A6AFF] via-[#1E57EC] to-[#0D36C2] rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden min-h-[540px]">
+              {/* Left Column: Vibrant Green Gradient Panel */}
+              <div className="lg:col-span-7 bg-gradient-to-br from-[#22C195] via-[#1AA67F] to-[#0E7256] rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden min-h-[540px]">
                 {/* Soft ambient lighting highlights */}
                 <div className="absolute -top-24 -right-24 w-88 h-88 bg-white/20 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-24 -left-24 w-88 h-88 bg-[#07248C]/40 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-24 -left-24 w-88 h-88 bg-[#064E3B]/40 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="relative z-10 pt-2 sm:pt-4">
                   <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white tracking-tight leading-[1.08] mb-4 font-sans uppercase">
                     START YOUR JOURNEY
                   </h2>
 
-                  <p className="text-blue-100 text-sm sm:text-base font-normal leading-relaxed max-w-lg">
+                  <p className="text-emerald-50 text-sm sm:text-base font-normal leading-relaxed max-w-lg">
                     Follow these simple steps to explore partnership with South India&apos;s fast-growing dual-brand fashion retail grid.
                   </p>
                 </div>
@@ -551,7 +551,7 @@ export default function OurFranchisePage() {
                 <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-8 mt-8 border-t border-white/15">
                   {/* Card 1: Active White Card */}
                   <div className="rounded-2xl bg-white text-slate-900 p-4 sm:p-5 shadow-xl flex flex-col justify-between min-h-[145px] transition-transform hover:-translate-y-0.5">
-                    <div className="w-7 h-7 rounded-full bg-[#1E57EC] text-white text-xs font-black flex items-center justify-center shrink-0 shadow-sm font-sans">
+                    <div className="w-7 h-7 rounded-full bg-[#1AA67F] text-white text-xs font-black flex items-center justify-center shrink-0 shadow-sm font-sans">
                       1
                     </div>
                     <div className="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug mt-3 font-sans">
@@ -635,7 +635,7 @@ export default function OurFranchisePage() {
                         placeholder="+91 97478 00041"
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
                       />
                     </div>
 
@@ -650,7 +650,7 @@ export default function OurFranchisePage() {
                         placeholder="e.g. Rahul Sharma"
                         value={formState.fullName}
                         onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
                       />
                     </div>
 
@@ -666,7 +666,7 @@ export default function OurFranchisePage() {
                           placeholder="partner@example.com"
                           value={formState.email}
                           onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
                         />
                       </div>
 
@@ -680,7 +680,7 @@ export default function OurFranchisePage() {
                           placeholder="e.g. Coimbatore"
                           value={formState.city}
                           onChange={(e) => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
                         />
                       </div>
                     </div>
@@ -742,14 +742,14 @@ export default function OurFranchisePage() {
                         placeholder="Preferred location, square footage, or questions..."
                         value={formState.message}
                         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all resize-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all resize-none"
                       />
                     </div>
 
                     {/* Submit using Button component */}
                     <div className="pt-2">
                       <Button
-                        variant="blue"
+                        variant="teal"
                         size="lg"
                         type="submit"
                         disabled={isSubmitting}
