@@ -16,6 +16,7 @@ import {
   Heart,
   CheckCircle2,
   ArrowRight,
+  ArrowUpRight,
   Send,
   PhoneCall,
   MapPin,
@@ -838,65 +839,122 @@ export default function OurFranchisePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          6. CLOSING CTA: LET'S GROW TOGETHER
+          6. CLOSING CTA: LET'S GROW TOGETHER (REFERENCE DESIGN)
       ───────────────────────────────────────────────────────────── */}
-      <section id="grow-together" className="py-20 sm:py-28 md:py-32 bg-white relative overflow-hidden">
-        <Container>
-          <div className="relative rounded-[32px] sm:rounded-[44px] bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white p-8 sm:p-14 md:p-20 overflow-hidden shadow-2xl">
-            {/* Background ambient lighting */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cluster-coral/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cluster-teal/15 rounded-full blur-3xl pointer-events-none" />
+      <section id="grow-together" className="pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 bg-white relative">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <div className="relative rounded-[32px] sm:rounded-[44px] bg-[#070D1E] text-white shadow-2xl">
+            {/* Background image from public folder + dark moody overlay */}
+            <div className="absolute inset-0 rounded-[32px] sm:rounded-[44px] overflow-hidden pointer-events-none">
+              <Image
+                src="/distributionback.jpg"
+                alt="City Architecture Background"
+                fill
+                sizes="100vw"
+                className="object-cover object-center opacity-30 mix-blend-luminosity"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#060D1E]/98 via-[#0A1630]/92 to-[#040916]/85" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-black/55" />
+              {/* Subtle ambient lighting glows */}
+              <div className="absolute -top-20 left-1/4 w-96 h-96 bg-cluster-blue/20 rounded-full blur-[140px]" />
+              <div className="absolute -bottom-20 right-1/4 w-96 h-96 bg-cluster-coral/15 rounded-full blur-[140px]" />
+            </div>
 
-            <div className="relative z-10 max-w-3xl">
-              <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="relative h-12 sm:h-14 w-36 sm:w-44 rounded-xl overflow-hidden bg-white/95 backdrop-blur-md border border-white/30 p-1.5 shadow-md">
-                  <Image
-                    src="/logos/crew-d-logo.jpg"
-                    alt="Crew-D Logo"
-                    fill
-                    className="object-contain"
-                  />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20">
+              {/* Left Column: Content */}
+              <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start relative z-20">
+                {/* Logo & Subheading Row */}
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-6">
+                  <div className="relative h-11 sm:h-13 w-32 sm:w-40 rounded-xl overflow-hidden bg-white/95 backdrop-blur-md border border-white/30 p-1.5 shadow-md">
+                    <Image
+                      src="/logos/crew-d-logo.jpg"
+                      alt="Crew-D Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                      Expanding Across South India
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
-                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
-                    Expanding Across South India
-                  </span>
+                {/* Main Headline */}
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tight text-white leading-[1.06] mb-3 font-sans">
+                  Let&apos;s Grow Together<span className="text-cluster-coral">.</span>
+                </h2>
+
+                {/* Subtitle Highlight */}
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-cluster-teal font-manrope tracking-tight mb-4">
+                  Your City Could Be Our Next Destination.
+                </p>
+
+                {/* Narrative Description */}
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal max-w-xl mb-8">
+                  Join us as we work towards making quality, comfortable, and affordable women&apos;s fashion accessible to more customers.
+                </p>
+
+                {/* Buttons matching Reference Image */}
+                <div className="flex flex-wrap items-center gap-4">
+                  <button
+                    onClick={scrollToEnquiry}
+                    className="inline-flex items-center gap-3 px-8 sm:px-9 py-4 rounded-xl bg-cluster-coral hover:bg-cluster-coral-hover text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-200 shadow-xl shadow-cluster-coral/30 group cursor-pointer font-manrope"
+                  >
+                    <span>Become a Franchise Partner</span>
+                    <span className="w-6 h-6 rounded-full bg-white/25 flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      <ArrowUpRight className="w-3.5 h-3.5 text-white" />
+                    </span>
+                  </button>
+
+                  <Link
+                    href="/contact"
+                    className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/20 backdrop-blur-md transition-all duration-200 font-manrope"
+                  >
+                    Contact Management
+                  </Link>
                 </div>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-[1.05] mb-4 font-sans">
-                Let&apos;s Grow Together<span className="text-cluster-coral">.</span>
-              </h2>
-
-              <p className="text-xl sm:text-2xl font-bold text-cluster-teal font-manrope tracking-tight mb-6">
-                Your City Could Be Our Next Destination.
-              </p>
-
-              <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl mb-10">
-                Join us as we work towards making quality, comfortable, and affordable women&apos;s fashion accessible to more customers.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <button
-                  onClick={scrollToEnquiry}
-                  className="px-8 sm:px-10 py-4 sm:py-4.5 rounded-xl bg-cluster-coral hover:bg-cluster-coral-hover text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-200 shadow-xl shadow-cluster-coral/25 flex items-center gap-2 group font-manrope cursor-pointer"
+              {/* Center: Playful curved doodle arrow pointing to the right figure (matching reference) */}
+              <div className="hidden xl:block absolute left-[56%] top-[40%] -translate-y-1/2 z-20 pointer-events-none">
+                <svg
+                  viewBox="0 0 130 90"
+                  fill="none"
+                  className="w-24 h-18 text-white/90 stroke-current drop-shadow-md -rotate-3"
                 >
-                  <span>Become a Franchise Partner</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                  <path
+                    d="M10 65 C 22 22, 58 8, 78 40 C 88 58, 65 74, 54 54 C 44 34, 72 14, 118 36"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M98 22 L 120 36 L 108 52"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
 
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/20 backdrop-blur-md transition-all duration-200 font-manrope"
-                >
-                  Contact Management
-                </Link>
+              {/* Right Column: Figure breaking the top edge of the card (matching reference) */}
+              <div className="lg:col-span-5 xl:col-span-5 relative flex justify-center lg:justify-end">
+                <div className="relative w-[280px] sm:w-[340px] md:w-[380px] lg:w-[420px] xl:w-[460px] h-[360px] sm:h-[440px] lg:h-[520px] xl:h-[580px] -mt-10 sm:-mt-20 lg:-mt-32 xl:-mt-44 lg:-mb-20 pointer-events-none">
+                  <Image
+                    src="/descimg.png"
+                    alt="Crew-D Fashion Ambassador"
+                    fill
+                    priority
+                    className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.65)]"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
     </div>
   );
