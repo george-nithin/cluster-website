@@ -203,10 +203,10 @@ export default function TriangleHero({
         <div className="max-w-xl lg:max-w-2xl flex flex-col items-start">
           {/* Optional Kicker */}
           {kicker && (
-            <div ref={tagRef} className="flex items-center gap-2.5 sm:gap-3 mb-3 sm:mb-4">
-              <span className="w-6 sm:w-8 h-[2px] bg-cluster-coral" />
+            <div ref={tagRef} className="flex items-center gap-3 mb-3 sm:mb-4">
+              <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
               <span
-                className={`uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[10.5px] sm:text-xs font-bold ${accentKickerColor} font-manrope`}
+                className={`uppercase tracking-[0.25em] text-[11px] font-bold ${accentKickerColor} font-manrope`}
               >
                 {kicker}
               </span>

@@ -114,8 +114,8 @@ export default function FabricCounter() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/15 pb-8 sm:pb-10">
           <div className="flex flex-col gap-3 max-w-2xl">
             <div className="flex items-center gap-3">
-              <span className="w-8 h-px bg-cluster-teal" />
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase">
+              <span className="w-8 h-0.5 bg-cluster-teal rounded-full" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase font-manrope">
                 Scale &amp; Performance
               </span>
             </div>

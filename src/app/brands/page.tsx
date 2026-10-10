@@ -58,7 +58,12 @@ export default function Brands() {
                 <div className="relative h-12 sm:h-14 w-48 sm:w-56 mb-6 sm:mb-8">
                   <Image src="/logos/cluster-main.png" alt="Cluster Logo" fill className="object-contain object-left" />
                 </div>
-                <span className="uppercase tracking-[0.2em] text-cluster-blue text-xs font-bold mb-3 sm:mb-4 block">Womenswear</span>
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="w-8 h-0.5 bg-cluster-blue rounded-full" />
+                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-blue uppercase font-manrope">
+                    Womenswear
+                  </span>
+                </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-gray-900 mb-4 sm:mb-6 tracking-tight leading-none">
                   CLUSTER<span className="text-cluster-blue">.</span>
                 </h2>
@@ -111,6 +116,12 @@ export default function Brands() {
               <div>
                 <div className="relative h-12 sm:h-14 w-48 sm:w-56 mb-6 sm:mb-8 opacity-90 mix-blend-multiply">
                   <Image src="/logos/Matrutva Wordmark.png" alt="Matrutva Logo" fill className="object-contain object-left" />
+                </div>
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                    Maternity Wear
+                  </span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-gray-900 mb-4 sm:mb-6 tracking-tight leading-none">
                   MATRUTVA MATERNITY<span className="text-cluster-coral">.</span>

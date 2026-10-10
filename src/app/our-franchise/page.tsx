@@ -5,480 +5,832 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import TriangleHero from "@/components/ui/TriangleHero";
-import PartnerCta from "@/components/ui/PartnerCta";
-import Button from "@/components/ui/Button";
 import { Reveal, StaggerReveal } from "@/components/anim";
+import Button from "@/components/ui/Button";
 import {
   Store,
-  Building2,
-  TrendingUp,
-  ShieldCheck,
-  Truck,
+  Layers,
   Sparkles,
-  Users,
+  Maximize,
+  TrendingUp,
+  Heart,
   CheckCircle2,
   ArrowRight,
-  Calculator,
-  ChevronDown,
-  ChevronUp,
   Send,
   PhoneCall,
   MapPin,
-  Clock,
-  Layers,
-  HelpCircle,
-  FileText,
-  BadgeCheck,
-  Percent,
+  Building,
+  Check,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function OurFranchisePage() {
-  // Selected Store Model for interactive showcase
-  const [activeModel, setActiveModel] = useState<number>(0);
-
-  // ROI Calculator State
-  const [storeSize, setStoreSize] = useState<number>(800);
-
   // Form State
   const [formState, setFormState] = useState({
     fullName: "",
     phone: "",
     email: "",
-    state: "Kerala",
     city: "",
-    model: "Exclusive Brand Outlet (EBO)",
-    spaceAvailability: "Owned Commercial Space",
-    carpetArea: "800",
-    investmentBudget: "₹18 Lakhs - ₹25 Lakhs",
-    experience: "",
+    ownsBusiness: "Yes",
+    hasSpace: "No",
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Key franchise stats
-  const performanceStats = [
-    {
-      metric: "35% – 42%",
-      label: "Gross Profit Margins",
-      sub: "Direct-from-factory pricing with zero middlemen cuts",
-      color: "text-cluster-blue",
-      bgColor: "bg-cluster-blue/10",
-      borderColor: "border-cluster-blue/20",
-    },
-    {
-      metric: "9,000+",
-      label: "Active Retail Network",
-      sub: "Proven market acceptance across Kerala & Tamil Nadu",
-      color: "text-cluster-coral",
-      bgColor: "bg-cluster-coral/10",
-      borderColor: "border-cluster-coral/20",
-    },
-    {
-      metric: "24–48h",
-      label: "Express Restocking",
-      sub: "Overnight replenishment from dual manufacturing hubs",
-      color: "text-cluster-teal",
-      bgColor: "bg-cluster-teal/10",
-      borderColor: "border-cluster-teal/20",
-    },
-    {
-      metric: "100%",
-      label: "Stock Rotation Support",
-      sub: "Curated seasonal rotation to ensure zero dead inventory",
-      color: "text-slate-800",
-      bgColor: "bg-slate-100",
-      borderColor: "border-slate-200",
-    },
-  ];
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 800);
+  };
 
-  // Franchise Models
-  const franchiseModels = [
-    {
-      id: "ebo",
-      tag: "FLAGSHIP FORMAT",
-      name: "Exclusive Brand Outlet (EBO)",
-      subtitle: "Dedicated Cluster Lifestyle & Maternity Destination",
-      area: "700 – 1,500 sq. ft.",
-      investment: "₹18 – ₹28 Lakhs",
-      payback: "12 – 16 Months",
-      image: "/ladieshome.png",
-      description:
-        "The complete flagship retail experience showcasing both Cluster Womenswear and Matrutva Maternity collections. Designed for high-street commercial hubs and premium shopping destinations.",
-      highlights: [
-        "Full branded store façade, architectural 3D layout & interior fit-out",
-        "Complete opening inventory mix (over 400+ seasonal & staple SKUs)",
-        "Integrated cloud POS billing software and RFID automated inventory scanning",
-        "Comprehensive visual merchandising, display mannequins, and branded packaging",
-        "Dedicated marketing launch campaign with local digital advertising blitz",
-      ],
-      idealFor: "Entrepreneurs and business owners seeking an exclusive branded apparel showroom.",
-    },
-    {
-      id: "sis",
-      tag: "HIGH TURNOVER",
-      name: "Shop-in-Shop (SIS) / Brand Corner",
-      subtitle: "Dedicated In-Store Experience for Established Retailers",
-      area: "300 – 600 sq. ft.",
-      investment: "₹8 – ₹14 Lakhs",
-      payback: "8 – 12 Months",
-      image: "/maternityhome.png",
-      description:
-        "An optimized, high-velocity shop-in-shop concept designed for existing multi-brand apparel showrooms and department stores looking to dedicate a high-margin specialty corner to Cluster brands.",
-      highlights: [
-        "Modular branded display racks, accent wall cladding, and illuminated signage",
-        "Tailored high-turnover product curation suited to the store's customer base",
-        "Low upfront capital expenditure with rapid revenue realization",
-        "Seamless integration with existing store billing or standalone Cluster POS",
-        "Continuous weekly replenishment powered by arterial freight corridors",
-      ],
-      idealFor: "Showroom owners wanting to monetize existing floor space with fast-moving fashion.",
-    },
-    {
-      id: "distributor",
-      tag: "TERRITORIAL SCALE",
-      name: "Regional Franchise Distributor",
-      subtitle: "Territorial Warehousing & Retail Supply Franchise",
-      area: "1,200 – 2,500 sq. ft. Hub",
-      investment: "₹35 – ₹55 Lakhs",
-      payback: "14 – 18 Months",
-      image: "/distributionhero.png",
-      description:
-        "An exclusive territorial distribution franchise holding sole supply rights for 50–100+ retail storefronts across a designated district or cluster of towns in South India.",
-      highlights: [
-        "Exclusive territorial monopoly for Cluster Womenswear and Matrutva supplies",
-        "Direct warehouse staging with palletized dispatches from dual factories",
-        "B2B ordering portal access with automated replenishment forecasts",
-        "Substantial bulk volume incentives and recurring dealer commissions",
-        "Dedicated corporate logistics manager and field sales territory support",
-      ],
-      idealFor: "Established wholesale distributors or logistics entrepreneurs seeking territorial scale.",
-    },
-  ];
+  const scrollToEnquiry = () => {
+    const el = document.getElementById("enquiry-form");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-  // 6 Pillars of Advantage
   const franchisePillars = [
     {
-      title: "Direct-from-Factory Margins",
-      desc: "Our dual vertically integrated facilities in Kerala and Cumbum eliminate brokers and middleman markups, passing 35%–42% gross margins directly to our franchise partners.",
-      icon: Building2,
-      color: "text-cluster-blue",
-      border: "border-cluster-blue/20",
-      bg: "bg-cluster-blue/5",
+      icon: (
+        <Layers className="w-6 h-6 text-cluster-coral group-hover:rotate-12 group-hover:scale-115 transition-transform duration-300" />
+      ),
+      iconBg: "bg-cluster-coral/10 border-cluster-coral/20",
+      accentBorder: "hover:border-cluster-coral/40",
+      accentBar: "from-cluster-coral to-rose-400",
+      number: "01",
+      title: "Two Brands. One Retail Destination.",
+      desc: "Bring everyday fashion and maternity wear together through a single unified retail concept.",
+      tag: "Dual Power",
     },
     {
-      title: "Rapid 200+ SKU Monthly Cycles",
-      desc: "Our in-house design incubation teams release over 200 fresh, trend-forward styles monthly, engineered specifically for South Indian climate, festive cycles, and fits.",
-      icon: Sparkles,
-      color: "text-cluster-coral",
-      border: "border-cluster-coral/20",
-      bg: "bg-cluster-coral/5",
+      icon: (
+        <Sparkles className="w-6 h-6 text-cluster-teal group-hover:scale-120 group-hover:-rotate-6 transition-transform duration-300" />
+      ),
+      iconBg: "bg-cluster-teal/10 border-cluster-teal/20",
+      accentBorder: "hover:border-cluster-teal/40",
+      accentBar: "from-cluster-teal to-cyan-400",
+      number: "02",
+      title: "Focused Product Assortment",
+      desc: "Serve a variety of customer needs with a curated women's apparel collection designed for everyday life.",
+      tag: "Curated Range",
     },
     {
-      title: "Turnkey 3D Architectural Fit-Out",
-      desc: "Receive customized 3D CAD retail layouts, standardized lighting schemes, bespoke fixtures, and visual merchandising guides tailored to your exact store blueprint.",
-      icon: Layers,
-      color: "text-cluster-teal",
-      border: "border-cluster-teal/20",
-      bg: "bg-cluster-teal/5",
+      icon: (
+        <Maximize className="w-6 h-6 text-cluster-blue group-hover:scale-115 group-hover:rotate-45 transition-transform duration-300" />
+      ),
+      iconBg: "bg-cluster-blue/10 border-cluster-blue/20",
+      accentBorder: "hover:border-cluster-blue/40",
+      accentBar: "from-cluster-blue to-indigo-400",
+      number: "03",
+      title: "Compact Store Format",
+      desc: "Our proposed franchise store format ranges from 200 to 600 sq. ft., subject to location and business requirements.",
+      tag: "High Efficiency",
     },
     {
-      title: "360° Omnichannel Marketing",
-      desc: "Benefit from regional influencer collaborations, localized digital ad campaigns, seasonal festive point-of-sale kits, and high-impact grand opening promotional support.",
-      icon: TrendingUp,
-      color: "text-cluster-blue",
-      border: "border-cluster-blue/20",
-      bg: "bg-cluster-blue/5",
+      icon: (
+        <TrendingUp className="w-6 h-6 text-cluster-teal group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+      ),
+      iconBg: "bg-cluster-teal/10 border-cluster-teal/20",
+      accentBorder: "hover:border-cluster-teal/40",
+      accentBar: "from-cluster-teal to-emerald-400",
+      number: "04",
+      title: "Growing Market Presence",
+      desc: "Be part of our planned retail expansion across Kerala, Tamil Nadu, and other key South Indian markets.",
+      tag: "Regional Growth",
     },
     {
-      title: "Cloud POS & RFID Auto-Replenishment",
-      desc: "Cloud-connected inventory algorithms analyze your daily sales and trigger automatic buffer dispatches from the nearest staging node so you never miss a sale.",
-      icon: Truck,
-      color: "text-cluster-coral",
-      border: "border-cluster-coral/20",
-      bg: "bg-cluster-coral/5",
-    },
-    {
-      title: "Staff Training & Retail Academy",
-      desc: "We train your store managers and customer associates in garment craftsmanship, cross-selling Matrutva maternity solutions, and delivering a luxury retail standard.",
-      icon: Users,
-      color: "text-cluster-teal",
-      border: "border-cluster-teal/20",
-      bg: "bg-cluster-teal/5",
+      icon: (
+        <Heart className="w-6 h-6 text-cluster-coral group-hover:scale-125 transition-transform duration-300" />
+      ),
+      iconBg: "bg-cluster-coral/10 border-cluster-coral/20",
+      accentBorder: "hover:border-cluster-coral/40",
+      accentBar: "from-cluster-coral to-amber-400",
+      number: "05",
+      title: "Built Around Women's Needs",
+      desc: "Offer customers a shopping destination focused on comfort, style, quality, and affordable fashion.",
+      tag: "Customer-Centric",
     },
   ];
-
-  // 6-step Onboarding Process
-  const onboardingSteps = [
-    {
-      step: "01",
-      title: "Application & Profile Review",
-      desc: "Submit your franchise expression of interest. Our corporate expansion team conducts an initial review within 48 business hours.",
-    },
-    {
-      step: "02",
-      title: "Location Catchment Feasibility",
-      desc: "Our field team conducts an on-site footfall audit, micro-market demographic analysis, and commercial viability evaluation.",
-    },
-    {
-      step: "03",
-      title: "Franchise Agreement & Rights",
-      desc: "Finalize territorial exclusivity, documentation, and operational rights with clear and transparent commercial covenants.",
-    },
-    {
-      step: "04",
-      title: "Store 3D Fit-Out & Fabrication",
-      desc: "Our retail architects deliver turnkey 3D visual plans, modular display racks, illumination designs, and external signage.",
-    },
-    {
-      step: "05",
-      title: "Inventory Staging & Team Training",
-      desc: "Receive initial stock curation tagged with RFID barcoding, along with comprehensive training on retail SOPs and billing.",
-    },
-    {
-      step: "06",
-      title: "Grand Launch & Revenue Blitz",
-      desc: "Kick off store operations with targeted local advertising, influencer visits, opening promotional kits, and sales acceleration.",
-    },
-  ];
-
-  // Dynamic ROI calculation based on chosen square footage
-  const calculateRoi = (sqft: number) => {
-    const fitoutCost = Math.round(sqft * 1100);
-    const stockCost = Math.round(sqft * 1400);
-    const workingCapital = Math.round(sqft * 400);
-    const totalEst = fitoutCost + stockCost + workingCapital;
-    const estMonthlySales = Math.round(sqft * 1250);
-    const estGrossProfit = Math.round(estMonthlySales * 0.38);
-    const estNetProfit = Math.round(estMonthlySales * 0.22);
-    const paybackMonths = Math.max(10, Math.round(totalEst / estNetProfit));
-
-    return {
-      fitoutCost,
-      stockCost,
-      workingCapital,
-      totalEst,
-      estMonthlySales,
-      estGrossProfit,
-      estNetProfit,
-      paybackMonths,
-    };
-  };
-
-  const currentRoi = calculateRoi(storeSize);
-
-  // FAQ Items
-  const faqList = [
-    {
-      q: "What is the typical initial investment required to open a Cluster franchise?",
-      a: "Depending on the model chosen, initial investment ranges from ₹8 Lakhs – ₹14 Lakhs for a Shop-in-Shop (SIS) format, ₹18 Lakhs – ₹28 Lakhs for an Exclusive Brand Outlet (EBO) of 700–1,200 sq.ft, and ₹35 Lakhs – ₹55 Lakhs for a Regional Distribution Franchise. This includes store fit-out, branded fixtures, billing hardware, opening inventory, and launch marketing.",
-    },
-    {
-      q: "Does Cluster help in site selection and store interior design?",
-      a: "Yes, absolutely. Our retail development team performs thorough catchment feasibility studies, assists in evaluating commercial rental agreements, and provides complimentary 3D architectural interior design layouts, lighting specifications, and standardized display rack fabrications.",
-    },
-    {
-      q: "How does stock replenishment and inventory management work?",
-      a: "We operate dual vertically integrated manufacturing facilities in Kerala and Cumbum (Tamil Nadu) supported by 14 regional cross-dock staging nodes. Franchise outlets receive express replenishment within 24 to 48 hours of placing replenishment orders through our connected cloud POS system.",
-    },
-    {
-      q: "What is the policy regarding slow-moving or seasonal inventory?",
-      a: "Cluster offers 100% stock rotation and seasonal exchange protection. To ensure high stock velocity and zero dead-stock accumulation, seasonal styles can be rotated back into our arterial distribution network in exchange for fresh, top-performing SKUs.",
-    },
-    {
-      q: "Is prior retail or fashion apparel experience required?",
-      a: "While prior retail or business background is helpful, it is not mandatory. Cluster provides comprehensive training covering customer service, garment fabric care, inventory controls, billing systems, and visual merchandising for you and your staff.",
-    },
-    {
-      q: "Can I open a Cluster franchise in Tier-2 or Tier-3 towns?",
-      a: "Yes! Tier-2, Tier-3, and developing suburban commercial hubs represent some of our highest-growth and highest-margin retail markets. With Cluster’s accessible luxury positioning and daily-wear demand, our brand resonates strongly with aspiring families and contemporary shoppers in these markets.",
-    },
-  ];
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-  };
 
   return (
-    <div className="bg-white min-h-screen text-cluster-text selection:bg-cluster-blue selection:text-white">
+    <div className="bg-white min-h-screen text-cluster-text selection:bg-cluster-coral selection:text-white">
       {/* ─────────────────────────────────────────────────────────────
-          1. Hero Section
+          1. HERO SECTION: BRING CREW-D TO YOUR CITY
       ───────────────────────────────────────────────────────────── */}
       <TriangleHero
-        kicker="Franchise & Retail Expansion"
-        heading="OWN A CLUSTER"
-        headingHighlight="FRANCHISE."
-        description="Step into South India’s premier apparel enterprise. Partner with Cluster Outfits to launch an Exclusive Brand Outlet or Multi-Brand Destination with direct-from-factory margins, zero dead-stock risk, and end-to-end retail incubation."
-        buttonText="EXPLORE FRANCHISE MODELS"
-        buttonHref="#franchise-models"
-        backgroundImage="/aboutuss.png"
-        backgroundAlt="Cluster Flagship Retail Store and Franchise"
-        scrollTargetId="franchise-metrics"
-        accentKickerColor="text-cluster-coral"
+        kicker="Our Franchise"
+        heading="BRING CREW-D TO"
+        headingHighlight="YOUR CITY."
+        description="A New Opportunity in Women's Fashion Retail by Cluster Outfits Private Limited — bringing everyday fashion and maternity wear together under one roof."
+        buttonText="ENQUIRE ABOUT A FRANCHISE"
+        buttonHref="#enquiry-form"
+        backgroundImage="/frannchise.png"
+        backgroundAlt="Crew-D Franchise Partnership"
+        scrollTargetId="concept-overview"
       />
 
       {/* ─────────────────────────────────────────────────────────────
-          2. Franchise Performance Metrics Strip
+          2. CONCEPT OVERVIEW: A NEW OPPORTUNITY IN WOMEN'S FASHION
       ───────────────────────────────────────────────────────────── */}
-      <section
-        id="franchise-metrics"
-        className="relative z-30 mt-6 sm:-mt-14 md:-mt-16"
-      >
+      {/* ─────────────────────────────────────────────────────────────
+          2. CONCEPT OVERVIEW: A NEW OPPORTUNITY IN WOMEN'S FASHION
+      ───────────────────────────────────────────────────────────── */}
+      <section id="concept-overview" className="py-16 sm:py-24 md:py-28 bg-white border-b border-cluster-border relative overflow-hidden">
         <Container>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {performanceStats.map((stat, idx) => (
-              <Reveal key={idx} direction="up" delay={idx * 0.08} duration={0.6}>
-                <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-[0_12px_32px_rgba(5,24,36,0.08)] border border-slate-100 hover:shadow-[0_20px_44px_rgba(5,24,36,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
-                  <div>
-                    <span className="text-3xl sm:text-4xl md:text-[42px] font-black font-manrope tracking-tight leading-none text-slate-900 block mb-2">
-                      {stat.metric}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1">
-                      {stat.label}
-                    </h3>
+          <div className="max-w-4xl mx-auto">
+            <Reveal direction="up" duration={0.6}>
+              <div className="rounded-[32px] sm:rounded-[44px] bg-gradient-to-b from-slate-50/80 via-white to-slate-50/40 border border-slate-200/80 p-8 sm:p-14 md:p-18 shadow-sm relative overflow-hidden text-center flex flex-col items-center">
+                {/* Subtle luxury ambient glow */}
+                <div className="absolute top-0 right-1/4 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-cluster-coral/5 rounded-full blur-3xl pointer-events-none" />
+
+                {/* 1. THE HIGHLIGHT: Big Centered Crew-D Logo */}
+                <div className="relative z-10 w-full flex justify-center mb-6 sm:mb-8">
+                  <div className="relative w-64 sm:w-80 md:w-[460px] lg:w-[500px] aspect-[1148/473] transition-transform duration-500 hover:scale-[1.02]">
+                    <Image
+                      src="/logos/crew-d-logo-clean.png"
+                      alt="Crew-D – Together We Create. Fashion"
+                      fill
+                      priority
+                      className="object-contain"
+                    />
                   </div>
-                  <p className="text-xs sm:text-[13px] text-cluster-muted leading-relaxed pt-3 border-t border-slate-100 mt-3">
-                    {stat.sub}
-                  </p>
                 </div>
-              </Reveal>
-            ))}
+
+                {/* Subheading / Kicker */}
+                <div className="relative z-10 flex items-center justify-center gap-3 mb-5">
+                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                    A New Opportunity in Women&apos;s Fashion Retail
+                  </span>
+                </div>
+
+                {/* 2. THE TITLE */}
+                <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-slate-900 tracking-tight leading-[1.14] mb-6 font-sans uppercase max-w-3xl">
+                  Bring Everyday Fashion &amp; Maternity Wear Together Under One Roof.
+                </h2>
+
+                {/* 3. THE DESCRIPTION */}
+                <div className="relative z-10 max-w-2xl sm:max-w-3xl mx-auto space-y-4 text-slate-600 text-base sm:text-lg md:text-[19px] leading-relaxed font-normal">
+                  <p>
+                    <strong className="text-slate-900 font-bold">Crew-D</strong> is a multi-brand women&apos;s fashion retail concept by{" "}
+                    <strong className="text-slate-900 font-bold">Cluster Outfits Private Limited</strong>, bringing everyday fashion and maternity wear together under one roof through our brands,{" "}
+                    <span className="text-cluster-teal font-bold">Cluster</span> and{" "}
+                    <span className="text-cluster-coral font-bold">Matrutva</span>.
+                  </p>
+                  <p>
+                    With a focus on <strong className="text-slate-900 font-bold">style, comfort, quality, and affordability</strong>, Crew-D aims to create a convenient shopping destination for women while building a growing retail network across South India.
+                  </p>
+                  <div className="pt-3">
+                    <p className="inline-block text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 py-3.5 rounded-2xl text-sm sm:text-base leading-relaxed">
+                      <strong className="text-slate-900 font-bold">Interested in owning a Crew-D franchise?</strong> We invite entrepreneurs, aspiring business owners, and retail partners to connect with us and explore the opportunity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          3. Franchise Formats & Store Models (Interactive Tabs)
+          3. WHAT IS CREW-D? (ONE DESTINATION. MULTIPLE FASHION NEEDS)
       ───────────────────────────────────────────────────────────── */}
-      <section id="franchise-models" className="py-20 sm:py-28 bg-slate-50/70 border-b border-slate-100">
+      <section id="what-is-crew-d" className="py-20 sm:py-28 md:py-32 bg-slate-50/70 border-b border-cluster-border relative overflow-hidden">
         <Container>
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
-            <Reveal direction="up">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-cluster-coral mb-3">
-                Store Formats Tailored For You
+          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+            <div className="flex justify-center mb-5">
+              <div className="relative h-12 sm:h-14 w-44 sm:w-52 overflow-hidden">
+                <Image
+                  src="/logos/crew-d-logo-clean.png"
+                  alt="Crew-D Fashion Retail"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-8 h-0.5 bg-cluster-teal rounded-full" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase font-manrope">
+                Retail Concept
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 tracking-tight leading-tight mb-4">
-                CHOOSE YOUR FRANCHISE MODEL
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-cluster-muted font-normal leading-relaxed">
-                Whether you seek a high-street flagship destination, a fast-turnover shop-in-shop, or regional distribution rights, our retail architectures are built for rapid profitability.
-              </p>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight uppercase mb-4 font-sans">
+              What Is Crew-D?
+            </h2>
+            <p className="text-lg sm:text-xl font-bold text-cluster-coral uppercase tracking-wide font-manrope mb-4">
+              One Destination. Multiple Fashion Needs.
+            </p>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Crew-D is designed to make women&apos;s fashion shopping convenient by bringing together a carefully selected range of everyday apparel and maternity wear in one store.
+            </p>
+          </div>
+
+          {/* Dual Brand Showcase Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+            {/* 1. CLUSTER – EVERYDAY FASHION */}
+            <Reveal direction="up" duration={0.6}>
+              <div className="rounded-[28px] sm:rounded-[36px] bg-white border border-cluster-border hover:border-cluster-teal/40 hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between h-full group">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src="/ladieshome.png"
+                    alt="Cluster Everyday Fashion Collection"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 550px"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
+                    <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/60 shadow-sm">
+                      <Image
+                        src="/logos/cluster-main.png"
+                        alt="Cluster Brand Logo"
+                        width={90}
+                        height={32}
+                        className="h-6 w-auto object-contain"
+                      />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-white font-manrope bg-cluster-teal/90 px-3 py-1 rounded-lg backdrop-blur-xs">
+                      Everyday Fashion
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-7 sm:p-9 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-cluster-teal transition-colors">
+                      Cluster – Everyday Fashion
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                      Explore a range of bottoms, short tops, tops, and nightwear designed for everyday style and comfort.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </Reveal>
 
-            {/* Model Selector Tabs */}
-            <Reveal direction="up" delay={0.15}>
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 bg-white rounded-2xl border border-slate-200/80 shadow-sm mt-8">
-                {franchiseModels.map((m, idx) => (
-                  <button
-                    key={m.id}
-                    onClick={() => setActiveModel(idx)}
-                    className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 flex items-center gap-2 ${
-                      activeModel === idx
-                        ? "bg-cluster-blue text-white shadow-md shadow-cluster-blue/20"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                    }`}
-                  >
-                    <span>{m.name.split("(")[0].trim()}</span>
-                  </button>
-                ))}
+            {/* 2. MATRUTVA – MATERNITY WEAR */}
+            <Reveal direction="up" duration={0.6} delay={0.1}>
+              <div className="rounded-[28px] sm:rounded-[36px] bg-white border border-cluster-border hover:border-cluster-coral/40 hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between h-full group">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src="/maternityhome.png"
+                    alt="Matrutva Maternity Wear Collection"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 550px"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
+                    <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/60 shadow-sm">
+                      <Image
+                        src="/logos/matrutva-clean-logo.png"
+                        alt="Matrutva Brand Logo"
+                        width={90}
+                        height={32}
+                        className="h-6 w-auto object-contain"
+                      />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-white font-manrope bg-cluster-coral/90 px-3 py-1 rounded-lg backdrop-blur-xs">
+                      Maternity Care
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-7 sm:p-9 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-2xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-cluster-coral transition-colors">
+                      Matrutva – Maternity Wear
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
+                      Discover maternity bras, maternity bottoms, and maternity nightwear designed with comfort and the needs of motherhood in mind.
+                    </p>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Active Model Spotlight Card */}
-          <Reveal direction="up" delay={0.2}>
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden transition-all duration-500">
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                {/* Left: Image & Badge */}
-                <div className="lg:col-span-5 relative min-h-[320px] sm:min-h-[420px] lg:min-h-full bg-slate-100 overflow-hidden group">
+          {/* Unified Statement Banner */}
+          <div className="mt-12 sm:mt-16 max-w-4xl mx-auto">
+            <Reveal direction="up" duration={0.6}>
+              <div className="p-7 sm:p-9 rounded-[24px] bg-gradient-to-r from-cluster-blue/[0.08] via-cluster-teal/[0.08] to-cluster-coral/[0.08] border border-cluster-border text-center flex flex-col items-center gap-4">
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-lg border-2 border-amber-300/40 shrink-0">
                   <Image
-                    src={franchiseModels[activeModel].image}
-                    alt={franchiseModels[activeModel].name}
+                    src="/logos/crew-d-badge.jpg"
+                    alt="Crew-D Fashion Emblem"
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <span className="inline-block px-3 py-1 rounded-full bg-cluster-coral text-white text-[11px] font-bold tracking-wider uppercase mb-2 shadow-sm">
-                      {franchiseModels[activeModel].tag}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight text-white">
-                      {franchiseModels[activeModel].name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-200 mt-1 line-clamp-2">
-                      {franchiseModels[activeModel].subtitle}
-                    </p>
-                  </div>
                 </div>
+                <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900 font-manrope max-w-2xl">
+                  &ldquo;Together, our brands create a retail experience that caters to women at different stages of life.&rdquo;
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
 
-                {/* Right: Key Specs & Deliverables */}
-                <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+      {/* ─────────────────────────────────────────────────────────────
+          4. WHY EXPLORE A CREW-D FRANCHISE? (5 VALUE PILLARS)
+      ───────────────────────────────────────────────────────────── */}
+      {/* ─────────────────────────────────────────────────────────────
+          4. WHY EXPLORE A CREW-D FRANCHISE? (STAGGERED BENTO GRID - MAX WIDTH + BG IMAGE)
+      ───────────────────────────────────────────────────────────── */}
+      <section id="why-crew-d" className="py-20 sm:py-28 md:py-32 text-white relative overflow-hidden border-b border-white/10 w-full">
+        {/* Background Image from public folder with Gradient Dark Colors Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/counterbg.jpg"
+            alt="Crew-D Franchise Operations Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Multi-layered dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#060D1E]/95 via-[#0B132B]/90 to-[#040814]/98" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-black/50" />
+        </div>
+
+        {/* Ambient background glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-cluster-coral/10 rounded-full blur-[130px] pointer-events-none z-0" />
+        <div className="absolute top-10 left-10 w-96 h-96 bg-cluster-teal/10 rounded-full blur-[130px] pointer-events-none z-0" />
+
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
+          {/* Header centered matching reference */}
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="w-8 h-0.5 bg-blue-400 rounded-full" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-blue-300 uppercase font-manrope">
+                Franchise Advantage
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white tracking-tight leading-[1.12] font-sans">
+              Why Explore a Crew-D Franchise?<br />
+              <span className="text-blue-300 font-normal text-2xl sm:text-3xl lg:text-[34px] block mt-2">
+                Turning dual-brand synergy into retail growth
+              </span>
+            </h2>
+          </div>
+
+          {/* Staggered Bento Grid matching reference layout - Max Width */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch w-full">
+              
+              {/* ─── COLUMN 1: Tall Card (Left) ─── */}
+              <div className="flex flex-col">
+                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between h-full backdrop-blur-md transition-all duration-300 shadow-xl group">
                   <div>
-                    {/* Metrics Matrix Bar */}
-                    <div className="grid grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 mb-8">
-                      <div>
-                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                          Space Required
-                        </span>
-                        <span className="text-sm sm:text-base font-bold text-slate-900 block">
-                          {franchiseModels[activeModel].area}
-                        </span>
-                      </div>
-                      <div className="border-x border-slate-200/60 px-3 sm:px-4">
-                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                          Est. Investment
-                        </span>
-                        <span className="text-sm sm:text-base font-bold text-cluster-blue block">
-                          {franchiseModels[activeModel].investment}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                          Est. Payback
-                        </span>
-                        <span className="text-sm sm:text-base font-bold text-cluster-teal block">
-                          {franchiseModels[activeModel].payback}
-                        </span>
-                      </div>
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                        Two Brands. One Store.
+                      </h3>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-coral font-manrope bg-cluster-coral/15 px-3 py-1 rounded-full border border-cluster-coral/25 shrink-0">
+                        Dual Power
+                      </span>
                     </div>
 
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-                      {franchiseModels[activeModel].description}
+                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                      Bring everyday fashion and maternity wear together through a single unified retail concept that multiplies footfall and customer reach under one roof.
                     </p>
-
-                    <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
-                      WHAT WE PROVIDE AS PART OF THIS MODEL:
-                    </h4>
-
-                    {/* Highlights List */}
-                    <div className="space-y-3 mb-8">
-                      {franchiseModels[activeModel].highlights.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-cluster-teal shrink-0 mt-0.5" />
-                          <span className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Card Bottom CTA */}
-                  <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                    <span className="text-xs text-cluster-muted italic">
-                      Ideal For: {franchiseModels[activeModel].idealFor}
-                    </span>
-                    <a
-                      href="#franchise-apply"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-cluster-blue hover:bg-cluster-blue-hover text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-md shadow-cluster-blue/20 shrink-0"
-                    >
-                      <span>APPLY FOR THIS MODEL</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                  {/* Big Number at Bottom Left with Small Text Next to It */}
+                  <div className="flex items-center gap-4 pt-8 mt-8 border-t border-white/10">
+                    <div className="text-5xl sm:text-6xl font-black text-cluster-coral font-sans tracking-tight shrink-0">
+                      2x
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-slate-300 leading-snug font-manrope">
+                      Dual-brand synergy delivering higher customer lifetime value &amp; repeat visits.
+                    </p>
                   </div>
                 </div>
+              </div>
+
+              {/* ─── COLUMN 2: Staggered Center Stack (3 Cards) ─── */}
+              <div className="flex flex-col gap-5">
+                
+                {/* Card 2A: Top Small Banner with Region Badges */}
+                <div className="rounded-[24px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 shadow-lg flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    {/* Overlapping Regional Node Badges */}
+                    <div className="flex -space-x-2.5 overflow-hidden">
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-blue to-cyan-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                        KL
+                      </div>
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-coral to-rose-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                        TN
+                      </div>
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-teal to-emerald-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                        KA
+                      </div>
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                        AP
+                      </div>
+                    </div>
+                    <span className="text-sm font-bold text-white font-manrope">
+                      20+ Retail Hubs
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-2.5 py-1 rounded-full border border-cluster-teal/25 shrink-0">
+                    Active Grid
+                  </span>
+                </div>
+
+                {/* Card 2B: Middle Card with Big Number (200 - 600 sq. ft.) */}
+                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between flex-1 backdrop-blur-md transition-all duration-300 shadow-xl group">
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-3">
+                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                        Compact Store Format
+                      </h3>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-3 py-1 rounded-full border border-cluster-teal/25 shrink-0">
+                        High Velocity
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                      Compact, high-velocity retail footprint optimized for fast inventory turnover and capital efficiency.
+                    </p>
+                  </div>
+
+                  {/* Big Number Specification */}
+                  <div className="pt-6 mt-4">
+                    <div className="text-4xl sm:text-5xl font-black text-cluster-teal font-sans tracking-tight">
+                      200 – 600 <span className="text-lg sm:text-xl font-medium text-slate-300">sq. ft.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2C: Bottom Card (Tailored Range) */}
+                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-6 sm:p-7 backdrop-blur-md transition-all duration-300 shadow-xl">
+                  <div className="flex items-center justify-between gap-3 mb-2.5">
+                    <h3 className="text-lg sm:text-xl font-black text-white tracking-tight font-sans">
+                      Focused Assortment
+                    </h3>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300 font-manrope bg-white/10 px-3 py-1 rounded-full border border-white/15 shrink-0">
+                      Curated Range
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-300/85 leading-relaxed font-normal">
+                    Serve daily fashion &amp; maternity wear with a curated collection designed for South Indian customer preferences.
+                  </p>
+                </div>
+              </div>
+
+              {/* ─── COLUMN 3: Tall Card (Right) ─── */}
+              <div className="flex flex-col">
+                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between h-full backdrop-blur-md transition-all duration-300 shadow-xl group">
+                  {/* Big Number at Top Right with Small Text Next to It */}
+                  <div>
+                    <div className="flex items-center gap-4 pb-8 mb-8 border-b border-white/10">
+                      <div className="text-5xl sm:text-6xl font-black text-cyan-400 font-sans tracking-tight shrink-0">
+                        100%
+                      </div>
+                      <p className="text-xs sm:text-[13px] text-slate-300 leading-snug font-manrope">
+                        Breathable, combed cottons &amp; verified factory craftsmanship across all categories.
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-3 mb-4">
+                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                        Growing Presence
+                      </h3>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400 font-manrope bg-cyan-400/15 px-3 py-1 rounded-full border border-cyan-400/25 shrink-0">
+                        Regional Scale
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                      Be part of our planned retail network expansion across Kerala, Tamil Nadu, and South India&apos;s fastest growing commercial districts.
+                    </p>
+                  </div>
+
+                  <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs font-bold font-manrope text-slate-400">
+                    <span className="uppercase tracking-wider">South India Expansion</span>
+                    <span className="text-cluster-teal flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      Verified Model
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          5. BECOME A CREW-D FRANCHISE PARTNER & ENQUIRY FORM
+      ───────────────────────────────────────────────────────────── */}
+      <section id="enquiry-form" className="py-12 sm:py-18 lg:py-24 bg-white border-b border-slate-100 relative overflow-hidden">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <Reveal direction="up" duration={0.6}>
+            {/* Master Card with Split Layout - Max Width */}
+            <div className="w-full rounded-[32px] sm:rounded-[40px] bg-white p-4 sm:p-6 lg:p-8 shadow-xl border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-stretch">
+              
+              {/* Left Column: Vibrant Blue Gradient Panel */}
+              <div className="lg:col-span-7 bg-gradient-to-br from-[#2A6AFF] via-[#1E57EC] to-[#0D36C2] rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden min-h-[540px]">
+                {/* Soft ambient lighting highlights */}
+                <div className="absolute -top-24 -right-24 w-88 h-88 bg-white/20 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-24 -left-24 w-88 h-88 bg-[#07248C]/40 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative z-10 pt-2 sm:pt-4">
+                  <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white tracking-tight leading-[1.08] mb-4 font-sans uppercase">
+                    START YOUR JOURNEY
+                  </h2>
+
+                  <p className="text-blue-100 text-sm sm:text-base font-normal leading-relaxed max-w-lg">
+                    Follow these simple steps to explore partnership with South India&apos;s fast-growing dual-brand fashion retail grid.
+                  </p>
+                </div>
+
+                {/* Bottom: 3 Step Cards Side-by-Side (1, 2, 3 Matching Reference Image) */}
+                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-8 mt-8 border-t border-white/15">
+                  {/* Card 1: Active White Card */}
+                  <div className="rounded-2xl bg-white text-slate-900 p-4 sm:p-5 shadow-xl flex flex-col justify-between min-h-[145px] transition-transform hover:-translate-y-0.5">
+                    <div className="w-7 h-7 rounded-full bg-[#1E57EC] text-white text-xs font-black flex items-center justify-center shrink-0 shadow-sm font-sans">
+                      1
+                    </div>
+                    <div className="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug mt-3 font-sans">
+                      Dual-brand power of Cluster &amp; Matrutva
+                    </div>
+                  </div>
+
+                  {/* Card 2: Frosted Glass Card */}
+                  <div className="rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 text-white p-4 sm:p-5 flex flex-col justify-between min-h-[145px] transition-transform hover:-translate-y-0.5">
+                    <div className="w-7 h-7 rounded-full bg-white/25 text-white text-xs font-black flex items-center justify-center shrink-0 border border-white/30 font-sans">
+                      2
+                    </div>
+                    <div className="text-xs sm:text-[13px] font-semibold text-white/95 leading-snug mt-3 font-sans">
+                      Compact store format (200 – 600 sq. ft.)
+                    </div>
+                  </div>
+
+                  {/* Card 3: Frosted Glass Card */}
+                  <div className="rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 text-white p-4 sm:p-5 flex flex-col justify-between min-h-[145px] transition-transform hover:-translate-y-0.5">
+                    <div className="w-7 h-7 rounded-full bg-white/25 text-white text-xs font-black flex items-center justify-center shrink-0 border border-white/30 font-sans">
+                      3
+                    </div>
+                    <div className="text-xs sm:text-[13px] font-semibold text-white/95 leading-snug mt-3 font-sans">
+                      Planned retail expansion across South India
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Clean Enquiry Form */}
+              <div className="lg:col-span-5 p-4 sm:p-6 lg:p-8 flex flex-col justify-center bg-white rounded-[24px]">
+                <div className="mb-6">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans mb-1.5 uppercase">
+                    JOIN US
+                  </h3>
+                  <p className="text-slate-500 text-xs sm:text-sm font-manrope">
+                    Fill out the enquiry form below to connect with our retail franchise team.
+                  </p>
+                </div>
+
+                {isSubmitted ? (
+                  <div className="p-8 text-center rounded-2xl bg-slate-50 border border-slate-200">
+                    <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <h4 className="text-xl font-black text-slate-900 mb-2">
+                      Enquiry Received
+                    </h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-6">
+                      Thank you, <strong className="text-slate-900">{formState.fullName}</strong>. Our franchise expansion desk will review your enquiry for <strong className="text-slate-900">{formState.city}</strong> and connect with you shortly.
+                    </p>
+                    <Button
+                      variant="dark"
+                      size="sm"
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormState({
+                          fullName: "",
+                          phone: "",
+                          email: "",
+                          city: "",
+                          ownsBusiness: "Yes",
+                          hasSpace: "No",
+                          message: "",
+                        });
+                      }}
+                    >
+                      Submit Another
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Phone Number */}
+                    <div>
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                        Phone Number <span className="text-cluster-coral">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 97478 00041"
+                        value={formState.phone}
+                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                      />
+                    </div>
+
+                    {/* Full Name */}
+                    <div>
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                        Full Name <span className="text-cluster-coral">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Rahul Sharma"
+                        value={formState.fullName}
+                        onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                      />
+                    </div>
+
+                    {/* Email & City */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                          Email Address <span className="text-cluster-coral">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="partner@example.com"
+                          value={formState.email}
+                          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                          City / State <span className="text-cluster-coral">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Coimbatore"
+                          value={formState.city}
+                          onChange={(e) => setFormState({ ...formState, city: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Business Ownership & Retail Space */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                          Own a Business?
+                        </label>
+                        <div className="grid grid-cols-2 gap-2">
+                          {["Yes", "No"].map((opt) => (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setFormState({ ...formState, ownsBusiness: opt })}
+                              className={`py-2 px-3 rounded-lg text-xs font-bold font-manrope border transition-all cursor-pointer ${
+                                formState.ownsBusiness === opt
+                                  ? "bg-black text-white border-black shadow-xs"
+                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                          Commercial Space?
+                        </label>
+                        <div className="grid grid-cols-2 gap-2">
+                          {["Yes", "No"].map((opt) => (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setFormState({ ...formState, hasSpace: opt })}
+                              className={`py-2 px-3 rounded-lg text-xs font-bold font-manrope border transition-all cursor-pointer ${
+                                formState.hasSpace === opt
+                                  ? "bg-black text-white border-black shadow-xs"
+                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                              }`}
+                            >
+                              {opt}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Additional Message */}
+                    <div>
+                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
+                        Message <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                      </label>
+                      <textarea
+                        rows={2}
+                        placeholder="Preferred location, square footage, or questions..."
+                        value={formState.message}
+                        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-blue focus:ring-2 focus:ring-cluster-blue/20 outline-none text-slate-900 text-sm transition-all resize-none"
+                      />
+                    </div>
+
+                    {/* Submit using Button component */}
+                    <div className="pt-2">
+                      <Button
+                        variant="blue"
+                        size="lg"
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full justify-center tracking-widest uppercase font-bold text-xs sm:text-sm"
+                      >
+                        {isSubmitting ? (
+                          "Submitting..."
+                        ) : (
+                          <span className="flex items-center justify-center gap-2">
+                            CONTINUE <ArrowRight className="w-4 h-4" />
+                          </span>
+                        )}
+                      </Button>
+                    </div>
+
+                    <p className="text-[11px] text-slate-400 text-center font-manrope leading-tight pt-1">
+                      By signing up you agree to receive official franchise updates from Cluster Outfits.
+                    </p>
+                  </form>
+                )}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          6. DIRECT FRANCHISE DESK (SEPARATE DEDICATED SECTION)
+      ───────────────────────────────────────────────────────────── */}
+      <section id="franchise-desk" className="py-14 sm:py-20 bg-slate-50 border-b border-cluster-border relative overflow-hidden">
+        <Container>
+          <Reveal direction="up" duration={0.6}>
+            <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-cluster-border p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+              {/* Subtle accent highlight */}
+              <div className="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-cluster-blue via-cluster-teal to-cluster-coral" />
+
+              <div className="flex items-center gap-5 sm:gap-6 text-left">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-cluster-blue text-white flex items-center justify-center shrink-0 shadow-lg shadow-cluster-blue/25">
+                  <PhoneCall className="w-8 h-8 sm:w-9 sm:h-9" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-1.5">
+                    <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                      Direct Franchise Desk
+                    </span>
+                  </div>
+                  <a
+                    href="tel:+919747800041"
+                    className="block text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 hover:text-cluster-blue transition-colors font-sans tracking-tight mb-1"
+                  >
+                    +91 97478 00041
+                  </a>
+                  <p className="text-xs sm:text-sm text-slate-500 font-medium font-manrope">
+                    Direct telephone assistance for franchise onboarding, store feasibility, and queries.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+                <Button
+                  variant="blue"
+                  size="default"
+                  href="tel:+919747800041"
+                  className="w-full sm:w-auto justify-center"
+                >
+                  Call Now
+                </Button>
+                <Button
+                  variant="outline-dark"
+                  size="default"
+                  href="https://wa.me/919747800041?text=Hi%2C%20I%20am%20interested%20in%20a%20Crew-D%20Franchise%20partnership"
+                  external
+                  className="w-full sm:w-auto justify-center"
+                >
+                  WhatsApp
+                </Button>
               </div>
             </div>
           </Reveal>
@@ -486,560 +838,66 @@ export default function OurFranchisePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          4. The Cluster Franchise Advantage (6 Core Pillars)
+          6. CLOSING CTA: LET'S GROW TOGETHER
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28 bg-white">
+      <section id="grow-together" className="py-20 sm:py-28 md:py-32 bg-white relative overflow-hidden">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <Reveal direction="up">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-cluster-teal mb-3">
-                Uncompromising Support
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 tracking-tight leading-tight mb-4">
-                THE CLUSTER FRANCHISE ADVANTAGE
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-cluster-muted font-normal leading-relaxed">
-                When you partner with Cluster, you do not just open a store—you plug directly into our vertically integrated powerhouse spanning state-of-the-art manufacturing, automated design, and proven retail logistics.
-              </p>
-            </Reveal>
-          </div>
+          <div className="relative rounded-[32px] sm:rounded-[44px] bg-gradient-to-br from-slate-900 via-slate-800 to-black text-white p-8 sm:p-14 md:p-20 overflow-hidden shadow-2xl">
+            {/* Background ambient lighting */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cluster-coral/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cluster-teal/15 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {franchisePillars.map((p, idx) => {
-              const IconComp = p.icon;
-              return (
-                <Reveal key={idx} direction="up" delay={idx * 0.08} duration={0.65}>
-                  <div className="bg-white rounded-3xl p-7 sm:p-9 border border-slate-100 shadow-[0_8px_30px_rgba(5,24,36,0.06)] hover:shadow-[0_20px_48px_rgba(5,24,36,0.1)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group">
-                    <div>
-                      <div
-                        className={`w-14 h-14 rounded-2xl ${p.bg} ${p.border} border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <IconComp className={`w-7 h-7 ${p.color}`} />
-                      </div>
-                      <h3 className="text-xl font-black text-slate-900 tracking-tight mb-3">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                        {p.desc}
-                      </p>
-                    </div>
-
-                    <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cluster-blue group-hover:gap-3 transition-all duration-200">
-                      <span>Enterprise Guarantee</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          5. Interactive Investment & ROI Calculator
-      ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28 bg-[#091C26] text-white relative overflow-hidden">
-        {/* Ambient lighting glows */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-cluster-blue/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-cluster-coral/15 rounded-full blur-[140px] pointer-events-none" />
-
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left: Explainer & Sliders */}
-            <div className="lg:col-span-6">
-              <Reveal direction="left">
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-cluster-coral mb-3">
-                  <Calculator className="w-4 h-4" />
-                  Estimated Economics
-                </span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight text-white mb-6">
-                  FRANCHISE INVESTMENT & ROI ESTIMATOR
-                </h2>
-                <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed mb-8">
-                  Get a realistic, data-backed projection of your store set-up capital, monthly revenue potential, and anticipated payback period based on our existing network metrics.
-                </p>
-
-                {/* Store Size Selector Buttons */}
-                <div className="mb-8">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-3">
-                    Select Proposed Store Size (Carpet Area):
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[500, 800, 1200].map((size) => (
-                      <button
-                        key={size}
-                        type="button"
-                        onClick={() => setStoreSize(size)}
-                        className={`py-3 px-4 rounded-xl text-center font-bold text-sm transition-all duration-200 border ${
-                          storeSize === size
-                            ? "bg-cluster-blue text-white border-cluster-blue shadow-lg shadow-cluster-blue/30"
-                            : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
-                        }`}
-                      >
-                        <span className="block text-lg font-black font-manrope">{size}</span>
-                        <span className="text-[11px] uppercase tracking-wider text-slate-300 font-medium">sq. ft.</span>
-                      </button>
-                    ))}
-                  </div>
+            <div className="relative z-10 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <div className="relative h-12 sm:h-14 w-36 sm:w-44 rounded-xl overflow-hidden bg-white/95 backdrop-blur-md border border-white/30 p-1.5 shadow-md">
+                  <Image
+                    src="/logos/crew-d-logo.jpg"
+                    alt="Crew-D Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 leading-relaxed">
-                  <strong className="text-white block mb-1">Notice on Estimates:</strong>
-                  Estimates are illustrative guidelines derived from average operating metrics of retail apparel partners across Kerala & Tamil Nadu. Exact numbers depend on micro-location rent, staff configuration, and seasonal footfall.
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                  <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                    Expanding Across South India
+                  </span>
                 </div>
-              </Reveal>
-            </div>
-
-            {/* Right: Projected Breakdown Card */}
-            <div className="lg:col-span-6">
-              <Reveal direction="right" delay={0.15}>
-                <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/15 p-6 sm:p-8 lg:p-10 shadow-2xl">
-                  <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-                        Estimated Capital Expenditure
-                      </span>
-                      <span className="text-3xl sm:text-4xl font-black font-manrope text-white">
-                        ₹{(currentRoi.totalEst / 100000).toFixed(1)} Lakhs
-                      </span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal block">
-                        Anticipated Payback
-                      </span>
-                      <span className="text-2xl sm:text-3xl font-black font-manrope text-cluster-teal">
-                        ~{currentRoi.paybackMonths} Months
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Breakdown lines */}
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
-                      <span className="text-slate-300">Turnkey Fit-Out & Architectural Fixtures</span>
-                      <span className="font-bold text-white font-manrope">
-                        ₹{(currentRoi.fitoutCost / 100000).toFixed(2)} L
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
-                      <span className="text-slate-300">Initial Curated Stock (400+ SKUs)</span>
-                      <span className="font-bold text-white font-manrope">
-                        ₹{(currentRoi.stockCost / 100000).toFixed(2)} L
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
-                      <span className="text-slate-300">Cloud POS Hardware & Working Buffer</span>
-                      <span className="font-bold text-white font-manrope">
-                        ₹{(currentRoi.workingCapital / 100000).toFixed(2)} L
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm py-2 border-b border-white/5">
-                      <span className="text-cluster-coral font-medium">Estimated Monthly Store Sales</span>
-                      <span className="font-bold text-cluster-coral font-manrope">
-                        ₹{(currentRoi.estMonthlySales / 100000).toFixed(2)} L / mo
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm py-2">
-                      <span className="text-cluster-teal font-medium">Projected Gross Margin (38%)</span>
-                      <span className="font-bold text-cluster-teal font-manrope">
-                        ₹{(currentRoi.estGrossProfit / 100000).toFixed(2)} L / mo
-                      </span>
-                    </div>
-                  </div>
-
-                  <a
-                    href="#franchise-apply"
-                    className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-xl bg-cluster-coral hover:bg-cluster-coral-hover text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-lg shadow-cluster-coral/25"
-                  >
-                    <span>REQUEST DETAILED FRANCHISE PROSPECTUS</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          6. Step-by-Step Onboarding Journey
-      ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28 bg-white border-b border-slate-100">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <Reveal direction="up">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-cluster-blue mb-3">
-                Transparent Roadmap
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 tracking-tight leading-tight mb-4">
-                HOW TO BECOME A FRANCHISE PARTNER
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-cluster-muted font-normal leading-relaxed">
-                From initial application review to grand opening day, our dedicated retail expansion team manages every milestone with precision.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {onboardingSteps.map((step, idx) => (
-              <Reveal key={idx} direction="up" delay={idx * 0.08} duration={0.6}>
-                <div className="bg-slate-50/70 rounded-3xl p-7 sm:p-8 border border-slate-200/80 hover:border-cluster-blue/40 hover:bg-white hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between group">
-                  <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <span className="text-3xl sm:text-4xl font-black font-manrope text-slate-300 group-hover:text-cluster-blue transition-colors duration-300">
-                        {step.step}
-                      </span>
-                      <span className="w-3 h-3 rounded-full bg-cluster-blue/30 group-hover:bg-cluster-blue group-hover:scale-125 transition-all duration-300" />
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {step.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-6 border-t border-slate-200/50 text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-slate-600">
-                    Phase {idx + 1} of 6
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          7. Franchise Application Form
-      ───────────────────────────────────────────────────────────── */}
-      <section id="franchise-apply" className="py-20 sm:py-28 bg-slate-50/70">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <Reveal direction="up">
-              <div className="text-center mb-12 sm:mb-16">
-                <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-cluster-coral mb-3">
-                  Expression of Interest
-                </span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 tracking-tight leading-tight mb-4">
-                  APPLY FOR A CLUSTER FRANCHISE
-                </h2>
-                <p className="text-sm sm:text-base text-cluster-muted font-normal max-w-2xl mx-auto leading-relaxed">
-                  Fill out the expression of interest form below. Our corporate business development director will get in touch within 24 to 48 business hours to schedule an introductory discovery call.
-                </p>
               </div>
-            </Reveal>
 
-            <Reveal direction="up" delay={0.1}>
-              <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-slate-200/90 shadow-xl">
-                {isSubmitted ? (
-                  <div className="text-center py-12 px-4">
-                    <div className="w-18 h-18 rounded-full bg-cluster-teal/15 text-cluster-teal inline-flex items-center justify-center mb-6">
-                      <CheckCircle2 className="w-10 h-10" />
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3 uppercase tracking-tight">
-                      Application Received!
-                    </h3>
-                    <p className="text-slate-600 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-                      Thank you for expressing interest in partnering with Cluster Outfits. Our retail franchise team will review your details and reach out to <strong>{formState.email || "you"}</strong> shortly.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <button
-                        type="button"
-                        onClick={() => setIsSubmitted(false)}
-                        className="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-colors"
-                      >
-                        Submit Another Inquiry
-                      </button>
-                      <a
-                        href="https://wa.me/919447000000?text=Hi%20Cluster%20Team%2C%20I%20have%20submitted%20a%20Franchise%20Inquiry%20and%20would%20like%20to%20connect."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-md flex items-center gap-2"
-                      >
-                        <span>Chat With Us on WhatsApp</span>
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="space-y-6">
-                    {/* Row 1: Name & Phone */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formState.fullName}
-                          onChange={(e) =>
-                            setFormState({ ...formState, fullName: e.target.value })
-                          }
-                          placeholder="e.g. Anand Menon"
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Phone Number (with WhatsApp) *
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          value={formState.phone}
-                          onChange={(e) =>
-                            setFormState({ ...formState, phone: e.target.value })
-                          }
-                          placeholder="+91 98765 43210"
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-[1.05] mb-4 font-sans">
+                Let&apos;s Grow Together<span className="text-cluster-coral">.</span>
+              </h2>
 
-                    {/* Row 2: Email & Proposed State */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={formState.email}
-                          onChange={(e) =>
-                            setFormState({ ...formState, email: e.target.value })
-                          }
-                          placeholder="name@example.com"
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Proposed State *
-                        </label>
-                        <select
-                          value={formState.state}
-                          onChange={(e) =>
-                            setFormState({ ...formState, state: e.target.value })
-                          }
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all bg-white"
-                        >
-                          <option value="Kerala">Kerala (All Districts)</option>
-                          <option value="Tamil Nadu">Tamil Nadu (All Districts)</option>
-                          <option value="Karnataka">Karnataka (Bangalore / Mysore / Mangalore)</option>
-                          <option value="Andhra Pradesh">Andhra Pradesh & Telangana</option>
-                          <option value="Other">Other Region in South India</option>
-                        </select>
-                      </div>
-                    </div>
+              <p className="text-xl sm:text-2xl font-bold text-cluster-teal font-manrope tracking-tight mb-6">
+                Your City Could Be Our Next Destination.
+              </p>
 
-                    {/* Row 3: Proposed City & Model */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Proposed City / Town / District *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formState.city}
-                          onChange={(e) =>
-                            setFormState({ ...formState, city: e.target.value })
-                          }
-                          placeholder="e.g. Kochi / Coimbatore / Cumbum"
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Preferred Franchise Format *
-                        </label>
-                        <select
-                          value={formState.model}
-                          onChange={(e) =>
-                            setFormState({ ...formState, model: e.target.value })
-                          }
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all bg-white"
-                        >
-                          <option value="Exclusive Brand Outlet (EBO)">
-                            Exclusive Brand Outlet (EBO) — 700 - 1,500 sq.ft
-                          </option>
-                          <option value="Shop-in-Shop (SIS)">
-                            Shop-in-Shop (SIS) / Brand Corner — 300 - 600 sq.ft
-                          </option>
-                          <option value="Regional Franchise Distributor">
-                            Regional Franchise Distributor — Warehouse Node
-                          </option>
-                        </select>
-                      </div>
-                    </div>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl mb-10">
+                Join us as we work towards making quality, comfortable, and affordable women&apos;s fashion accessible to more customers.
+              </p>
 
-                    {/* Row 4: Space Status & Budget */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Commercial Space Status *
-                        </label>
-                        <select
-                          value={formState.spaceAvailability}
-                          onChange={(e) =>
-                            setFormState({
-                              ...formState,
-                              spaceAvailability: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all bg-white"
-                        >
-                          <option value="Owned Commercial Space">Owned Property</option>
-                          <option value="Rented / Leased Space">Rented / Leased</option>
-                          <option value="Searching for Location">Currently Searching</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Carpet Area (sq. ft.)
-                        </label>
-                        <input
-                          type="text"
-                          value={formState.carpetArea}
-                          onChange={(e) =>
-                            setFormState({ ...formState, carpetArea: e.target.value })
-                          }
-                          placeholder="e.g. 800 sq. ft."
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                          Investment Budget *
-                        </label>
-                        <select
-                          value={formState.investmentBudget}
-                          onChange={(e) =>
-                            setFormState({
-                              ...formState,
-                              investmentBudget: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all bg-white"
-                        >
-                          <option value="₹8 Lakhs - ₹15 Lakhs">₹8 Lakhs - ₹15 Lakhs</option>
-                          <option value="₹18 Lakhs - ₹25 Lakhs">₹18 Lakhs - ₹25 Lakhs</option>
-                          <option value="₹25 Lakhs - ₹40 Lakhs">₹25 Lakhs - ₹40 Lakhs</option>
-                          <option value="₹40 Lakhs+">₹40 Lakhs and Above</option>
-                        </select>
-                      </div>
-                    </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  onClick={scrollToEnquiry}
+                  className="px-8 sm:px-10 py-4 sm:py-4.5 rounded-xl bg-cluster-coral hover:bg-cluster-coral-hover text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-200 shadow-xl shadow-cluster-coral/25 flex items-center gap-2 group font-manrope cursor-pointer"
+                >
+                  <span>Become a Franchise Partner</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
 
-                    {/* Message / Additional Information */}
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                        Business Background & Location Highlights (Optional)
-                      </label>
-                      <textarea
-                        rows={3}
-                        value={formState.message}
-                        onChange={(e) =>
-                          setFormState({ ...formState, message: e.target.value })
-                        }
-                        placeholder="Tell us about your proposed commercial location, footfall, or existing business experience..."
-                        className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-cluster-blue focus:border-transparent transition-all resize-none"
-                      />
-                    </div>
-
-                    {/* Terms Checkbox */}
-                    <div className="flex items-start gap-3 pt-2">
-                      <input
-                        type="checkbox"
-                        id="agree"
-                        required
-                        defaultChecked
-                        className="mt-1 h-4 w-4 rounded border-slate-300 text-cluster-blue focus:ring-cluster-blue"
-                      />
-                      <label htmlFor="agree" className="text-xs text-cluster-muted leading-relaxed">
-                        I confirm that the information provided is accurate and authorize the Cluster Outfits corporate franchise expansion team to contact me regarding partnership opportunities.
-                      </label>
-                    </div>
-
-                    {/* Submit Button */}
-                    <div className="pt-4">
-                      <button
-                        type="submit"
-                        className="w-full inline-flex items-center justify-center gap-3 py-4 rounded-xl bg-cluster-blue hover:bg-cluster-blue-hover text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-xl shadow-cluster-blue/20"
-                      >
-                        <Send className="w-4 h-4" />
-                        <span>SUBMIT FRANCHISE EXPRESSION OF INTEREST</span>
-                      </button>
-                    </div>
-                  </form>
-                )}
+                <Link
+                  href="/contact"
+                  className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm tracking-wider uppercase border border-white/20 backdrop-blur-md transition-all duration-200 font-manrope"
+                >
+                  Contact Management
+                </Link>
               </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          8. Frequently Asked Questions (FAQ Accordion)
-      ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28 bg-white">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14 sm:mb-18">
-              <Reveal direction="up">
-                <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-cluster-teal mb-3">
-                  Got Questions?
-                </span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 tracking-tight leading-tight mb-4">
-                  FREQUENTLY ASKED QUESTIONS
-                </h2>
-                <p className="text-sm sm:text-base text-cluster-muted font-normal leading-relaxed">
-                  Everything you need to know about the investment structure, stock exchange safeguards, and support ecosystem.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="space-y-4">
-              {faqList.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <Reveal key={idx} direction="up" delay={idx * 0.05}>
-                    <div className="border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200">
-                      <button
-                        type="button"
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full p-5 sm:p-6 text-left bg-white hover:bg-slate-50/70 flex items-center justify-between gap-4 transition-colors"
-                      >
-                        <span className="font-bold text-sm sm:text-base text-slate-900 pr-2">
-                          {faq.q}
-                        </span>
-                        <span className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-slate-600">
-                          {isOpen ? (
-                            <ChevronUp className="w-4 h-4 text-cluster-blue" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4" />
-                          )}
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40">
-                          {faq.a}
-                        </div>
-                      )}
-                    </div>
-                  </Reveal>
-                );
-              })}
             </div>
           </div>
         </Container>
       </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          9. Closing Partner CTA
-      ───────────────────────────────────────────────────────────── */}
-      <PartnerCta />
     </div>
   );
 }

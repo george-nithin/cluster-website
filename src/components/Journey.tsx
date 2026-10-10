@@ -8,9 +8,9 @@ export default function Journey() {
       <HorizontalScrub>
         {/* ── Intro panel ── */}
         <div className="flex w-[min(82vw,500px)] sm:w-[min(38vw,500px)] min-w-[260px] sm:min-w-[300px] h-[440px] sm:h-[500px] flex-col justify-center relative shrink-0 pr-4 sm:pr-6">
-          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <span className="w-8 sm:w-12 h-px bg-cluster-teal" />
-            <span className="uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[10.5px] sm:text-[11px] text-cluster-teal font-bold">
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <span className="w-8 h-0.5 bg-cluster-teal rounded-full" />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase font-manrope">
               The Business Journey
             </span>
           </div>
@@ -46,40 +46,29 @@ export default function Journey() {
             <div className="flex justify-between items-center text-[10px] uppercase tracking-[0.28em] text-cluster-muted font-semibold">
               <span>
                 Stage{' '}
-                <b className="text-cluster-coral font-bold">{s.n}</b>
+                <span className="font-bold text-slate-800">{s.n}</span>
                 {' '}/ 05
               </span>
-              <span className="bg-cluster-surface border border-cluster-border/60 px-2 py-0.5 rounded text-[9px] font-bold text-cluster-text tracking-wider">{s.sub}</span>
+              <span className="bg-cluster-surface border border-cluster-border/60 px-2.5 py-0.5 rounded text-[9px] font-bold text-cluster-text tracking-wider">{s.sub}</span>
             </div>
 
             {/* Content Body */}
-            <div className="my-auto py-2">
-              <div className="flex items-center justify-between mb-4">
-                {/* Large stage number */}
-                <div className="text-[clamp(2.5rem,4vw,3.8rem)] font-black font-manrope leading-none select-none text-cluster-coral/90 group-hover:text-cluster-coral transition-colors duration-300">
-                  {s.n}
-                </div>
-                {/* Icon */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0">
-                  <JourneyIcon type={s.icon} />
-                </div>
+            <div className="my-auto py-2 flex flex-col items-start">
+              {/* Animated Icon on the left side above the title, enlarged */}
+              <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mb-5 sm:mb-6 shrink-0 transition-transform duration-500 group-hover:scale-105">
+                <JourneyIcon type={s.icon} />
               </div>
 
-              <h3 className="text-[clamp(1.1rem,1.4vw,1.35rem)] font-bold mb-3 text-cluster-text">
+              <h3 className="text-xl sm:text-2xl font-black mb-2.5 sm:mb-3 text-cluster-text tracking-tight font-manrope uppercase">
                 {s.t}
               </h3>
-              <p className="max-w-[340px] text-[14px] sm:text-[15px] text-cluster-muted leading-relaxed">{s.d}</p>
+              <p className="max-w-[340px] text-[14px] sm:text-[15px] text-cluster-muted leading-relaxed font-normal">{s.d}</p>
             </div>
 
             {/* Stat footer */}
             <div className="pt-4 text-[11px] uppercase tracking-[0.18em] font-semibold text-cluster-muted border-t border-cluster-border flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cluster-coral shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
               {s.stat}
-            </div>
-
-            {/* Stage number watermark */}
-            <div className="absolute bottom-6 right-6 text-[68px] font-black font-manrope text-cluster-border/25 leading-none select-none pointer-events-none group-hover:text-cluster-border/40 transition-colors duration-500 tabular-nums">
-              {String(idx + 1).padStart(2, '0')}
             </div>
           </div>
         ))}

@@ -120,9 +120,11 @@ export default function OurReach() {
           <div className="max-w-5xl mx-auto flex flex-col items-center">
             {/* Section Header */}
             <Reveal direction="up" className="text-center mb-12 sm:mb-16 md:mb-20">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-cluster-coral text-xs font-bold tracking-[0.25em] uppercase font-manrope mb-4">
-                <span className="w-2 h-2 rounded-full bg-cluster-coral animate-pulse" />
-                <span>Our Reach at a Glance</span>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                  Our Reach at a Glance
+                </span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-none">
                 OUR REACH AT A GLANCE<span className="text-cluster-coral">.</span>

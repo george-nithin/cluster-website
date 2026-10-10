@@ -14,7 +14,7 @@ export default function IntroSection() {
             <div className="flex flex-col gap-6 sm:gap-7 max-w-xl">
               <div>
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <span className="w-8 h-px bg-cluster-coral" />
+                  <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
                   <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
                     Introduction
                   </span>

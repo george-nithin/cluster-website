@@ -44,8 +44,8 @@ export default function PartnerCta() {
             <div className="flex flex-col items-start justify-center max-w-2xl">
               {/* Kicker with Design System Coral Bar */}
               <div className="flex items-center gap-3 mb-4 sm:mb-8">
-                <span className="w-8 sm:w-10 h-[2px] bg-cluster-coral" />
-                <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
+                <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
                   Partner With Us
                 </span>
               </div>

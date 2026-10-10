@@ -7,7 +7,102 @@ import ManufacturingStages from "@/components/manufacturing/ManufacturingStages"
 import PartnerCta from "@/components/ui/PartnerCta";
 import TriangleHero from "@/components/ui/TriangleHero";
 
+import { Layers, Cpu, Users, ShieldCheck, Boxes, Truck } from "lucide-react";
+
 export const metadata: Metadata = { title: "Manufacturing — Texvia by Cluster" };
+
+const CAPABILITIES = [
+  {
+    number: "01.",
+    title: "Design to Production",
+    desc: "In-house production from design to final packing.",
+    icon: (
+      <Layers className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Top row - 01: Light Blue
+    bg: "bg-[#EBF5F8]",
+    textTitle: "text-[#0A3D4E]",
+    textDesc: "text-[#285A6B]",
+    iconColor: "text-[#0E7293]",
+    numberColor: "text-[#0E7293]/70",
+    border: "border-b md:border-b md:border-r border-[#D0E6EE]",
+  },
+  {
+    number: "02.",
+    title: "Modern Machinery",
+    desc: "Cutting, stitching, finishing, ironing, and packing.",
+    icon: (
+      <Cpu className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Top row - 02: Medium Blue (Signature Brand Blue)
+    bg: "bg-[#0E7293]",
+    textTitle: "text-white",
+    textDesc: "text-blue-100/90",
+    iconColor: "text-white",
+    numberColor: "text-white/70",
+    border: "border-b md:border-b md:border-r border-[#0C5F7A]",
+  },
+  {
+    number: "03.",
+    title: "Skilled & Experienced Workforce",
+    desc: "A trained team focused on quality and workmanship.",
+    icon: (
+      <Users className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Top row - 03: Dark Blue (Midnight Navy)
+    bg: "bg-[#06202B]",
+    textTitle: "text-white",
+    textDesc: "text-slate-300",
+    iconColor: "text-cyan-300",
+    numberColor: "text-cyan-300/70",
+    border: "border-b md:border-b border-[#082B3A]",
+  },
+  {
+    number: "04.",
+    title: "Strict Quality Control",
+    desc: "Quality checks at every stage of production.",
+    icon: (
+      <ShieldCheck className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Bottom row - 04: Dark Blue (Midnight Navy)
+    bg: "bg-[#06202B]",
+    textTitle: "text-white",
+    textDesc: "text-slate-300",
+    iconColor: "text-cyan-300",
+    numberColor: "text-cyan-300/70",
+    border: "border-b md:border-b-0 md:border-r border-[#082B3A]",
+  },
+  {
+    number: "05.",
+    title: "Flexible Production",
+    desc: "Ability to handle bulk and customised orders.",
+    icon: (
+      <Boxes className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Bottom row - 05: Medium Blue (Signature Brand Blue)
+    bg: "bg-[#0E7293]",
+    textTitle: "text-white",
+    textDesc: "text-blue-100/90",
+    iconColor: "text-white",
+    numberColor: "text-white/70",
+    border: "border-b md:border-b-0 md:border-r border-[#0C5F7A]",
+  },
+  {
+    number: "06.",
+    title: "Timely Supply",
+    desc: "Consistent and reliable delivery.",
+    icon: (
+      <Truck className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
+    ),
+    // Bottom row - 06: Light Blue
+    bg: "bg-[#EBF5F8]",
+    textTitle: "text-[#0A3D4E]",
+    textDesc: "text-[#285A6B]",
+    iconColor: "text-[#0E7293]",
+    numberColor: "text-[#0E7293]/70",
+    border: "",
+  },
+];
 
 export default function ManufacturingPage() {
   return (
@@ -122,6 +217,53 @@ export default function ManufacturingPage() {
           </div>
         </Container>
       </div>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Our Manufacturing Capabilities
+      ───────────────────────────────────────────────────────────── */}
+      <section id="capabilities" className="py-16 sm:py-24 md:py-32 bg-slate-50/70 border-t border-cluster-border">
+        <Container className="max-w-[1440px]">
+          <SectionHead
+            kicker="Production Excellence"
+            title="Our Manufacturing Capabilities."
+            right="03 / CAPABILITIES"
+          />
+
+          <div className="mt-10 sm:mt-14 md:mt-16">
+            <Reveal direction="up" duration={0.6}>
+              {/* Flush Seamless Grid Matching Reference Layout */}
+              <div className="rounded-[28px] sm:rounded-[36px] overflow-hidden border border-slate-200/90 shadow-xl grid grid-cols-1 md:grid-cols-3">
+                {CAPABILITIES.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`${item.bg} ${item.border} p-8 sm:p-10 lg:p-12 flex flex-col justify-between min-h-[380px] sm:min-h-[440px] transition-all duration-300 group`}
+                  >
+                    {/* Header: Big Icon (No Box/Background) + Number on Right */}
+                    <div className="flex items-start justify-between">
+                      <div className={item.iconColor}>
+                        {item.icon}
+                      </div>
+                      <span className={`text-xs sm:text-sm font-mono font-bold tracking-widest ${item.numberColor}`}>
+                        {item.number}
+                      </span>
+                    </div>
+
+                    {/* Content: Title & Description (No tags or badges) */}
+                    <div className="pt-14 sm:pt-20">
+                      <h3 className={`text-2xl sm:text-[28px] font-black tracking-tight leading-snug mb-3.5 font-sans ${item.textTitle}`}>
+                        {item.title}
+                      </h3>
+                      <p className={`text-sm sm:text-base leading-relaxed font-normal ${item.textDesc}`}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
 
       {/* Partner With Us CTA */}
       <PartnerCta />

@@ -266,9 +266,9 @@ export function SectionHead({
       }`}
     >
       <div>
-        <div className="flex items-center gap-3 mb-2">
-          <span className="w-8 h-px bg-cluster-coral" />
-          <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+        <div className="flex items-center gap-3 mb-3">
+          <span className={`w-8 h-0.5 rounded-full ${dark ? "bg-cyan-400" : "bg-cluster-coral"}`} />
+          <span className={`text-[11px] font-bold tracking-[0.25em] uppercase font-manrope ${dark ? "text-cyan-400" : "text-cluster-coral"}`}>
             {kicker}
           </span>
         </div>
