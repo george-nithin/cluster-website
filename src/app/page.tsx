@@ -7,13 +7,9 @@ import CompanyOverview from '@/components/CompanyOverview';
 import CorePillars from '@/components/CorePillars';
 import FabricCounter from '@/components/ui/FabricCounter';
 import PartnerCta from '@/components/ui/PartnerCta';
-import ScrollThread from '@/components/ui/ScrollThread';
-
 export default function Home() {
   return (
     <div className="flex flex-col pb-12 sm:pb-16 relative bg-white">
-      {/* Dynamic Apparel Scroll Thread */}
-      <ScrollThread />
       {/* Top Hero & Dual Brand Banners */}
       <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
         <HeroCarousel />
