@@ -58,7 +58,7 @@ const STAGES: StageItem[] = [
     number: "04",
     tag: "Assembly Line",
     title: "Artisan Stitching",
-    facility: "Kerala & Kambam Units",
+    facility: "Kerala & Cumbum Units",
     description:
       "Synchronized multi-line assembly operated by 350+ skilled artisans equipped with high-speed automated sewing and flatlock machinery.",
     image: "/stitching.jpg",

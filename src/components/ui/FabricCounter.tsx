@@ -102,11 +102,11 @@ export default function FabricCounter() {
           className="object-cover object-center transition-transform duration-[10000ms] ease-out group-hover:scale-105"
         />
 
-        {/* ── Multi-Layer Black Gradient Overlays for Maximum Visibility ── */}
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 via-55% to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent to-black/50" />
+        {/* ── Multi-Layer Black Gradient Overlays (Reduced by 20% for Enhanced Background Visibility) ── */}
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/65 via-55% to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent to-black/40" />
       </div>
 
       {/* ── Top Header Area (Spans full width with max content constraint) ── */}
@@ -122,9 +122,6 @@ export default function FabricCounter() {
             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
               MEASURED AT EVERY LAYER<span className="text-cluster-teal">.</span>
             </h2>
-            <p className="text-xs sm:text-sm md:text-base text-white/70 leading-relaxed font-light mt-1 max-w-xl">
-              From precision cutting in our dual state facilities to daily stock replenishment across 9,000+ retail storefronts in South India.
-            </p>
           </div>
 
           <div className="text-[10px] sm:text-[11px] tracking-[0.2em] text-white/60 font-mono uppercase shrink-0">
@@ -223,7 +220,7 @@ export default function FabricCounter() {
         {/* ── Subtitle Footnote Bar ── */}
         <div className="mt-10 sm:mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[12px] sm:text-[13px] text-white/60">
           <p>
-            Operating across 2 specialized production facilities in Kerala &amp; Kambam, Tamil Nadu with state-wide retail dispatch.
+            Operating across 2 specialized production facilities in Kerala &amp; Cumbum, Tamil Nadu with state-wide retail dispatch.
           </p>
           <div className="flex items-center gap-4 text-white/80 text-[11px] font-semibold tracking-wider uppercase">
             <span className="flex items-center gap-1.5">

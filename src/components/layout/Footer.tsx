@@ -35,6 +35,7 @@ const EXISTING_PAGES = [
   { name: "Manufacturing", href: "/manufacturing" },
   { name: "Distribution", href: "/distribution" },
   { name: "Our Reach", href: "/our-reach" },
+  { name: "Our Franchise", href: "/our-franchise" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -42,7 +43,7 @@ const EXISTING_PAGES = [
 const EXISTING_BRANDS = [
   { name: "Cluster Studio", href: "/brands" },
   { name: "Matrutva Maternity", href: "/brands" },
-  { name: "Texiva Manufacturing", href: "/manufacturing" },
+  { name: "Texvia by Cluster", href: "/manufacturing" },
 ];
 
 const SOCIAL_LINKS = [

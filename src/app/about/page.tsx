@@ -31,7 +31,7 @@ import Button from "@/components/ui/Button";
 export default function About() {
   const stats = [
     { value: STATS.workforce, suffix: "+", label: "Master Artisans", desc: "Across dual manufacturing units" },
-    { value: 2, suffix: "", label: "Production Facilities", desc: "Kerala & Kambam (Tamil Nadu)" },
+    { value: 2, suffix: "", label: "Production Facilities", desc: "Kerala & Cumbum (Tamil Nadu)" },
     { value: 25000, suffix: "+", label: "Monthly Customers", desc: "Reaching 25,000+ consumers every month" },
     { value: 9000, suffix: "+", label: "Retail Outlets", desc: "Active retail partner counters" },
   ];
@@ -272,7 +272,7 @@ export default function About() {
                     <Factory className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.75]" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight font-manrope mb-3">
-                    Texiva Dual Facilities
+                    Texvia Dual Facilities
                   </h3>
                   <p className="text-xs sm:text-[13.5px] text-white/90 leading-relaxed font-light">
                     Twin precision manufacturing plants in Kerala and Tamil Nadu with automated CAD spreading, 350+ master tailors, and strict AQL 1.5 audits.
@@ -491,7 +491,7 @@ export default function About() {
               </div>
               <div className="p-7">
                 <p className="text-[13.5px] text-cluster-muted leading-relaxed font-normal">
-                  Algorithmic marker layout planning ensures maximum fabric yield and minimal offcuts during automated multi-ply CNC knife cutting across both Kerala and Kambam facilities.
+                  Algorithmic marker layout planning ensures maximum fabric yield and minimal offcuts during automated multi-ply CNC knife cutting across both Kerala and Cumbum facilities.
                 </p>
               </div>
             </div>

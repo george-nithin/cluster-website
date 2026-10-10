@@ -28,7 +28,7 @@ export default function Distribution() {
       step: "01",
       title: "Factory Staging & RFID",
       sub: "Dual Facilities",
-      desc: "Garments exit our Kerala & Kambam facilities with automated SKU barcoding, pre-sorted into retail-ready distribution batches.",
+      desc: "Garments exit our Kerala & Cumbum facilities with automated SKU barcoding, pre-sorted into retail-ready distribution batches.",
       icon: Building2,
       color: "text-cluster-blue",
       bgColor: "bg-cluster-blue/10",

@@ -17,8 +17,8 @@ const THREE_COMPANIES = [
     title: "Cluster Outfits Pvt. Ltd.",
     description:
       "The master holding organization uniting manufacturing, brand incubation, and supply chain logistics under a single mission: premium apparel delivered at scale. We oversee end-to-end design incubation, state-of-the-art textile manufacturing, and proprietary retail distribution powering 9,000+ counters across South India.",
-    logoPath: "/logos/cluster-outfits-transparent.png",
-    logoAlt: "Cluster Outfits Pvt. Ltd. Official Logo",
+    logoPath: "/logos/cluster-main.png",
+    logoAlt: "Cluster - The Best You Choose Official Logo",
     color: "#0E7293",
     href: "/about",
     ctaText: "Explore Cluster Outfits",
@@ -35,15 +35,15 @@ const THREE_COMPANIES = [
     ctaText: "Explore Matrutva Collection",
   },
   {
-    id: "texiva",
-    title: "Texiva Manufacturing",
+    id: "texvia",
+    title: "Texvia by Cluster",
     description:
-      "Two advanced manufacturing facilities across Kerala and Tamil Nadu. 350+ master artisans, automated CAD cutting, and in-line quality systems producing at zero waste. From raw yarn procurement to finished packaging, Texiva ensures uncompromising durability, precision finishing, and dependable scale.",
-    logoPath: "/logos/texiva-logo.png",
-    logoAlt: "Texiva Textiles & Precision Manufacturing Logo",
+      "Two advanced manufacturing facilities across Kerala and Tamil Nadu. 350+ master artisans, automated CAD cutting, and in-line quality systems producing at zero waste. From raw yarn procurement to finished packaging, Texvia ensures uncompromising durability, precision finishing, and dependable scale.",
+    logoPath: "/logos/texvia-logo.png",
+    logoAlt: "Texvia by Cluster Textiles & Precision Manufacturing Logo",
     color: "#22C195",
     href: "/manufacturing",
-    ctaText: "Explore Texiva Facilities",
+    ctaText: "Explore Texvia Facilities",
   },
 ];
 

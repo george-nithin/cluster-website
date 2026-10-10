@@ -53,7 +53,7 @@ export default function ManufacturingPage() {
                 <b className="text-4xl sm:text-5xl lg:text-7xl font-light text-cluster-text flex items-baseline gap-1 leading-none font-manrope">
                   <Counter to={STATS.tamilNaduWorkforce} suffix="+" />
                 </b>
-                <span className="mt-3 sm:mt-4 block text-xs sm:text-sm text-cluster-muted">Workforce — Kambam, TN</span>
+                <span className="mt-3 sm:mt-4 block text-xs sm:text-sm text-cluster-muted">Workforce — Cumbum, TN</span>
               </div>
             </div>
           </StaggerReveal>
@@ -110,7 +110,7 @@ export default function ManufacturingPage() {
 
               <div className="group relative overflow-hidden rounded-[20px] sm:rounded-[24px] border border-cluster-border bg-cluster-surface shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-500 hover:border-cluster-teal/30">
                 <div className="absolute top-0 left-0 w-1 h-full bg-cluster-teal transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500" />
-                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Kambam, Tamil Nadu</h4>
+                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Cumbum, Tamil Nadu</h4>
                 <p className="text-cluster-teal text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Unit 02</p>
                 <p className="text-cluster-muted text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">High-volume production facility anchoring the Tamil Nadu network for expansive scale.</p>
                 <div className="flex items-end gap-2">

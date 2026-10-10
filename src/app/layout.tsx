@@ -19,7 +19,10 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Cluster Outfits Pvt. Ltd. | Uniting Brands, Manufacturing & Distribution',
+  title: {
+    default: 'The Best You Choose',
+    template: '%s | The Best You Choose',
+  },
   description: 'An enterprise platform uniting brand incubation, advanced textile manufacturing, and retail distribution across South India.',
   icons: {
     icon: [
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     shortcut: ['/favicon.ico'],
   },
   openGraph: {
-    title: 'Cluster Outfits Pvt. Ltd. | Uniting Brands, Manufacturing & Distribution',
+    title: 'The Best You Choose',
     description: 'An enterprise platform uniting brand incubation, advanced textile manufacturing, and retail distribution across South India.',
     siteName: 'Cluster Outfits Pvt. Ltd.',
     images: [
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cluster Outfits Pvt. Ltd. Logo',
+        alt: 'Cluster Outfits - The Best You Choose',
       },
     ],
     locale: 'en_IN',
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cluster Outfits Pvt. Ltd. | Uniting Brands, Manufacturing & Distribution',
+    title: 'The Best You Choose',
     description: 'An enterprise platform uniting brand incubation, advanced textile manufacturing, and retail distribution across South India.',
     images: ['/og-image.png'],
   },

@@ -13,6 +13,7 @@ const navLinks = [
   { name: 'Manufacturing', href: '/manufacturing' },
   { name: 'Distribution', href: '/distribution' },
   { name: 'Our Reach', href: '/our-reach' },
+  { name: 'Our Franchise', href: '/our-franchise' },
   { name: 'About', href: '/about' },
 ];
 
