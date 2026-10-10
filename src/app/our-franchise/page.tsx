@@ -169,12 +169,12 @@ export default function OurFranchisePage() {
               </div>
 
               {/* 2. THE TITLE */}
-              <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.12] mb-6 font-sans uppercase max-w-5xl">
+              <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-black text-slate-900 tracking-tight leading-[1.12] mb-6 font-sans uppercase w-full">
                 Bring Everyday Fashion &amp; Maternity Wear Together Under One Roof.
               </h2>
 
               {/* 3. THE DESCRIPTION */}
-              <div className="relative z-10 max-w-3xl sm:max-w-4xl mx-auto space-y-4 text-slate-600 text-base sm:text-lg md:text-[19px] leading-relaxed font-normal">
+              <div className="relative z-10 w-full space-y-4 text-slate-600 text-base sm:text-lg md:text-[19px] leading-relaxed font-normal">
                 <p>
                   <strong className="text-slate-900 font-bold">Crew-D</strong> is a multi-brand women&apos;s fashion retail concept by{" "}
                   <strong className="text-slate-900 font-bold">Cluster Outfits Private Limited</strong>, bringing everyday fashion and maternity wear together under one roof through our brands,{" "}
@@ -184,8 +184,8 @@ export default function OurFranchisePage() {
                 <p>
                   With a focus on <strong className="text-slate-900 font-bold">style, comfort, quality, and affordability</strong>, Crew-D aims to create a convenient shopping destination for women while building a growing retail network across South India.
                 </p>
-                <div className="pt-3">
-                  <p className="inline-block text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base leading-relaxed max-w-3xl">
+                <div className="pt-3 w-full flex justify-center">
+                  <p className="w-full text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base leading-relaxed">
                     <strong className="text-slate-900 font-bold">Interested in owning a Crew-D franchise?</strong> We invite entrepreneurs, aspiring business owners, and retail partners to connect with us and explore the opportunity.
                   </p>
                 </div>
