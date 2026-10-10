@@ -340,38 +340,19 @@ export default function OurFranchisePage() {
       {/* ─────────────────────────────────────────────────────────────
           4. WHY EXPLORE A CREW-D FRANCHISE? (STAGGERED BENTO GRID - MAX WIDTH + BG IMAGE)
       ───────────────────────────────────────────────────────────── */}
-      <section id="why-crew-d" className="py-20 sm:py-28 md:py-32 text-white relative overflow-hidden border-b border-white/10 w-full">
-        {/* Background Image from public folder with Gradient Dark Colors Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/counterbg.jpg"
-            alt="Crew-D Franchise Operations Background"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          {/* Multi-layered dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#060D1E]/95 via-[#0B132B]/90 to-[#040814]/98" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-black/50" />
-        </div>
-
-        {/* Ambient background glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-cluster-coral/10 rounded-full blur-[130px] pointer-events-none z-0" />
-        <div className="absolute top-10 left-10 w-96 h-96 bg-cluster-teal/10 rounded-full blur-[130px] pointer-events-none z-0" />
-
+      <section id="why-crew-d" className="py-20 sm:py-28 md:py-32 text-white relative overflow-hidden bg-black w-full border-b border-white/10">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
           {/* Header centered matching reference */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
             <div className="flex items-center justify-center gap-3 mb-5">
-              <span className="w-8 h-0.5 bg-blue-400 rounded-full" />
-              <span className="text-[11px] font-bold tracking-[0.25em] text-blue-300 uppercase font-manrope">
+              <span className="w-8 h-0.5 bg-cluster-teal rounded-full" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase font-manrope">
                 Franchise Advantage
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white tracking-tight leading-[1.12] font-sans">
               Why Explore a Crew-D Franchise?<br />
-              <span className="text-blue-300 font-normal text-2xl sm:text-3xl lg:text-[34px] block mt-2">
+              <span className="text-slate-300 font-normal text-2xl sm:text-3xl lg:text-[34px] block mt-2">
                 Turning dual-brand synergy into retail growth
               </span>
             </h2>
@@ -380,54 +361,54 @@ export default function OurFranchisePage() {
           {/* Staggered Bento Grid matching reference layout - Max Width */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch w-full">
               
-              {/* ─── COLUMN 1: Tall Card (Left) ─── */}
+              {/* ─── COLUMN 1: Cluster Coral Card (Left) ─── */}
               <div className="flex flex-col">
-                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between h-full backdrop-blur-md transition-all duration-300 shadow-xl group">
+                <div className="rounded-[26px] bg-gradient-to-br from-[#E86D46] via-[#D65B34] to-[#B84420] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-4">
                       <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
                         Two Brands. One Store.
                       </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-coral font-manrope bg-cluster-coral/15 px-3 py-1 rounded-full border border-cluster-coral/25 shrink-0">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
                         Dual Power
                       </span>
                     </div>
 
-                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                    <p className="text-sm text-white/90 leading-relaxed font-normal">
                       Bring everyday fashion and maternity wear together through a single unified retail concept that multiplies footfall and customer reach under one roof.
                     </p>
                   </div>
 
                   {/* Big Number at Bottom Left with Small Text Next to It */}
-                  <div className="flex items-center gap-4 pt-8 mt-8 border-t border-white/10">
-                    <div className="text-5xl sm:text-6xl font-black text-cluster-coral font-sans tracking-tight shrink-0">
+                  <div className="flex items-center gap-4 pt-8 mt-8 border-t border-white/20">
+                    <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
                       2x
                     </div>
-                    <p className="text-xs sm:text-[13px] text-slate-300 leading-snug font-manrope">
+                    <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
                       Dual-brand synergy delivering higher customer lifetime value &amp; repeat visits.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* ─── COLUMN 2: Staggered Center Stack (3 Cards) ─── */}
+              {/* ─── COLUMN 2: Cluster Teal Family Cards (Center) ─── */}
               <div className="flex flex-col gap-5">
                 
                 {/* Card 2A: Top Small Banner with Region Badges */}
-                <div className="rounded-[24px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-5 sm:p-6 backdrop-blur-md transition-all duration-300 shadow-lg flex items-center justify-between gap-4">
+                <div className="rounded-[24px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-5 sm:p-6 transition-all duration-300 shadow-lg flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     {/* Overlapping Regional Node Badges */}
                     <div className="flex -space-x-2.5 overflow-hidden">
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-blue to-cyan-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-blue to-cyan-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
                         KL
                       </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-coral to-rose-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-coral to-rose-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
                         TN
                       </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-cluster-teal to-emerald-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-teal to-emerald-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
                         KA
                       </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-[#0B132B] bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
                         AP
                       </div>
                     </div>
@@ -435,62 +416,62 @@ export default function OurFranchisePage() {
                       20+ Retail Hubs
                     </span>
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-2.5 py-1 rounded-full border border-cluster-teal/25 shrink-0">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-2.5 py-1 rounded-full border border-cluster-teal/30 shrink-0">
                     Active Grid
                   </span>
                 </div>
 
-                {/* Card 2B: Middle Card with Big Number (200 - 600 sq. ft.) */}
-                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between flex-1 backdrop-blur-md transition-all duration-300 shadow-xl group">
+                {/* Card 2B: Middle Teal Card with Big Number (200 - 600 sq. ft.) */}
+                <div className="rounded-[26px] bg-gradient-to-br from-[#1DA883] via-[#168A6A] to-[#0E634C] p-7 sm:p-8 flex flex-col justify-between flex-1 transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-3">
                       <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
                         Compact Store Format
                       </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-3 py-1 rounded-full border border-cluster-teal/25 shrink-0">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
                         High Velocity
                       </span>
                     </div>
 
-                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                    <p className="text-sm text-white/90 leading-relaxed font-normal">
                       Compact, high-velocity retail footprint optimized for fast inventory turnover and capital efficiency.
                     </p>
                   </div>
 
                   {/* Big Number Specification */}
                   <div className="pt-6 mt-4">
-                    <div className="text-4xl sm:text-5xl font-black text-cluster-teal font-sans tracking-tight">
-                      200 – 600 <span className="text-lg sm:text-xl font-medium text-slate-300">sq. ft.</span>
+                    <div className="text-4xl sm:text-5xl font-black text-white font-sans tracking-tight drop-shadow-sm">
+                      200 – 600 <span className="text-lg sm:text-xl font-medium text-white/85">sq. ft.</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Card 2C: Bottom Card (Tailored Range) */}
-                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-6 sm:p-7 backdrop-blur-md transition-all duration-300 shadow-xl">
+                <div className="rounded-[26px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-6 sm:p-7 transition-all duration-300 shadow-lg">
                   <div className="flex items-center justify-between gap-3 mb-2.5">
                     <h3 className="text-lg sm:text-xl font-black text-white tracking-tight font-sans">
                       Focused Assortment
                     </h3>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300 font-manrope bg-white/10 px-3 py-1 rounded-full border border-white/15 shrink-0">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-3 py-1 rounded-full border border-cluster-teal/30 shrink-0">
                       Curated Range
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-300/85 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                     Serve daily fashion &amp; maternity wear with a curated collection designed for South Indian customer preferences.
                   </p>
                 </div>
               </div>
 
-              {/* ─── COLUMN 3: Tall Card (Right) ─── */}
+              {/* ─── COLUMN 3: Cluster Blue Card (Right) ─── */}
               <div className="flex flex-col">
-                <div className="rounded-[26px] bg-[#121B35]/85 hover:bg-[#152040]/90 border border-[#202C4F] hover:border-white/20 p-7 sm:p-8 flex flex-col justify-between h-full backdrop-blur-md transition-all duration-300 shadow-xl group">
+                <div className="rounded-[26px] bg-gradient-to-br from-[#0E7293] via-[#0B5C77] to-[#084257] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
                   {/* Big Number at Top Right with Small Text Next to It */}
                   <div>
-                    <div className="flex items-center gap-4 pb-8 mb-8 border-b border-white/10">
-                      <div className="text-5xl sm:text-6xl font-black text-cyan-400 font-sans tracking-tight shrink-0">
+                    <div className="flex items-center gap-4 pb-8 mb-8 border-b border-white/20">
+                      <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
                         100%
                       </div>
-                      <p className="text-xs sm:text-[13px] text-slate-300 leading-snug font-manrope">
+                      <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
                         Breathable, combed cottons &amp; verified factory craftsmanship across all categories.
                       </p>
                     </div>
@@ -499,20 +480,20 @@ export default function OurFranchisePage() {
                       <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
                         Growing Presence
                       </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400 font-manrope bg-cyan-400/15 px-3 py-1 rounded-full border border-cyan-400/25 shrink-0">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
                         Regional Scale
                       </span>
                     </div>
 
-                    <p className="text-sm text-slate-300/85 leading-relaxed font-normal">
+                    <p className="text-sm text-white/90 leading-relaxed font-normal">
                       Be part of our planned retail network expansion across Kerala, Tamil Nadu, and South India&apos;s fastest growing commercial districts.
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs font-bold font-manrope text-slate-400">
+                  <div className="pt-6 mt-6 border-t border-white/20 flex items-center justify-between text-xs font-bold font-manrope text-white/80">
                     <span className="uppercase tracking-wider">South India Expansion</span>
-                    <span className="text-cluster-teal flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span className="text-white flex items-center gap-1.5 font-bold">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" />
                       Verified Model
                     </span>
                   </div>
