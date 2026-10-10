@@ -164,8 +164,8 @@ export default function About() {
                 <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
                   {/* Eyebrow / Kicker */}
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
-                    <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                    <span className="w-8 h-0.5 bg-cluster-teal rounded-full" />
+                    <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-teal uppercase font-manrope">
                       Founder’s Journey
                     </span>
                   </div>
@@ -174,7 +174,7 @@ export default function About() {
                   <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black uppercase text-slate-900 tracking-tight leading-[1.06] mb-2 font-sans">
                     Devan S
                   </h2>
-                  <div className="text-base sm:text-lg font-bold text-cluster-coral uppercase tracking-wider mb-6 font-manrope">
+                  <div className="text-base sm:text-lg font-bold text-cluster-teal uppercase tracking-wider mb-6 font-manrope">
                     Managing Director
                   </div>
 
@@ -196,7 +196,7 @@ export default function About() {
                 <div className="lg:col-span-5 p-6 sm:p-10 lg:p-12 flex items-center justify-center">
                   <div className="relative w-full max-w-[390px] aspect-[3/4.2] sm:aspect-[3/4.4] rounded-tl-[44px] sm:rounded-tl-[52px] rounded-tr-[24px] rounded-b-[24px] sm:rounded-b-[28px] overflow-hidden bg-slate-100/60 border border-slate-200/90 shadow-xl flex items-end justify-center group">
                     {/* 1. Left Half Rectangle with vertical outline "FOUNDER" */}
-                    <div className="absolute top-0 left-0 bottom-0 w-[47%] bg-gradient-to-b from-[#E5484D] via-[#DE3D42] to-[#D9383A] rounded-tl-[44px] sm:rounded-tl-[52px] overflow-hidden flex items-center justify-center select-none pointer-events-none z-0">
+                    <div className="absolute top-0 left-0 bottom-0 w-[47%] bg-gradient-to-b from-[#22C195] via-[#1DA883] to-[#158767] rounded-tl-[44px] sm:rounded-tl-[52px] overflow-hidden flex items-center justify-center select-none pointer-events-none z-0">
                       <span
                         className="font-black text-4xl sm:text-5xl lg:text-[52px] tracking-[0.24em] uppercase text-transparent whitespace-nowrap transform -rotate-90 font-sans select-none"
                         style={{
@@ -220,7 +220,7 @@ export default function About() {
                     </div>
 
                     {/* 3. Blurred Color Box Overlay at Bottom with Name & Designation */}
-                    <div className="absolute bottom-0 inset-x-0 z-20 p-6 sm:p-7 pt-16 sm:pt-24 bg-gradient-to-t from-[#E5484D] via-[#E5484D]/90 to-transparent backdrop-blur-[3px]">
+                    <div className="absolute bottom-0 inset-x-0 z-20 p-6 sm:p-7 pt-16 sm:pt-24 bg-gradient-to-t from-[#158767] via-[#22C195]/90 to-transparent backdrop-blur-[3px]">
                       <div className="relative z-10">
                         <h3 className="text-2xl sm:text-[26px] font-black text-white tracking-tight leading-tight font-sans drop-shadow-sm">
                           Devan S
