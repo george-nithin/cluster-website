@@ -23,6 +23,7 @@ import {
   Building,
   Check,
   ShieldAlert,
+  ChevronDown,
 } from "lucide-react";
 
 export default function OurFranchisePage() {
@@ -623,126 +624,105 @@ export default function OurFranchisePage() {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    {/* Phone Number */}
-                    <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                        Phone Number <span className="text-cluster-coral">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="+91 97478 00041"
-                        value={formState.phone}
-                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
-                      />
-                    </div>
-
+                  <form onSubmit={handleSubmit} className="space-y-3.5">
                     {/* Full Name */}
                     <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                        Full Name <span className="text-cluster-coral">*</span>
-                      </label>
+                      <label htmlFor="fullName" className="sr-only">Name</label>
                       <input
+                        id="fullName"
                         type="text"
                         required
-                        placeholder="e.g. Rahul Sharma"
+                        placeholder="Name"
                         value={formState.fullName}
                         onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
+                        className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-slate-800 placeholder:text-[#6C757D] text-sm sm:text-base outline-none focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all font-sans"
                       />
                     </div>
 
-                    {/* Email & City */}
+                    {/* Email & Phone */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       <div>
-                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                          Email Address <span className="text-cluster-coral">*</span>
-                        </label>
+                        <label htmlFor="email" className="sr-only">Email</label>
                         <input
+                          id="email"
                           type="email"
                           required
-                          placeholder="partner@example.com"
+                          placeholder="Email"
                           value={formState.email}
                           onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
+                          className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-slate-800 placeholder:text-[#6C757D] text-sm sm:text-base outline-none focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all font-sans"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                          City / State <span className="text-cluster-coral">*</span>
-                        </label>
+                        <label htmlFor="phone" className="sr-only">Phone Number</label>
                         <input
-                          type="text"
+                          id="phone"
+                          type="tel"
                           required
-                          placeholder="e.g. Coimbatore"
-                          value={formState.city}
-                          onChange={(e) => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all"
+                          placeholder="Phone Number"
+                          value={formState.phone}
+                          onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                          className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-slate-800 placeholder:text-[#6C757D] text-sm sm:text-base outline-none focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all font-sans"
                         />
                       </div>
                     </div>
 
-                    {/* Business Ownership & Retail Space */}
+                    {/* City / State */}
+                    <div>
+                      <label htmlFor="city" className="sr-only">City / State</label>
+                      <input
+                        id="city"
+                        type="text"
+                        required
+                        placeholder="City / State"
+                        value={formState.city}
+                        onChange={(e) => setFormState({ ...formState, city: e.target.value })}
+                        className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-slate-800 placeholder:text-[#6C757D] text-sm sm:text-base outline-none focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all font-sans"
+                      />
+                    </div>
+
+                    {/* Business Ownership & Retail Space (Select a Subject Style) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      <div>
-                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                          Own a Business?
-                        </label>
-                        <div className="grid grid-cols-2 gap-2">
-                          {["Yes", "No"].map((opt) => (
-                            <button
-                              key={opt}
-                              type="button"
-                              onClick={() => setFormState({ ...formState, ownsBusiness: opt })}
-                              className={`py-2 px-3 rounded-lg text-xs font-bold font-manrope border transition-all cursor-pointer ${
-                                formState.ownsBusiness === opt
-                                  ? "bg-black text-white border-black shadow-xs"
-                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                              }`}
-                            >
-                              {opt}
-                            </button>
-                          ))}
-                        </div>
+                      <div className="relative">
+                        <label htmlFor="ownsBusiness" className="sr-only">Own a Business?</label>
+                        <select
+                          id="ownsBusiness"
+                          value={formState.ownsBusiness}
+                          onChange={(e) => setFormState({ ...formState, ownsBusiness: e.target.value })}
+                          className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-[#6C757D] text-sm sm:text-base outline-none appearance-none cursor-pointer focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all pr-11 font-sans"
+                        >
+                          <option value="Yes">Own a Business: Yes</option>
+                          <option value="No">Own a Business: No</option>
+                        </select>
+                        <ChevronDown className="w-4 h-4 text-[#6C757D] absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none" />
                       </div>
 
-                      <div>
-                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                          Commercial Space?
-                        </label>
-                        <div className="grid grid-cols-2 gap-2">
-                          {["Yes", "No"].map((opt) => (
-                            <button
-                              key={opt}
-                              type="button"
-                              onClick={() => setFormState({ ...formState, hasSpace: opt })}
-                              className={`py-2 px-3 rounded-lg text-xs font-bold font-manrope border transition-all cursor-pointer ${
-                                formState.hasSpace === opt
-                                  ? "bg-black text-white border-black shadow-xs"
-                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                              }`}
-                            >
-                              {opt}
-                            </button>
-                          ))}
-                        </div>
+                      <div className="relative">
+                        <label htmlFor="hasSpace" className="sr-only">Commercial Space?</label>
+                        <select
+                          id="hasSpace"
+                          value={formState.hasSpace}
+                          onChange={(e) => setFormState({ ...formState, hasSpace: e.target.value })}
+                          className="w-full px-5 py-3.5 sm:py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-[#6C757D] text-sm sm:text-base outline-none appearance-none cursor-pointer focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all pr-11 font-sans"
+                        >
+                          <option value="Yes">Commercial Space: Yes</option>
+                          <option value="No">Commercial Space: No</option>
+                        </select>
+                        <ChevronDown className="w-4 h-4 text-[#6C757D] absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none" />
                       </div>
                     </div>
 
-                    {/* Additional Message */}
+                    {/* Message Textarea */}
                     <div>
-                      <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 font-manrope mb-1.5">
-                        Message <span className="text-slate-400 font-normal lowercase">(optional)</span>
-                      </label>
+                      <label htmlFor="message" className="sr-only">Message</label>
                       <textarea
-                        rows={2}
-                        placeholder="Preferred location, square footage, or questions..."
+                        id="message"
+                        rows={4}
+                        placeholder="Message..."
                         value={formState.message}
                         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 outline-none text-slate-900 text-sm transition-all resize-none"
+                        className="w-full px-5 py-4 rounded-[18px] bg-[#F1F3F5] border border-transparent text-slate-800 placeholder:text-[#6C757D] text-sm sm:text-base outline-none focus:bg-white focus:border-cluster-teal focus:ring-2 focus:ring-cluster-teal/20 transition-all resize-none min-h-[120px] font-sans"
                       />
                     </div>
 
@@ -753,7 +733,7 @@ export default function OurFranchisePage() {
                         size="lg"
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full justify-center tracking-widest uppercase font-bold text-xs sm:text-sm"
+                        className="w-full justify-center tracking-widest uppercase font-bold text-xs sm:text-sm !rounded-[18px] py-4"
                       >
                         {isSubmitting ? (
                           "Submitting..."
