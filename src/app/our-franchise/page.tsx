@@ -90,7 +90,7 @@ export default function OurFranchisePage() {
       accentBar: "from-cluster-blue to-indigo-400",
       number: "03",
       title: "Compact Store Format",
-      desc: "Our proposed franchise store format ranges from 200 to 600 sq. ft., subject to location and business requirements.",
+      desc: "Our proposed franchise store format ranges from 350 to 650 sq. ft., subject to location and business requirements.",
       tag: "High Efficiency",
     },
     {
@@ -421,7 +421,7 @@ export default function OurFranchisePage() {
                   </span>
                 </div>
 
-                {/* Card 2B: Middle Teal Card with Big Number (200 - 600 sq. ft.) */}
+                {/* Card 2B: Middle Teal Card with Big Number (350 - 650 sq. ft.) */}
                 <div className="rounded-[26px] bg-gradient-to-br from-[#1DA883] via-[#168A6A] to-[#0E634C] p-7 sm:p-8 flex flex-col justify-between flex-1 transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-3">
@@ -441,7 +441,7 @@ export default function OurFranchisePage() {
                   {/* Big Number Specification */}
                   <div className="pt-6 mt-4">
                     <div className="text-4xl sm:text-5xl font-black text-white font-sans tracking-tight drop-shadow-sm">
-                      200 – 600 <span className="text-lg sm:text-xl font-medium text-white/85">sq. ft.</span>
+                      350 – 650 <span className="text-lg sm:text-xl font-medium text-white/85">sq. ft.</span>
                     </div>
                   </div>
                 </div>
@@ -547,7 +547,7 @@ export default function OurFranchisePage() {
                       2
                     </div>
                     <div className="text-xs sm:text-[13px] font-semibold text-white/95 leading-snug mt-3 font-sans">
-                      Compact store format (200 – 600 sq. ft.)
+                      Compact store format (350 – 650 sq. ft.)
                     </div>
                   </div>
 

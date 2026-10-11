@@ -40,13 +40,13 @@ const MILESTONES: Milestone[] = [
     highlight: "Private Limited incorporation · Industrial scale & multi-state grid",
   },
   {
-    year: "2,000+",
+    year: "9,000+",
     yearSub: "Counters",
     step: "04",
     tag: "Retail Network",
     title: "Extensive Retail Reach",
-    desc: "Supplying to 2,000+ A-Class and B-Class retail counters across Kerala.",
-    highlight: "Supplying 2,000+ A-Class & B-Class storefronts across Kerala",
+    desc: "Supplying to 9,000+ A-Class and B-Class retail counters across Kerala & Tamil Nadu.",
+    highlight: "Supplying 9,000+ A-Class & B-Class storefronts across Kerala and Tamil Nadu",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function CompanyJourney() {
             </div>
             <div className="lg:col-span-7 flex flex-col justify-end">
               <p className="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed font-sans max-w-2xl">
-                From our origins in the ladies&apos; garment industry to establishing Cluster Outfits under Indian Air Force veteran leadership, and incorporating into an agile Private Limited apparel manufacturing enterprise supplying over 2,000+ retail counters across South India.
+                From our origins in the ladies&apos; garment industry to establishing Cluster Outfits under Indian Air Force veteran leadership, and incorporating into an agile Private Limited apparel manufacturing enterprise supplying over 9,000+ retail counters across South India.
               </p>
             </div>
           </div>

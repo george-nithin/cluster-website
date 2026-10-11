@@ -5,19 +5,19 @@ import { Reveal } from '@/components/anim';
 import PartnerCta from '@/components/ui/PartnerCta';
 
 const clusterLooks: Look[] = [
-  { src: '/dress/look-01.jpg', name: 'Elegant Evening Wear', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-02.jpg', name: 'Casual Chic', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-03.jpg', name: 'Summer Breeze', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-04.jpg', name: 'Office Ready', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-05.jpg', name: 'Weekend Comfort', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies Tops.jpg', name: 'Ladies Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies bottom.jpg', name: 'Ladies Bottom', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Short Tops.jpg', name: 'Short Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Nightwear & Nighties.jpg', name: 'Nightwear & Nighties', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Nighties .jpg', name: 'Nighties', w: 1200, h: 1800, details: [] },
 ];
 
 const maternityLooks: Look[] = [
-  { src: '/dress/look-06.jpg', name: 'Comfort Feeding Bra', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-07.jpg', name: 'Everyday Maternity Top', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-08.jpg', name: 'Cozy Nightie', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-09.jpg', name: 'Stylish Maternity Dress', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-10.jpg', name: 'Lounge Wear', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Feeding Bras.jpg', name: 'Maternity Feeding Bras', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Nightie.jpg', name: 'Maternity Nightie', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Top.jpg', name: 'Maternity Top', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Lounge Wear.jpg', name: 'Lounge Wear', w: 1200, h: 1800, details: [] },
+  { src: '/dress/look-09.jpg', name: 'Maternity Dress', w: 1200, h: 1800, details: [] },
 ];
 
 export default function Brands() {
