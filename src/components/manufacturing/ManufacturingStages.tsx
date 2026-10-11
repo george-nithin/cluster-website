@@ -20,78 +20,90 @@ const STAGES: StageItem[] = [
   {
     id: "stage-01",
     number: "01",
-    tag: "Pre-Production",
-    title: "Design & Development",
-    facility: "CAD Studio & Pattern Room",
+    tag: "Fabric Inbound",
+    title: "Fabric Inspection & Relaxation",
+    facility: "Fabric Testing & QC Bay",
     description:
-      "Translating fashion concepts into master digital tech packs, graded CAD pattern blocks, and precision sample prototypes.",
-    image: "/design.jpg",
-    spec: "48h Prototype SLA",
+      "Inspect incoming fabric for defects and allow it to relax before cutting.",
+    image: "/sourching.jpg",
+    spec: "100% Roll Inspection",
     dotColor: "#22C195",
   },
   {
     id: "stage-02",
     number: "02",
-    tag: "Material Inbound",
-    title: "Material Sourcing",
-    facility: "Raw Material Warehouse",
+    tag: "Pattern & CAD",
+    title: "Cutting",
+    facility: "Automated Spreading Floor",
     description:
-      "Procuring certified combed cottons, viscose blends, and custom trims from audited mills with strict in-house fabric shrinkage testing.",
-    image: "/sourching.jpg",
-    spec: "100% Roll Verification",
-    dotColor: "#F59E0B",
+      "Cut fabric according to garment patterns and production specifications.",
+    image: "/cutting.jpg",
+    spec: "CNC Precision Cut",
+    dotColor: "#0284C7",
   },
   {
     id: "stage-03",
     number: "03",
-    tag: "Fabrication Prep",
-    title: "Precision Cutting",
-    facility: "Automated Spreading Floor",
+    tag: "Assembly Line",
+    title: "Stitching",
+    facility: "Industrial Sewing Bays",
     description:
-      "Computerized tension-free fabric spreading and multi-ply CNC knife cutting maximizing fabric utilization with sub-millimeter tolerances.",
-    image: "/cutting.jpg",
-    spec: "±0.5mm Accuracy",
-    dotColor: "#0284C7",
+      "Assemble garment components using industrial sewing equipment.",
+    image: "/stitching.jpg",
+    spec: "Juki High-Speed Line",
+    dotColor: "#10B981",
   },
   {
     id: "stage-04",
     number: "04",
-    tag: "Assembly Line",
-    title: "Artisan Stitching",
-    facility: "Kerala & Cumbum Units",
+    tag: "Quality Audit",
+    title: "Quality Check",
+    facility: "In-Line Inspection Tables",
     description:
-      "Synchronized multi-line assembly operated by 350+ skilled artisans equipped with high-speed automated sewing and flatlock machinery.",
-    image: "/stitching.jpg",
-    spec: "12 Assembly Lines",
-    dotColor: "#10B981",
+      "Check garments for stitching defects, consistency, and finishing standards.",
+    image: "/qc.jpg",
+    spec: "Zero-Defect Standard",
+    dotColor: "#8B5CF6",
   },
   {
     id: "stage-05",
     number: "05",
-    tag: "Quality Audit",
-    title: "Finishing & QC",
-    facility: "Quality Testing Lab",
+    tag: "Pressing & Presentation",
+    title: "Finishing & Ironing",
+    facility: "Steam Vacuum Stations",
     description:
-      "End-to-end inline inspection, calibrated needle detection scanning, industrial vacuum steam pressing, and dimensional compliance audits.",
-    image: "/qc.jpg",
-    spec: "AQL 1.5 Standard",
-    dotColor: "#8B5CF6",
+      "Complete pressing, finishing, and final garment presentation.",
+    image: "/ironing.png",
+    spec: "Dual-Stage Steam Press",
+    dotColor: "#F59E0B",
   },
   {
     id: "stage-06",
     number: "06",
-    tag: "Retail Logistics",
-    title: "Packaging & Dispatch",
-    facility: "Central Logistics Hub",
+    tag: "Packaging Floor",
+    title: "Packing",
+    facility: "Automated Folding & Bagging",
     description:
-      "Individual barcode serialization, shelf-ready brand tagging, moisture-resistant packaging, and rapid logistics dispatch across 9,000+ retail counters.",
+      "Fold, organise, and pack finished garments for distribution.",
     image: "/packing.png",
-    spec: "9,000+ Retail Outlets",
+    spec: "Barcode Tagged & Sealed",
+    dotColor: "#EC4899",
+  },
+  {
+    id: "stage-07",
+    number: "07",
+    tag: "Logistics Hub",
+    title: "Dispatch",
+    facility: "Outbound Logistics Bays",
+    description:
+      "Prepare completed orders for shipment and delivery.",
+    image: "/distributionback.jpg",
+    spec: "9,000+ Retail Network",
     dotColor: "#FF8A65",
   },
 ];
 
-// Default card active when not hovering (card index 1: second card, exactly like the reference image)
+// Default card active when not hovering (card index 1: second card)
 const DEFAULT_ACTIVE_INDEX = 1;
 
 export default function ManufacturingStages() {
@@ -100,12 +112,12 @@ export default function ManufacturingStages() {
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col gap-8 sm:gap-10">
       {/* ─────────────────────────────────────────────────────────────
-          1. Six Stages Interactive Hover-Reveal Stage Cards (Full Width)
+          1. Seven Stages Interactive Hover-Reveal Stage Cards (Full Width)
       ───────────────────────────────────────────────────────────── */}
       <div className="w-full overflow-x-auto pb-4 no-scrollbar">
         <div
           onMouseLeave={() => setActiveIdx(DEFAULT_ACTIVE_INDEX)}
-          className="flex gap-3 sm:gap-4 lg:gap-5 w-full min-w-[740px] md:min-w-[900px] lg:min-w-0 h-[380px] sm:h-[460px] lg:h-[520px]"
+          className="flex gap-2.5 sm:gap-3.5 lg:gap-4 w-full min-w-[880px] md:min-w-[1040px] lg:min-w-0 h-[380px] sm:h-[460px] lg:h-[520px]"
         >
           {STAGES.map((stage, idx) => {
             const isActive = activeIdx === idx;

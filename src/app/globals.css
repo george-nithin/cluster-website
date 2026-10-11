@@ -108,5 +108,47 @@
   .animate-pulse-subtle {
     animation: pulseSubtle 3s ease-in-out infinite;
   }
+
+  /* Live Logo Continuous Micro-Animations */
+  @keyframes liveLevitate {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-5px) scale(1.02);
+    }
+  }
+
+  @keyframes liveGlow {
+    0%, 100% {
+      opacity: 0.45;
+      filter: blur(14px);
+    }
+    50% {
+      opacity: 0.9;
+      filter: blur(22px);
+    }
+  }
+
+  @keyframes liveShimmer {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    45%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .animate-live-logo {
+    animation: liveLevitate 4.2s ease-in-out infinite;
+  }
+
+  .animate-live-glow {
+    animation: liveGlow 3.2s ease-in-out infinite;
+  }
+
+  .animate-live-shimmer {
+    animation: liveShimmer 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
 }
 

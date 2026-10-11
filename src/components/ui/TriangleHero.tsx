@@ -10,6 +10,7 @@ import Button from "@/components/ui/Button";
 
 interface TriangleHeroProps {
   kicker?: string;
+  brandBadge?: React.ReactNode;
   heading: string;
   headingHighlight?: string;
   description: string;
@@ -24,6 +25,7 @@ interface TriangleHeroProps {
 
 export default function TriangleHero({
   kicker,
+  brandBadge,
   heading,
   headingHighlight,
   description,
@@ -201,6 +203,13 @@ export default function TriangleHero({
       {/* 4. Foreground Content (Overlays Left Triangle) */}
       <Container className="relative z-30 py-16 sm:py-24 md:py-32">
         <div className="max-w-xl lg:max-w-2xl flex flex-col items-start">
+          {/* Optional Brand Badge */}
+          {brandBadge && (
+            <div className="mb-4 sm:mb-5">
+              {brandBadge}
+            </div>
+          )}
+
           {/* Optional Kicker */}
           {kicker && (
             <div ref={tagRef} className="flex items-center gap-3 mb-3 sm:mb-4">

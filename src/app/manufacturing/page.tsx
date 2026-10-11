@@ -4,6 +4,7 @@ import { Counter, SectionHead, Reveal, StaggerReveal } from "@/components/anim";
 import { STATS, UNITS, KER_PATH, PEN_PATH } from "@/lib/data";
 import Container from '@/components/ui/Container';
 import ManufacturingStages from "@/components/manufacturing/ManufacturingStages";
+import TexviaOverview from "@/components/manufacturing/TexviaOverview";
 import PartnerCta from "@/components/ui/PartnerCta";
 import TriangleHero from "@/components/ui/TriangleHero";
 
@@ -45,7 +46,7 @@ const CAPABILITIES = [
   {
     number: "03.",
     title: "Skilled & Experienced Workforce",
-    desc: "A trained team focused on quality and workmanship.",
+    desc: "A trained team with a focus on quality.",
     icon: (
       <Users className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
     ),
@@ -75,7 +76,7 @@ const CAPABILITIES = [
   {
     number: "05.",
     title: "Flexible Production",
-    desc: "Ability to handle bulk and customised orders.",
+    desc: "Capability to handle bulk and customised orders.",
     icon: (
       <Boxes className="w-14 h-14 sm:w-16 sm:h-16 stroke-[1.2] transition-transform duration-500 group-hover:scale-105" />
     ),
@@ -112,9 +113,9 @@ export default function ManufacturingPage() {
         kicker="Manufacturing Division"
         heading="MADE TO"
         headingHighlight="SCALE."
-        description="Dual precision facilities producing high-velocity retail garments with zero defect."
-        buttonText="EXPLORE UNITS"
-        buttonHref="#stats"
+        description="Texvia by Cluster operates dual precision facilities producing high-velocity retail garments with zero-defect engineering."
+        buttonText="EXPLORE TEXVIA"
+        buttonHref="#texvia-overview"
         backgroundImage="/manufacture.jpg"
         backgroundAlt="Texvia Textile Manufacturing Facility"
         scrollTargetId="stats"
@@ -155,10 +156,15 @@ export default function ManufacturingPage() {
         </Container>
       </div>
 
+      {/* ─────────────────────────────────────────────────────────────
+          Texvia by Cluster — Comprehensive Industrial Overview
+      ───────────────────────────────────────────────────────────── */}
+      <TexviaOverview />
+
       {/* The Line / Process Section - Full Width */}
       <section className="mt-14 sm:mt-20 md:mt-28 w-full">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-          <SectionHead kicker="The Line" title="Six Stages, One Standard." right="01 / PROCESS" />
+          <SectionHead kicker="Manufacturing Process" title="Seven-Stage Production Workflow." right="02 / PROCESS" />
         </div>
         <div className="mt-6 sm:mt-10 w-full">
           <ManufacturingStages />
@@ -168,7 +174,7 @@ export default function ManufacturingPage() {
       {/* Locations Section */}
       <div id="locations" className="mt-14 sm:mt-20 md:mt-28 pb-14 sm:pb-20 md:pb-28">
         <Container>
-          <SectionHead kicker="Manufacturing Locations" title="Two States. One Network." right="02 / LOCATIONS" />
+          <SectionHead kicker="Manufacturing Locations" title="Two States. One Network." right="03 / LOCATIONS" />
           <div className="mt-8 sm:mt-12 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 sm:gap-12 lg:gap-20 items-center">
             {/* Map */}
             <Reveal direction="up" duration={0.8} className="w-full">
@@ -192,25 +198,53 @@ export default function ManufacturingPage() {
             
             {/* Unit Details */}
             <StaggerReveal stagger={0.16} className="flex flex-col gap-4 sm:gap-6">
+              {/* Kerala Unit Card */}
               <div className="group relative overflow-hidden rounded-[20px] sm:rounded-[24px] border border-cluster-border bg-cluster-surface shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-500 hover:border-cluster-coral/30">
                 <div className="absolute top-0 left-0 w-1 h-full bg-cluster-coral transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500" />
-                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Kerala</h4>
-                <p className="text-cluster-coral text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Unit 01</p>
-                <p className="text-cluster-muted text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">Apparel manufacturing unit serving the Cluster and Matrutva production lines with precision capabilities.</p>
-                <div className="flex items-end gap-2">
+                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Kerala Unit</h4>
+                <p className="text-cluster-coral text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Location: Kerala, India</p>
+                <div className="space-y-2 mb-6 sm:mb-8 text-xs sm:text-sm text-cluster-muted">
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-coral shrink-0" />
+                    <span>Manufacturing unit</span>
+                  </p>
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-coral shrink-0" />
+                    <span>Skilled workforce</span>
+                  </p>
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-coral shrink-0" />
+                    <span>Focused production for key categories</span>
+                  </p>
+                </div>
+                <div className="flex items-end gap-2 pt-4 border-t border-slate-200/60">
                   <b className="text-3xl sm:text-4xl font-manrope font-bold text-cluster-text leading-none"><Counter to={100} suffix="+" /></b>
-                  <span className="text-[11px] sm:text-xs uppercase tracking-widest text-cluster-muted mb-1">Employees</span>
+                  <span className="text-[11px] sm:text-xs uppercase tracking-widest text-cluster-muted mb-1">Skilled Artisans</span>
                 </div>
               </div>
 
+              {/* Cumbum Unit (Tamil Nadu) Card */}
               <div className="group relative overflow-hidden rounded-[20px] sm:rounded-[24px] border border-cluster-border bg-cluster-surface shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-500 hover:border-cluster-teal/30">
                 <div className="absolute top-0 left-0 w-1 h-full bg-cluster-teal transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500" />
-                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Cumbum, Tamil Nadu</h4>
-                <p className="text-cluster-teal text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Unit 02</p>
-                <p className="text-cluster-muted text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">High-volume production facility anchoring the Tamil Nadu network for expansive scale.</p>
-                <div className="flex items-end gap-2">
+                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Cumbum Unit (Tamil Nadu)</h4>
+                <p className="text-cluster-teal text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Location: Tamil Nadu, India</p>
+                <div className="space-y-2 mb-6 sm:mb-8 text-xs sm:text-sm text-cluster-muted">
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
+                    <span>Manufacturing unit</span>
+                  </p>
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
+                    <span>Skilled workforce</span>
+                  </p>
+                  <p className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
+                    <span>Focused production for key categories</span>
+                  </p>
+                </div>
+                <div className="flex items-end gap-2 pt-4 border-t border-slate-200/60">
                   <b className="text-3xl sm:text-4xl font-manrope font-bold text-cluster-text leading-none"><Counter to={250} suffix="+" /></b>
-                  <span className="text-[11px] sm:text-xs uppercase tracking-widest text-cluster-muted mb-1">Employees</span>
+                  <span className="text-[11px] sm:text-xs uppercase tracking-widest text-cluster-muted mb-1">Skilled Artisans</span>
                 </div>
               </div>
             </StaggerReveal>
@@ -226,7 +260,7 @@ export default function ManufacturingPage() {
           <SectionHead
             kicker="Production Excellence"
             title="Our Manufacturing Capabilities."
-            right="03 / CAPABILITIES"
+            right="04 / CAPABILITIES"
           />
 
           <div className="mt-10 sm:mt-14 md:mt-16">
