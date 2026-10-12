@@ -24,6 +24,7 @@ import {
   Check,
   ShieldAlert,
   ChevronDown,
+  Instagram,
 } from "lucide-react";
 
 export default function OurFranchisePage() {
@@ -188,6 +189,18 @@ export default function OurFranchisePage() {
                   <p className="w-full text-slate-800 font-medium bg-cluster-coral/[0.05] border border-cluster-coral/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base leading-relaxed">
                     <strong className="text-slate-900 font-bold">Interested in owning a Crew-D franchise?</strong> We invite entrepreneurs, aspiring business owners, and retail partners to connect with us and explore the opportunity.
                   </p>
+                </div>
+
+                <div className="pt-4 w-full flex justify-center">
+                  <a
+                    href="https://www.instagram.com/crew.dfashion"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 hover:text-pink-600 font-semibold text-xs sm:text-sm shadow-xs transition-all hover:scale-105"
+                  >
+                    <Instagram className="w-4 h-4 text-pink-600" />
+                    <span>Follow @crew.dfashion on Instagram</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -787,6 +800,16 @@ export default function OurFranchisePage() {
                   className="w-full sm:w-auto justify-center"
                 >
                   WhatsApp
+                </Button>
+                <Button
+                  variant="outline-dark"
+                  size="default"
+                  href="https://www.instagram.com/crew.dfashion"
+                  external
+                  className="w-full sm:w-auto justify-center inline-flex items-center gap-2"
+                >
+                  <Instagram className="w-4 h-4 text-pink-600" />
+                  <span>@crew.dfashion</span>
                 </Button>
               </div>
             </div>

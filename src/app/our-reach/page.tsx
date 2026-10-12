@@ -89,7 +89,7 @@ export default function OurReach() {
         description="From manufacturing excellence to an expanding retail presence, Cluster connects quality apparel with retailers and customers across Kerala and Tamil Nadu."
         buttonText="EXPLORE OUR REACH"
         buttonHref="#glance"
-        backgroundImage="/ourreach.jpg"
+        backgroundImage="/ourreach.png"
         backgroundAlt="Cluster Apparel Growing Network and Retail Reach"
         scrollTargetId="glance"
       />

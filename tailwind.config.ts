@@ -25,6 +25,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "sans-serif"],
+        comfortaa: ["var(--font-comfortaa)", "Comfortaa", "sans-serif"],
+        heading: ["var(--font-comfortaa)", "Comfortaa", "sans-serif"],
+        title: ["var(--font-comfortaa)", "Comfortaa", "sans-serif"],
         manrope: ["var(--font-manrope)", "Manrope", "sans-serif"],
         numbers: ["var(--font-manrope)", "Manrope", "sans-serif"],
         mono: ["var(--font-manrope)", "Manrope", "monospace"],

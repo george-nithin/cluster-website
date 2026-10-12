@@ -55,7 +55,7 @@ export default function PartnerCta() {
                 Let&apos;s build the<br />
                 next generation<br />
                 of{" "}
-                <span className="font-serif italic font-normal text-cluster-coral capitalize tracking-normal inline-block">
+                <span className="font-comfortaa font-bold text-cluster-coral capitalize tracking-normal inline-block">
                   Apparel.
                 </span>
               </h2>

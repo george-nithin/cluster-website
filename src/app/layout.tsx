@@ -1,8 +1,41 @@
 import type { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+
+const comfortaa = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Comfortaa-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Comfortaa-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Comfortaa-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Comfortaa-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Comfortaa-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-comfortaa',
+  display: 'swap',
+});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,7 +98,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} font-sans min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${manrope.variable} ${comfortaa.variable} font-sans min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">
           {children}

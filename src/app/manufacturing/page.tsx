@@ -116,7 +116,7 @@ export default function ManufacturingPage() {
         description="Texvia by Cluster operates dual precision facilities producing high-velocity retail garments with zero-defect engineering."
         buttonText="EXPLORE TEXVIA"
         buttonHref="#texvia-overview"
-        backgroundImage="/manufacture.jpg"
+        backgroundImage="/manufacture.png"
         backgroundAlt="Texvia Textile Manufacturing Facility"
         scrollTargetId="stats"
       />

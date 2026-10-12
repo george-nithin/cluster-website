@@ -2,8 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
+    --font-comfortaa: 'Comfortaa', cursive, sans-serif;
     --font-inter: 'Inter', sans-serif;
     --font-manrope: 'Manrope', sans-serif;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -35,12 +68,24 @@
     font-variant-numeric: tabular-nums;
   }
 
+  h1, h2, h3, h4, h5, h6,
+  .font-heading,
+  .font-title,
+  .font-comfortaa,
+  [class*="text-hero"],
+  [class*="text-h1"],
+  [class*="text-h2"],
+  [class*="text-h3"] {
+    font-family: var(--font-comfortaa), 'Comfortaa', cursive, sans-serif !important;
+    font-weight: 700 !important;
+  }
+
   h1, h2, h3 {
-    @apply font-sans font-black uppercase tracking-tight leading-[1.04];
+    @apply uppercase tracking-tight leading-[1.04];
   }
 
   h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight;
+    @apply tracking-tight;
   }
 
   ::selection {

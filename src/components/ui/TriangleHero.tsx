@@ -225,7 +225,7 @@ export default function TriangleHero({
           {/* Main Heading */}
           <h1
             ref={headingRef}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.4rem] font-black text-white uppercase tracking-tight leading-[1.02] sm:leading-[0.98] mb-4 sm:mb-6 font-manrope break-words w-full"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[4.4rem] font-bold text-white uppercase tracking-tight leading-[1.02] sm:leading-[0.98] mb-4 sm:mb-6 font-comfortaa break-words w-full"
           >
             {heading}
             {headingHighlight && (

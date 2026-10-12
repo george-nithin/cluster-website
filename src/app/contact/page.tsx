@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
-import { Mail, Phone, MapPin, Building2, Send, Clock, ShieldCheck, Check, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, Send, Clock, ShieldCheck, Check, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import { Reveal } from '@/components/anim';
 import PartnerCta from '@/components/ui/PartnerCta';
 import TriangleHero from '@/components/ui/TriangleHero';
@@ -131,6 +131,55 @@ export default function ContactPage() {
               </div>
             </Reveal>
           </div>
+
+          {/* Official Social Channels */}
+          <Reveal direction="up" delay={0.3} duration={0.6}>
+            <div className="mt-8 bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-[0_12px_32px_rgba(5,24,36,0.06)] flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col text-center md:text-left">
+                <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
+                  Follow &amp; Connect
+                </span>
+                <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight mt-1">
+                  Official Social Channels
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-500 font-normal mt-0.5">
+                  Stay updated with brand lookbooks, seasonal drops, and franchise expansions.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href="https://www.instagram.com/cluster_outfits"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 hover:border-pink-500 hover:text-pink-600 bg-slate-50/60 hover:bg-pink-50/30 text-xs sm:text-sm font-semibold text-slate-700 transition-all shadow-2xs hover:scale-105"
+                >
+                  <Instagram className="w-4 h-4 text-pink-600" />
+                  <span>@cluster_outfits</span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/crew.dfashion"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 hover:border-pink-500 hover:text-pink-600 bg-slate-50/60 hover:bg-pink-50/30 text-xs sm:text-sm font-semibold text-slate-700 transition-all shadow-2xs hover:scale-105"
+                >
+                  <Instagram className="w-4 h-4 text-pink-600" />
+                  <span>@crew.dfashion (Crew-D)</span>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578611106514"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 hover:border-[#1877F2] hover:text-[#1877F2] bg-slate-50/60 hover:bg-blue-50/30 text-xs sm:text-sm font-semibold text-slate-700 transition-all shadow-2xs hover:scale-105"
+                >
+                  <Facebook className="w-4 h-4 text-[#1877F2]" />
+                  <span>Cluster Outfits Facebook</span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 

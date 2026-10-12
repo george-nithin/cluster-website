@@ -44,38 +44,51 @@ const EXISTING_BRANDS = [
   { name: "Cluster Studio", href: "/brands" },
   { name: "Matrutva Maternity", href: "/brands" },
   { name: "Texvia by Cluster", href: "/manufacturing" },
+  { name: "Crew-D Retail", href: "/our-franchise" },
 ];
 
 const SOCIAL_LINKS = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://facebook.com",
-    label: "Follow Cluster on Facebook",
+    href: "https://www.facebook.com/profile.php?id=61578611106514",
+    label: "Follow Cluster Outfits on Facebook",
+    handle: "Facebook",
   },
   {
-    name: "Instagram",
+    name: "Instagram (Cluster)",
     icon: Instagram,
-    href: "https://instagram.com",
-    label: "Follow Cluster on Instagram",
+    href: "https://www.instagram.com/cluster_outfits",
+    label: "Follow @cluster_outfits on Instagram",
+    handle: "@cluster_outfits",
+  },
+  {
+    name: "Instagram (Crew-D)",
+    icon: Instagram,
+    href: "https://www.instagram.com/crew.dfashion",
+    label: "Follow @crew.dfashion (Crew-D) on Instagram",
+    handle: "@crew.dfashion",
   },
   {
     name: "YouTube",
     icon: Youtube,
     href: "https://youtube.com",
     label: "Subscribe to Cluster on YouTube",
+    handle: "YouTube",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
     href: "https://linkedin.com",
     label: "Connect with Cluster on LinkedIn",
+    handle: "LinkedIn",
   },
   {
     name: "WhatsApp",
     icon: WhatsAppIcon,
     href: "https://wa.me/918848483741",
     label: "Chat with Cluster on WhatsApp",
+    handle: "WhatsApp",
   },
 ];
 
@@ -234,9 +247,15 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-200 bg-white hover:bg-[#0E7293] hover:border-[#0E7293] text-neutral-600 hover:text-white flex items-center justify-center transition-all duration-200 shadow-2xs hover:scale-105 active:scale-95"
+                title={social.label}
+                className="group relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-neutral-200 bg-white hover:bg-[#0E7293] hover:border-[#0E7293] text-neutral-600 hover:text-white flex items-center justify-center transition-all duration-200 shadow-2xs hover:scale-105 active:scale-95"
               >
                 <Icon className="w-4 h-4 sm:w-[17px] sm:h-[17px]" />
+                {social.handle && (
+                  <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-slate-900 text-white text-[10px] font-medium py-1 px-2 rounded-md whitespace-nowrap shadow-md z-30">
+                    {social.handle}
+                  </span>
+                )}
               </a>
             );
           })}

@@ -4,11 +4,12 @@ import Link from 'next/link';
 import Lookbook, { Look } from '@/components/ui/Lookbook';
 import { Reveal } from '@/components/anim';
 import PartnerCta from '@/components/ui/PartnerCta';
+import { Instagram } from 'lucide-react';
 
 const clusterLooks: Look[] = [
-  { src: '/dress/Ladies Tops.jpg', name: 'Ladies Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies Tops.webp', name: 'Ladies Tops', w: 1200, h: 1800, details: [] },
   { src: '/dress/Ladies bottom.jpg', name: 'Ladies Bottom', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Short Tops.jpg', name: 'Short Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Short Tops.webp', name: 'Short Tops', w: 1200, h: 1800, details: [] },
   { src: '/dress/Nightwear & Nighties.jpg', name: 'Nightwear & Nighties', w: 1200, h: 1800, details: [] },
   { src: '/dress/Nighties .jpg', name: 'Nighties', w: 1200, h: 1800, details: [] },
 ];
@@ -85,6 +86,18 @@ export default function Brands() {
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Short Tops</span>
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Ladies Tops</span>
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Nightwear & Nighties</span>
+                </div>
+
+                <div className="pt-6 w-full">
+                  <a
+                    href="https://www.instagram.com/cluster_outfits"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white hover:border-cluster-blue hover:text-cluster-blue text-xs font-semibold text-slate-700 transition-all hover:scale-105 shadow-2xs"
+                  >
+                    <Instagram className="w-3.5 h-3.5 text-pink-600" />
+                    <span>Follow @cluster_outfits on Instagram</span>
+                  </a>
                 </div>
               </div>
             </Reveal>
