@@ -49,7 +49,7 @@ const THREE_COMPANIES = [
     categoryBadgeColor: "bg-emerald-100/80 text-emerald-800 border-emerald-200/60",
     title: "Texvia by Cluster",
     description:
-      "Dedicated high-precision manufacturing infrastructure operating across Kerala (100+ artisans) and Kambam, Tamil Nadu (250+ technicians) with zero-defect quality control.",
+      "Dedicated high-precision manufacturing infrastructure operating across Kerala (100+ artisans) and Cumbum, Tamil Nadu (250+ technicians) with zero-defect quality control.",
     logoPath: "/logos/texvia-logo-clean.png",
     logoAlt: "Texvia by Cluster Official Logo",
     color: "#22C195",
