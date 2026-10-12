@@ -1,5 +1,6 @@
 import Container from '@/components/ui/Container';
 import Image from 'next/image';
+import Link from 'next/link';
 import Lookbook, { Look } from '@/components/ui/Lookbook';
 import { Reveal } from '@/components/anim';
 import PartnerCta from '@/components/ui/PartnerCta';
@@ -72,7 +73,15 @@ export default function Brands() {
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-8 text-gray-700 font-light w-full border-t border-gray-200 pt-6 sm:pt-8 text-sm sm:text-base">
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Ladies Bottoms</span>
+                  <Link href="/ladies-bottom" className="flex items-center justify-between group py-1.5 px-3 -mx-3 rounded-xl hover:bg-cluster-blue/5 transition-all text-gray-900 font-medium">
+                    <span className="flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-full bg-cluster-blue group-hover:scale-125 transition-transform"></span>
+                      <span className="group-hover:text-cluster-blue font-semibold transition-colors">Ladies Bottoms</span>
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-cluster-blue bg-cluster-blue/10 px-2 py-0.5 rounded-full group-hover:bg-cluster-blue group-hover:text-white transition-all">
+                      View Series →
+                    </span>
+                  </Link>
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Short Tops</span>
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Ladies Tops</span>
                   <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Nightwear & Nighties</span>
@@ -95,15 +104,37 @@ export default function Brands() {
         </Reveal>
         <Reveal direction="up" delay={0.15} className="w-full">
           <div className="w-full flex overflow-x-auto snap-x snap-mandatory pb-8 sm:pb-12 hide-scrollbar px-4 md:px-12 xl:px-24 gap-4 sm:gap-6 md:gap-8">
-            {clusterLooks.map((look) => (
-              <div key={look.src} className="relative shrink-0 snap-center w-[75vw] sm:w-[48vw] md:w-[38vw] lg:w-[28vw] aspect-[2/3] overflow-hidden group rounded-xl shadow-xs">
-                <Image src={look.src} alt={look.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 translate-y-0 sm:translate-y-4 sm:group-hover:translate-y-0 text-white">
-                  <p className="font-serif text-lg sm:text-2xl tracking-wide">{look.name}</p>
+            {clusterLooks.map((look) => {
+              const isLadiesBottom = look.name.toLowerCase().includes('ladies bottom');
+              const CardInner = (
+                <div className="relative w-full h-full">
+                  <Image src={look.src} alt={look.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 translate-y-0 sm:translate-y-4 sm:group-hover:translate-y-0 text-white">
+                    <p className="font-serif text-lg sm:text-2xl tracking-wide">{look.name}</p>
+                    {isLadiesBottom && (
+                      <span className="inline-flex items-center gap-1.5 mt-1 text-xs font-sans font-bold uppercase tracking-wider text-cluster-coral">
+                        Explore 5 Styles →
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return isLadiesBottom ? (
+                <Link
+                  key={look.src}
+                  href="/ladies-bottom"
+                  className="relative shrink-0 snap-center w-[75vw] sm:w-[48vw] md:w-[38vw] lg:w-[28vw] aspect-[2/3] overflow-hidden group rounded-xl shadow-xs cursor-pointer ring-2 ring-transparent hover:ring-cluster-coral/50 transition-all"
+                >
+                  {CardInner}
+                </Link>
+              ) : (
+                <div key={look.src} className="relative shrink-0 snap-center w-[75vw] sm:w-[48vw] md:w-[38vw] lg:w-[28vw] aspect-[2/3] overflow-hidden group rounded-xl shadow-xs">
+                  {CardInner}
+                </div>
+              );
+            })}
           </div>
         </Reveal>
       </section>
