@@ -120,14 +120,26 @@ export default function ContactPage() {
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4">
-                  Office Address
+                  Office &amp; Factory
                 </h3>
-                <address className="not-italic flex flex-col gap-1 text-slate-600 text-sm sm:text-base leading-relaxed mt-auto">
-                  <span className="font-semibold text-slate-800">3rd Floor, VIII/307-1</span>
-                  <span>Thujanth B&amp;B Tower, Upstair of QRS</span>
-                  <span>TVM Road, Pulamon (PO), Kottarakara</span>
-                  <span>Kollam, Kerala – 691531</span>
-                </address>
+                <div className="flex flex-col gap-3 text-left text-xs sm:text-sm text-slate-600 leading-relaxed mt-auto w-full">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-coral font-manrope mb-1">Registered Office</span>
+                    <address className="not-italic flex flex-col text-slate-700">
+                      <span className="font-semibold text-slate-800">3rd Floor, VIII/307-1, Thujanth B&amp;B Tower</span>
+                      <span>TVM Road, Pulamon (PO), Kottarakara</span>
+                      <span>Kollam, Kerala – 691531</span>
+                    </address>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-teal font-manrope mb-1">Manufacturing Unit (Texvia)</span>
+                    <address className="not-italic flex flex-col text-slate-700">
+                      <span className="font-semibold text-slate-800">10-K2, P Kuruppathevar Building</span>
+                      <span>Near Cumbum New Bus Stand, Cumbum</span>
+                      <span>Kambam, Theni, Tamil Nadu – 625516</span>
+                    </address>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>

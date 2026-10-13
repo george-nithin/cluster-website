@@ -8,7 +8,7 @@ import TexviaOverview from "@/components/manufacturing/TexviaOverview";
 import PartnerCta from "@/components/ui/PartnerCta";
 import TriangleHero from "@/components/ui/TriangleHero";
 
-import { Layers, Cpu, Users, ShieldCheck, Boxes, Truck } from "lucide-react";
+import { Layers, Cpu, Users, ShieldCheck, Boxes, Truck, MapPin } from "lucide-react";
 
 export const metadata: Metadata = { title: "Manufacturing — Texvia by Cluster" };
 
@@ -223,23 +223,39 @@ export default function ManufacturingPage() {
                 </div>
               </div>
 
-              {/* Cumbum Unit (Tamil Nadu) Card */}
+              {/* Texvia Manufacturing Unit - Cumbum, Tamil Nadu */}
               <div className="group relative overflow-hidden rounded-[20px] sm:rounded-[24px] border border-cluster-border bg-cluster-surface shadow-sm p-6 sm:p-8 hover:shadow-md transition-all duration-500 hover:border-cluster-teal/30">
                 <div className="absolute top-0 left-0 w-1 h-full bg-cluster-teal transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-500" />
-                <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text mb-1">Cumbum Unit (Tamil Nadu)</h4>
-                <p className="text-cluster-teal text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Location: Tamil Nadu, India</p>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h4 className="text-xl sm:text-2xl font-black uppercase text-cluster-text">Texvia by Cluster</h4>
+                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-cluster-teal/10 text-cluster-teal font-manrope">Manufacturing Unit</span>
+                </div>
+                <p className="text-cluster-teal text-xs sm:text-sm tracking-widest uppercase font-semibold font-manrope mb-3 sm:mb-4">Cumbum Facility · Tamil Nadu, India</p>
+                
+                {/* Official Facility Address */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs mb-5 text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                  <div className="flex items-start gap-2.5">
+                    <MapPin className="w-4 h-4 text-cluster-teal shrink-0 mt-0.5" />
+                    <address className="not-italic flex flex-col">
+                      <span className="font-bold text-slate-900">10-K2, P Kuruppathevar Building</span>
+                      <span className="text-slate-600">Near Cumbum New Bus Stand, Cumbum</span>
+                      <span className="text-slate-600">Kambam, Theni District, Tamil Nadu – 625516</span>
+                    </address>
+                  </div>
+                </div>
+
                 <div className="space-y-2 mb-6 sm:mb-8 text-xs sm:text-sm text-cluster-muted">
                   <p className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
-                    <span>Manufacturing unit</span>
+                    <span>State-of-the-art apparel production facility</span>
                   </p>
                   <p className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
-                    <span>Skilled workforce</span>
+                    <span>High-velocity cutting, stitching, and finishing lines</span>
                   </p>
                   <p className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-cluster-teal shrink-0" />
-                    <span>Focused production for key categories</span>
+                    <span>Powers Cluster Womenswear &amp; Matrutva collections</span>
                   </p>
                 </div>
                 <div className="flex items-end gap-2 pt-4 border-t border-slate-200/60">

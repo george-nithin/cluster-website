@@ -7,9 +7,9 @@ import PartnerCta from '@/components/ui/PartnerCta';
 import { Instagram } from 'lucide-react';
 
 const clusterLooks: Look[] = [
-  { src: '/dress/Ladies Tops.webp', name: 'Ladies Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies Tops.webp', name: 'Long Kurti', w: 1200, h: 1800, details: [] },
   { src: '/dress/Ladies bottom.jpg', name: 'Ladies Bottom', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Short Tops.webp', name: 'Short Tops', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Short Tops.jpeg', name: 'Short Tops', w: 1200, h: 1800, details: [] },
   { src: '/dress/Nightwear & Nighties.jpg', name: 'Nightwear & Nighties', w: 1200, h: 1800, details: [] },
   { src: '/dress/Nighties .jpg', name: 'Nighties', w: 1200, h: 1800, details: [] },
 ];
@@ -17,9 +17,9 @@ const clusterLooks: Look[] = [
 const maternityLooks: Look[] = [
   { src: '/dress/Maternity Feeding Bras.jpg', name: 'Maternity Feeding Bras', w: 1200, h: 1800, details: [] },
   { src: '/dress/Maternity Nightie.jpg', name: 'Maternity Nightie', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Maternity Top.jpg', name: 'Maternity Top', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Top.jpeg', name: 'Maternity Top', w: 1200, h: 1800, details: [] },
   { src: '/dress/Lounge Wear.jpg', name: 'Lounge Wear', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-09.jpg', name: 'Maternity Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/look-09.jpeg', name: 'Maternity Dress', w: 1200, h: 1800, details: [] },
 ];
 
 export default function Brands() {

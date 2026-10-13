@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import FloatingContactButtons from '@/components/ui/FloatingContactButtons';
 
 const comfortaa = localFont({
   src: [
@@ -40,14 +41,12 @@ const comfortaa = localFont({
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
 
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
-  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -104,6 +103,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingContactButtons />
       </body>
     </html>
   );
