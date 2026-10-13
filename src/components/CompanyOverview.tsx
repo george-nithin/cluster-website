@@ -34,7 +34,7 @@ const THREE_COMPANIES = [
     categoryBadgeColor: "bg-orange-100/80 text-orange-800 border-orange-200/60",
     title: "Matrutva",
     description:
-      "Focused exclusively on medical-grade ergonomic maternity, feeding bras, soft maternity nighties, and nursing wear engineered for comfort and everyday maternal life.",
+      "Focused exclusively on ergonomic maternity dresses, kurtas, feeding dresses & tops, nightwear, and feeding bras engineered for comfort and everyday maternal life.",
     logoPath: "/logos/matrutva-clean-logo.png",
     logoAlt: "Matrutva Celebrating Motherhood Logo",
     color: "#FF8A65",

@@ -350,7 +350,7 @@ export default function About() {
                     Cluster &amp; Matrutva
                   </h3>
                   <p className="text-xs sm:text-[13.5px] text-white/90 leading-relaxed font-light">
-                    Our consumer brand pillars: Cluster Womenswear (everyday tops, bottoms, and nightwear) and Matrutva (dedicated nursing and maternity apparel engineered for mother and baby comfort).
+                    Our consumer brand pillars: Cluster Womenswear (bottoms, kurtas, short tops, dresses, shirts, and nightwear) and Matrutva (maternity dresses, kurtas, feeding apparel, nightwear, and feeding bras).
                   </p>
                 </div>
 

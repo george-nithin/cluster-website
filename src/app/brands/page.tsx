@@ -7,19 +7,22 @@ import PartnerCta from '@/components/ui/PartnerCta';
 import { Instagram } from 'lucide-react';
 
 const clusterLooks: Look[] = [
-  { src: '/dress/Ladies Tops.webp', name: 'Long Kurti', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Ladies bottom.jpg', name: 'Ladies Bottom', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Short Tops.jpeg', name: 'Short Tops', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Nightwear & Nighties.jpg', name: 'Nightwear & Nighties', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Nighties .jpg', name: 'Nighties', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies bottom.jpg', name: 'Bottom', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Ladies Tops.webp', name: 'Kurtas', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Short Tops.jpeg', name: 'Short Top', w: 1200, h: 1800, details: [] },
+  { src: '/dress/ladies dress.webp', name: 'Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/ladies shirt.jpg', name: 'Shirt', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Nightwear & Nighties.jpg', name: 'Night Wear', w: 1200, h: 1800, details: [] },
 ];
 
 const maternityLooks: Look[] = [
-  { src: '/dress/Maternity Feeding Bras.jpg', name: 'Maternity Feeding Bras', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Maternity Nightie.jpg', name: 'Maternity Nightie', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Maternity Top.jpeg', name: 'Maternity Top', w: 1200, h: 1800, details: [] },
-  { src: '/dress/Lounge Wear.jpg', name: 'Lounge Wear', w: 1200, h: 1800, details: [] },
-  { src: '/dress/look-09.jpeg', name: 'Maternity Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/maternity dress.jpg', name: 'Maternity Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/maternity kurta.jpg', name: 'Maternity Kurta', w: 1200, h: 1800, details: [] },
+  { src: '/dress/look-09.jpeg', name: 'Maternity Feeding Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/feeding top.jpg', name: 'Maternity Feeding Top', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Nightie.jpg', name: 'Maternity Night Dress', w: 1200, h: 1800, details: [] },
+  { src: '/dress/maternity suit.jpg', name: 'Maternity Night Suit', w: 1200, h: 1800, details: [] },
+  { src: '/dress/Maternity Feeding Bras.jpg', name: 'Feeding Bra', w: 1200, h: 1800, details: [] },
 ];
 
 export default function Brands() {
@@ -73,19 +76,21 @@ export default function Brands() {
                   Redefining the contemporary wardrobe with versatile, trend-forward pieces designed for the modern lifestyle. From elegant evening wear to effortless weekend comfort, Cluster embodies sophistication in every thread.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-8 text-gray-700 font-light w-full border-t border-gray-200 pt-6 sm:pt-8 text-sm sm:text-base">
-                  <Link href="/ladies-bottom" className="flex items-center justify-between group py-1.5 px-3 -mx-3 rounded-xl hover:bg-cluster-blue/5 transition-all text-gray-900 font-medium">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-8 text-gray-700 font-light w-full border-t border-gray-200 pt-6 sm:pt-8 text-sm sm:text-base">
+                  <Link href="/ladies-bottom" className="flex items-center justify-between group py-1 px-3 -mx-3 rounded-xl hover:bg-cluster-blue/5 transition-all text-gray-900 font-medium">
                     <span className="flex items-center gap-3">
                       <span className="w-2 h-2 rounded-full bg-cluster-blue group-hover:scale-125 transition-transform"></span>
-                      <span className="group-hover:text-cluster-blue font-semibold transition-colors">Ladies Bottoms</span>
+                      <span className="group-hover:text-cluster-blue font-semibold transition-colors">Bottom</span>
                     </span>
                     <span className="text-xs font-bold uppercase tracking-wider text-cluster-blue bg-cluster-blue/10 px-2 py-0.5 rounded-full group-hover:bg-cluster-blue group-hover:text-white transition-all">
                       View Series →
                     </span>
                   </Link>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Short Tops</span>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Ladies Tops</span>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Nightwear & Nighties</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Kurtas</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Short Top</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Dress</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Shirt</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>Night Wear</span>
                 </div>
 
                 <div className="pt-6 w-full">
@@ -118,7 +123,7 @@ export default function Brands() {
         <Reveal direction="up" delay={0.15} className="w-full">
           <div className="w-full flex overflow-x-auto snap-x snap-mandatory pb-8 sm:pb-12 hide-scrollbar px-4 md:px-12 xl:px-24 gap-4 sm:gap-6 md:gap-8">
             {clusterLooks.map((look) => {
-              const isLadiesBottom = look.name.toLowerCase().includes('ladies bottom');
+              const isLadiesBottom = look.name.toLowerCase().includes('bottom');
               const CardInner = (
                 <div className="relative w-full h-full">
                   <Image src={look.src} alt={look.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -174,11 +179,14 @@ export default function Brands() {
                   Supporting you through every beautiful stage of motherhood. Matrutva focuses on exceptionally comfortable, functional, and stylish maternity apparel designed to adapt to your changing body.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-8 text-gray-700 font-light w-full border-t border-gray-300 pt-6 sm:pt-8 text-sm sm:text-base">
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Feeding Bras</span>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Nighties</span>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Tops</span>
-                  <span className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Lounge Wear</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-8 text-gray-700 font-light w-full border-t border-gray-300 pt-6 sm:pt-8 text-sm sm:text-base">
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Dress</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Kurta</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Feeding Dress</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Feeding Top</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Night Dress</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Maternity Night Suit</span>
+                  <span className="flex items-center gap-3 py-1"><span className="w-1.5 h-1.5 rounded-full bg-[#8c7e75]"></span>Feeding Bra</span>
                 </div>
               </div>
             </Reveal>

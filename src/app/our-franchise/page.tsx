@@ -277,7 +277,7 @@ export default function OurFranchisePage() {
                       Cluster – Everyday Fashion
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                      Explore a range of bottoms, short tops, tops, and nightwear designed for everyday style and comfort.
+                      Explore our signature range of bottoms, kurtas, short tops, dresses, shirts, and nightwear designed for everyday style and comfort.
                     </p>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default function OurFranchisePage() {
                       Matrutva – Maternity Wear
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                      Discover maternity bras, maternity bottoms, and maternity nightwear designed with comfort and the needs of motherhood in mind.
+                      Discover maternity dresses, kurtas, feeding dresses &amp; tops, night dresses, night suits, and feeding bras designed with comfort and maternal care in mind.
                     </p>
                   </div>
                 </div>
