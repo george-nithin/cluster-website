@@ -28,25 +28,35 @@ const maternityLooks: Look[] = [
 export default function Brands() {
   return (
     <div className="flex flex-col w-full bg-white font-sans">
-      {/* Immersive Hero */}
-      <section className="relative w-full aspect-[16/10] sm:aspect-auto min-h-[260px] sm:min-h-[440px] md:min-h-[500px] h-auto sm:h-[55vh] md:h-[65vh] lg:h-[72vh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <Image src="/hero2.png" alt="Fashion Hero" fill className="object-cover object-center sm:object-[center_30%]" priority />
-        <div className="absolute inset-0 bg-black/35 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
-        <Reveal direction="up" duration={0.9} className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto text-white">
-          <div className="py-4 sm:py-8">
-            <span className="uppercase tracking-[0.25em] sm:tracking-[0.4em] text-[10px] sm:text-xs md:text-sm font-bold mb-2 sm:mb-4 text-cluster-coral block">
+      {/* Brand Page Hero Banner */}
+      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[55vh] md:h-[70vh] lg:h-[80vh] max-h-[920px] overflow-hidden bg-white">
+        <Image
+          src="/hero2.png"
+          alt="Matrutva Maternity - House of Brands"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+      </section>
+
+      {/* House of Brands Intro Section */}
+      <section className="w-full py-10 sm:py-14 md:py-16 bg-white border-b border-gray-100">
+        <Container>
+          <Reveal direction="up" className="max-w-4xl mx-auto text-center px-4">
+            <span className="uppercase tracking-[0.25em] sm:tracking-[0.35em] text-xs sm:text-sm font-bold mb-3 text-cluster-coral block">
               House of Brands
             </span>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-tight sm:leading-none mb-2 sm:mb-6 text-white">
-              MODERN ELEGANCE.<br />
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight sm:leading-none mb-3 sm:mb-4 text-gray-900">
+              MODERN ELEGANCE.<br className="hidden sm:inline" />{" "}
               <span className="text-cluster-coral">UNCOMPROMISED COMFORT.</span>
             </h1>
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light text-white/85 max-w-2xl leading-relaxed mx-auto line-clamp-2 sm:line-clamp-none">
+            <p className="text-xs sm:text-base md:text-lg font-light text-gray-600 max-w-2xl leading-relaxed mx-auto">
               Cluster and Matrutva represent our commitment to empowering women through exceptionally crafted apparel for every stage of life.
             </p>
-          </div>
-        </Reveal>
+          </Reveal>
+        </Container>
       </section>
 
       {/* Cluster Brand Section - Image Left, Text Right */}
