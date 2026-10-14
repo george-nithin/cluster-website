@@ -30,7 +30,7 @@ export default function Brands() {
     <div className="flex flex-col w-full bg-white font-sans">
       {/* Immersive Hero */}
       <section className="relative w-full aspect-[16/10] sm:aspect-auto min-h-[260px] sm:min-h-[440px] md:min-h-[500px] h-auto sm:h-[55vh] md:h-[65vh] lg:h-[72vh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <Image src="/hero3.png" alt="Fashion Hero" fill className="object-cover object-center sm:object-[center_30%]" priority />
+        <Image src="/hero2.png" alt="Fashion Hero" fill className="object-cover object-center sm:object-[center_30%]" priority />
         <div className="absolute inset-0 bg-black/35 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
         <Reveal direction="up" duration={0.9} className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto text-white">
