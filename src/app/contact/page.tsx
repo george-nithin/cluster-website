@@ -97,6 +97,9 @@ export default function ContactPage() {
                   Phone Number
                 </h3>
                 <div className="flex flex-col gap-2 text-slate-600 text-sm sm:text-base mt-auto">
+                  <a href="tel:+919995832016" className="hover:text-cluster-coral transition-colors font-medium">
+                    +91 99958 32016
+                  </a>
                   <a href="tel:+918848483741" className="hover:text-cluster-coral transition-colors font-medium">
                     +91 88484 83741
                   </a>

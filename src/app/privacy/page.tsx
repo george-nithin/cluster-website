@@ -320,6 +320,10 @@ export default function PrivacyPolicyPage() {
                         <Phone className="w-4 h-4 text-cluster-teal shrink-0" />
                         <div>
                           <strong>Phone:</strong>{" "}
+                          <a href="tel:+919995832016" className="text-slate-800 hover:text-cluster-teal font-medium">
+                            +91 99958 32016
+                          </a>
+                          {" / "}
                           <a href="tel:+918848483741" className="text-slate-800 hover:text-cluster-teal font-medium">
                             +91 88484 83741
                           </a>

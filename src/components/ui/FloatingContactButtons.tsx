@@ -24,11 +24,11 @@ export default function FloatingContactButtons() {
         <span
           className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-slate-900/95 backdrop-blur-md px-3 py-1.5 text-xs font-medium text-white shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 hidden sm:block"
         >
-          Call: +91 88484 83741
+          Call: +91 99958 32016 / +91 88484 83741
         </span>
         <a
-          href="tel:+918848483741"
-          aria-label="Call Cluster Outfits at +91 88484 83741"
+          href="tel:+919995832016"
+          aria-label="Call Cluster Outfits at +91 99958 32016"
           className="flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-full bg-[#0E7293] text-white shadow-[0_8px_24px_rgba(14,114,147,0.35)] transition-all duration-300 hover:bg-[#0A5872] hover:scale-110 active:scale-95 hover:shadow-[0_12px_28px_rgba(14,114,147,0.45)] focus:outline-none focus:ring-4 focus:ring-[#0E7293]/30"
         >
           <Phone className="h-5 w-5 sm:h-5.5 sm:w-5.5 stroke-[2.2]" />
@@ -43,7 +43,7 @@ export default function FloatingContactButtons() {
           Chat on WhatsApp
         </span>
         <a
-          href="https://wa.me/918848483741?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products%20and%20franchise%20opportunities."
+          href="https://wa.me/919995832016?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products%20and%20franchise%20opportunities."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with Cluster Outfits on WhatsApp"
