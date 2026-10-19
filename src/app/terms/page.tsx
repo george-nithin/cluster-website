@@ -147,7 +147,7 @@ export default function TermsOfServicePage() {
                   <br />
                   Incorporated under the Indian Companies Act, 2013
                   <br />
-                  Registered Office: 3rd Floor, VIII/307-1, Thujanth B&amp;B Tower, TVM Road, Pulamon (PO), Kottarakara, Kollam, Kerala – 691531, India
+                  Registered Office: Thujanth, B&amp;B Tower, TVM road, near Indian Coffee House, Pulamon Junction, Kottarakkara, Keralam 691531
                 </div>
                 <p>
                   Cluster Outfits operates as an integrated apparel conglomerate managing brand incubation (<strong className="text-slate-900">Cluster</strong> and <strong className="text-slate-900">Matrutva</strong>), high-velocity industrial manufacturing (<strong className="text-slate-900">Texvia Garments</strong>), multi-state retail distribution, and franchise operations (<strong className="text-slate-900">Crew-D</strong>).

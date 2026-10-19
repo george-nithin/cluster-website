@@ -401,13 +401,23 @@ export default function Distribution() {
                       Retail Stores
                     </h2>
 
-                    <div className="flex items-center">
+                    <div className="flex flex-wrap items-center gap-3">
                       <Button
                         variant="blue"
                         href="#interactive-map"
                       >
                         Explore Interactive Map
                       </Button>
+                      <a
+                        href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold tracking-wider uppercase backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
+                        title="View Cluster Outfits HQ on Google Maps"
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-cluster-coral" />
+                        <span>Google Maps ↗</span>
+                      </a>
                     </div>
                   </div>
 

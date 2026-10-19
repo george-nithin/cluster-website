@@ -118,8 +118,14 @@ export default function ContactPage() {
             {/* Card 3: Office Address */}
             <Reveal direction="up" delay={0.25} duration={0.6}>
               <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col items-center text-center shadow-[0_12px_32px_rgba(5,24,36,0.08)] border border-slate-100 hover:shadow-[0_20px_48px_rgba(5,24,36,0.12)] hover:-translate-y-1 transition-all duration-300 h-full">
-                <div className="relative inline-flex items-center justify-center mb-5 sm:mb-6">
-                  <svg className="w-12 h-12 sm:w-14 sm:h-14 text-slate-800" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <a
+                  href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center justify-center mb-5 sm:mb-6 group/icon hover:scale-105 transition-transform cursor-pointer"
+                  title="View Cluster Outfits location on Google Maps"
+                >
+                  <svg className="w-12 h-12 sm:w-14 sm:h-14 text-slate-800 group-hover/icon:text-cluster-coral transition-colors" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="12 40 24 35 40 40 52 35 52 51 40 55 24 50 12 55" />
                     <line x1="24" y1="35" x2="24" y2="50" />
                     <line x1="40" y1="40" x2="40" y2="55" />
@@ -129,26 +135,74 @@ export default function ContactPage() {
                   <span className="absolute -top-1 -right-1 w-6 h-6 bg-[#DE4326] text-white rounded-full flex items-center justify-center shadow-md ring-2 ring-white">
                     <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </span>
-                </div>
+                </a>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4">
                   Office &amp; Factory
                 </h3>
                 <div className="flex flex-col gap-3 text-left text-xs sm:text-sm text-slate-600 leading-relaxed mt-auto w-full">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                    <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-coral font-manrope mb-1">Registered Office</span>
+                  <a
+                    href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100/80 border border-slate-100 hover:border-cluster-coral/40 transition-all group/office block cursor-pointer"
+                    title="Open Registered Office location in Google Maps"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-coral font-manrope">
+                        Registered Office
+                      </span>
+                      <span className="text-[10px] font-semibold text-cluster-coral opacity-80 group-hover/office:opacity-100 flex items-center gap-1">
+                        View on Map ↗
+                      </span>
+                    </div>
                     <address className="not-italic flex flex-col text-slate-700">
-                      <span className="font-semibold text-slate-800">3rd Floor, VIII/307-1, Thujanth B&amp;B Tower</span>
-                      <span>TVM Road, Pulamon (PO), Kottarakara</span>
-                      <span>Kollam, Kerala – 691531</span>
+                      <span className="font-semibold text-slate-800">Thujanth, B&amp;B Tower</span>
+                      <span>TVM Road, near Indian Coffee House</span>
+                      <span>Pulamon Junction, Kottarakkara, Keralam 691531</span>
                     </address>
-                  </div>
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                    <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-teal font-manrope mb-1">Manufacturing Unit (Texvia)</span>
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/GdVJD8dj4W8fbHE29"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100/80 border border-slate-100 hover:border-cluster-teal/40 transition-all group/texvia block cursor-pointer"
+                    title="Open Texvia Cumbum location in Google Maps"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-bold block text-[10px] sm:text-[11px] uppercase tracking-wider text-cluster-teal font-manrope">
+                        Manufacturing Unit (Texvia)
+                      </span>
+                      <span className="text-[10px] font-semibold text-cluster-teal opacity-80 group-hover/texvia:opacity-100 flex items-center gap-1">
+                        View on Map ↗
+                      </span>
+                    </div>
                     <address className="not-italic flex flex-col text-slate-700">
                       <span className="font-semibold text-slate-800">10-K2, P Kuruppathevar Building</span>
                       <span>Near Cumbum New Bus Stand, Cumbum</span>
                       <span>Kambam, Theni, Tamil Nadu – 625516</span>
                     </address>
+                  </a>
+                  <div className="grid grid-cols-2 gap-2 mt-1">
+                    <a
+                      href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-lg bg-cluster-coral/10 hover:bg-cluster-coral text-cluster-coral hover:text-white text-[11px] font-bold uppercase tracking-wider font-manrope transition-all duration-200"
+                      title="View Cluster Kerala HQ on Google Maps"
+                    >
+                      <MapPin className="w-3.5 h-3.5 shrink-0" />
+                      <span>Kerala HQ ↗</span>
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/GdVJD8dj4W8fbHE29"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 px-2.5 py-2 rounded-lg bg-cluster-teal/10 hover:bg-cluster-teal text-cluster-teal hover:text-white text-[11px] font-bold uppercase tracking-wider font-manrope transition-all duration-200"
+                      title="View Texvia Cumbum Facility on Google Maps"
+                    >
+                      <MapPin className="w-3.5 h-3.5 shrink-0" />
+                      <span>Texvia Cumbum ↗</span>
+                    </a>
                   </div>
                 </div>
               </div>

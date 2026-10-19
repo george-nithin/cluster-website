@@ -159,11 +159,32 @@ export default function Footer() {
                 </span>
               </a>
 
-              <div className="inline-flex items-center gap-2.5 text-neutral-600">
-                <span className="w-6 h-6 rounded-md bg-neutral-100 flex items-center justify-center text-cluster-teal">
-                  <MapPin className="w-3.5 h-3.5" />
-                </span>
-                <span>Kerala &amp; Tamil Nadu, India</span>
+              <div className="flex flex-col gap-1.5 pt-0.5">
+                <div className="inline-flex items-center gap-2.5 text-neutral-600">
+                  <span className="w-6 h-6 rounded-md bg-neutral-100 flex items-center justify-center text-cluster-teal">
+                    <MapPin className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="font-medium text-slate-700">Locations:</span>
+                  <a
+                    href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Thujanth, B&amp;B Tower, TVM road, near Indian Coffee House, Pulamon Junction, Kottarakkara, Keralam 691531"
+                    className="text-neutral-600 hover:text-cluster-coral hover:underline font-medium transition-colors cursor-pointer"
+                  >
+                    Kottarakkara, Kerala ↗
+                  </a>
+                  <span className="text-neutral-300">•</span>
+                  <a
+                    href="https://maps.app.goo.gl/GdVJD8dj4W8fbHE29"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Texvia Cumbum (Tamil Nadu) Facility on Google Maps"
+                    className="text-neutral-600 hover:text-cluster-teal hover:underline font-medium transition-colors cursor-pointer"
+                  >
+                    Texvia Cumbum ↗
+                  </a>
+                </div>
               </div>
             </div>
           </div>

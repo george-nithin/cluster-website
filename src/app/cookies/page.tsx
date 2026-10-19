@@ -285,7 +285,7 @@ export default function CookiePolicyPage() {
                     contact@clusteroutfits.com
                   </a>
                   <br />
-                  Registered Office: 3rd Floor, VIII/307-1, Thujanth B&amp;B Tower, Pulamon (PO), Kottarakara, Kollam, Kerala – 691531, India
+                  Registered Office: Thujanth, B&amp;B Tower, TVM road, near Indian Coffee House, Pulamon Junction, Kottarakkara, Keralam 691531
                 </div>
               </div>
             </section>

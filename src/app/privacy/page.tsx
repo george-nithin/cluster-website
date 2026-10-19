@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                   <br />
                   CIN / Corporate Entity: Apparel Manufacturing &amp; Wholesale Distribution
                   <br />
-                  Registered Office: 3rd Floor, VIII/307-1, Thujanth B&amp;B Tower, TVM Road, Pulamon (PO), Kottarakara, Kollam, Kerala – 691531, India
+                  Registered Office: Thujanth, B&amp;B Tower, TVM road, near Indian Coffee House, Pulamon Junction, Kottarakkara, Keralam 691531
                 </div>
                 <p>
                   It governs how we collect, store, process, and disclose information across our corporate brands including <strong className="text-slate-900">Cluster</strong> (contemporary womenswear), <strong className="text-slate-900">Matrutva</strong> (maternity and nursing apparel), <strong className="text-slate-900">Texvia</strong> (smart manufacturing facilities), and the <strong className="text-slate-900">Crew-D</strong> retail franchise network.
@@ -297,15 +297,21 @@ export default function PrivacyPolicyPage() {
                     </p>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="w-4 h-4 text-cluster-teal shrink-0 mt-0.5" />
+                    <a
+                      href="https://maps.app.goo.gl/mK36pXx6K9HJMzsB7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Registered Office on Google Maps"
+                      className="flex items-start gap-3 group/loc hover:text-cluster-teal transition-colors"
+                    >
+                      <MapPin className="w-4 h-4 text-cluster-teal shrink-0 mt-0.5 group-hover/loc:scale-110 transition-transform" />
                       <div>
-                        <strong>Registered Office:</strong>
+                        <strong className="group-hover/loc:underline">Registered Office (View on Map ↗):</strong>
                         <p className="text-slate-600 mt-0.5">
-                          3rd Floor, VIII/307-1, Thujanth B&amp;B Tower, TVM Road, Pulamon (PO), Kottarakara, Kollam, Kerala – 691531, India
+                          Thujanth, B&amp;B Tower, TVM road, near Indian Coffee House, Pulamon Junction, Kottarakkara, Keralam 691531
                         </p>
                       </div>
-                    </div>
+                    </a>
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
                         <Mail className="w-4 h-4 text-cluster-teal shrink-0" />

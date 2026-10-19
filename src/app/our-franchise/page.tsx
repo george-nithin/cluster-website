@@ -756,15 +756,15 @@ export default function OurFranchisePage() {
       <section id="franchise-desk" className="py-14 sm:py-20 bg-slate-50 border-b border-cluster-border relative overflow-hidden">
         <Container>
           <Reveal direction="up" duration={0.6}>
-            <div className="max-w-4xl mx-auto rounded-3xl bg-white border border-cluster-border p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div className="w-full rounded-3xl bg-white border border-cluster-border p-8 sm:p-10 lg:p-12 shadow-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8 relative overflow-hidden">
               {/* Subtle accent highlight */}
               <div className="absolute top-0 left-0 h-1.5 w-full bg-gradient-to-r from-cluster-blue via-cluster-teal to-cluster-coral" />
 
-              <div className="flex items-center gap-5 sm:gap-6 text-left">
+              <div className="flex items-center gap-5 sm:gap-6 text-left min-w-0 flex-1">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-cluster-blue text-white flex items-center justify-center shrink-0 shadow-lg shadow-cluster-blue/25">
                   <PhoneCall className="w-8 h-8 sm:w-9 sm:h-9" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center gap-3 mb-1.5">
                     <span className="w-8 h-0.5 bg-cluster-coral rounded-full" />
                     <span className="text-[11px] font-bold tracking-[0.25em] text-cluster-coral uppercase font-manrope">
@@ -773,17 +773,17 @@ export default function OurFranchisePage() {
                   </div>
                   <a
                     href="tel:+919747800041"
-                    className="block text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 hover:text-cluster-blue transition-colors font-sans tracking-tight mb-1"
+                    className="block text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-black text-slate-900 hover:text-cluster-blue transition-colors font-sans tracking-tight mb-1 whitespace-nowrap"
                   >
                     +91 97478 00041
                   </a>
-                  <p className="text-xs sm:text-sm text-slate-500 font-medium font-manrope">
+                  <p className="text-xs sm:text-sm text-slate-500 font-medium font-manrope max-w-xl">
                     Direct telephone assistance for franchise onboarding, store feasibility, and queries.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0 w-full lg:w-auto">
                 <Button
                   variant="blue"
                   size="default"
