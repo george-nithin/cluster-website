@@ -772,10 +772,10 @@ export default function OurFranchisePage() {
                     </span>
                   </div>
                   <a
-                    href="tel:+919747800041"
+                    href="tel:+918848483741"
                     className="block text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-black text-slate-900 hover:text-cluster-blue transition-colors font-sans tracking-tight mb-1 whitespace-nowrap"
                   >
-                    +91 97478 00041
+                    +91 88484 83741
                   </a>
                   <p className="text-xs sm:text-sm text-slate-500 font-medium font-manrope max-w-xl">
                     Direct telephone assistance for franchise onboarding, store feasibility, and queries.
@@ -787,7 +787,7 @@ export default function OurFranchisePage() {
                 <Button
                   variant="blue"
                   size="default"
-                  href="tel:+919747800041"
+                  href="tel:+918848483741"
                   className="w-full sm:w-auto justify-center"
                 >
                   Call Now
@@ -795,7 +795,7 @@ export default function OurFranchisePage() {
                 <Button
                   variant="outline-dark"
                   size="default"
-                  href="https://wa.me/919747800041?text=Hi%2C%20I%20am%20interested%20in%20a%20Crew-D%20Franchise%20partnership"
+                  href="https://wa.me/918848483741?text=Hi%2C%20I%20am%20interested%20in%20a%20Crew-D%20Franchise%20partnership"
                   external
                   className="w-full sm:w-auto justify-center"
                 >
