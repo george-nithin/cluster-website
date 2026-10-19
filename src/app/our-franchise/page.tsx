@@ -373,147 +373,147 @@ export default function OurFranchisePage() {
 
           {/* Staggered Bento Grid matching reference layout - Max Width */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch w-full">
-              
-              {/* ─── COLUMN 1: Cluster Coral Card (Left) ─── */}
-              <div className="flex flex-col">
-                <div className="rounded-[26px] bg-gradient-to-br from-[#E86D46] via-[#D65B34] to-[#B84420] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
-                  <div>
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
-                        Two Brands. One Store.
-                      </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
-                        Dual Power
-                      </span>
-                    </div>
 
-                    <p className="text-sm text-white/90 leading-relaxed font-normal">
-                      Bring everyday fashion and maternity wear together through a single unified retail concept that multiplies footfall and customer reach under one roof.
-                    </p>
-                  </div>
-
-                  {/* Big Number at Bottom Left with Small Text Next to It */}
-                  <div className="flex items-center gap-4 pt-8 mt-8 border-t border-white/20">
-                    <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
-                      2x
-                    </div>
-                    <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
-                      Dual-brand synergy delivering higher customer lifetime value &amp; repeat visits.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* ─── COLUMN 2: Cluster Teal Family Cards (Center) ─── */}
-              <div className="flex flex-col gap-5">
-                
-                {/* Card 2A: Top Small Banner with Region Badges */}
-                <div className="rounded-[24px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-5 sm:p-6 transition-all duration-300 shadow-lg flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    {/* Overlapping Regional Node Badges */}
-                    <div className="flex -space-x-2.5 overflow-hidden">
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-blue to-cyan-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
-                        KL
-                      </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-coral to-rose-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
-                        TN
-                      </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-teal to-emerald-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
-                        KA
-                      </div>
-                      <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
-                        AP
-                      </div>
-                    </div>
-                    <span className="text-sm font-bold text-white font-manrope">
-                      20+ Retail Hubs
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-2.5 py-1 rounded-full border border-cluster-teal/30 shrink-0">
-                    Active Grid
-                  </span>
-                </div>
-
-                {/* Card 2B: Middle Teal Card with Big Number (350 - 650 sq. ft.) */}
-                <div className="rounded-[26px] bg-gradient-to-br from-[#1DA883] via-[#168A6A] to-[#0E634C] p-7 sm:p-8 flex flex-col justify-between flex-1 transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
-                  <div>
-                    <div className="flex items-center justify-between gap-3 mb-3">
-                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
-                        Compact Store Format
-                      </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
-                        High Velocity
-                      </span>
-                    </div>
-
-                    <p className="text-sm text-white/90 leading-relaxed font-normal">
-                      Compact, high-velocity retail footprint optimized for fast inventory turnover and capital efficiency.
-                    </p>
-                  </div>
-
-                  {/* Big Number Specification */}
-                  <div className="pt-6 mt-4">
-                    <div className="text-4xl sm:text-5xl font-black text-white font-sans tracking-tight drop-shadow-sm">
-                      350 – 650 <span className="text-lg sm:text-xl font-medium text-white/85">sq. ft.</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 2C: Bottom Card (Tailored Range) */}
-                <div className="rounded-[26px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-6 sm:p-7 transition-all duration-300 shadow-lg">
-                  <div className="flex items-center justify-between gap-3 mb-2.5">
-                    <h3 className="text-lg sm:text-xl font-black text-white tracking-tight font-sans">
-                      Focused Assortment
+            {/* ─── COLUMN 1: Cluster Coral Card (Left) ─── */}
+            <div className="flex flex-col">
+              <div className="rounded-[26px] bg-gradient-to-br from-[#E86D46] via-[#D65B34] to-[#B84420] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                      Two Brands. One Store.
                     </h3>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-3 py-1 rounded-full border border-cluster-teal/30 shrink-0">
-                      Curated Range
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
+                      Dual Power
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                    Serve daily fashion &amp; maternity wear with a curated collection designed for South Indian customer preferences.
+
+                  <p className="text-sm text-white/90 leading-relaxed font-normal">
+                    Bring everyday fashion and maternity wear together through a single unified retail concept that multiplies footfall and customer reach under one roof.
+                  </p>
+                </div>
+
+                {/* Big Number at Bottom Left with Small Text Next to It */}
+                <div className="flex items-center gap-4 pt-8 mt-8 border-t border-white/20">
+                  <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
+                    2x
+                  </div>
+                  <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
+                    Dual-brand synergy delivering higher customer lifetime value &amp; repeat visits.
                   </p>
                 </div>
               </div>
+            </div>
 
-              {/* ─── COLUMN 3: Cluster Blue Card (Right) ─── */}
-              <div className="flex flex-col">
-                <div className="rounded-[26px] bg-gradient-to-br from-[#0E7293] via-[#0B5C77] to-[#084257] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
-                  {/* Big Number at Top Right with Small Text Next to It */}
-                  <div>
-                    <div className="flex items-center gap-4 pb-8 mb-8 border-b border-white/20">
-                      <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
-                        100%
-                      </div>
-                      <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
-                        Breathable, combed cottons &amp; verified factory craftsmanship across all categories.
-                      </p>
+            {/* ─── COLUMN 2: Cluster Teal Family Cards (Center) ─── */}
+            <div className="flex flex-col gap-5">
+
+              {/* Card 2A: Top Small Banner with Region Badges */}
+              <div className="rounded-[24px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-5 sm:p-6 transition-all duration-300 shadow-lg flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  {/* Overlapping Regional Node Badges */}
+                  <div className="flex -space-x-2.5 overflow-hidden">
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-blue to-cyan-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      KL
                     </div>
-
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
-                        Growing Presence
-                      </h3>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
-                        Regional Scale
-                      </span>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-coral to-rose-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      TN
                     </div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-cluster-teal to-emerald-400 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      KA
+                    </div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-black bg-gradient-to-tr from-purple-500 to-indigo-500 text-white text-[11px] font-black flex items-center justify-center font-manrope shadow-xs">
+                      AP
+                    </div>
+                  </div>
+                  <span className="text-sm font-bold text-white font-manrope">
+                    20+ Retail Hubs
+                  </span>
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-2.5 py-1 rounded-full border border-cluster-teal/30 shrink-0">
+                  Active Grid
+                </span>
+              </div>
 
-                    <p className="text-sm text-white/90 leading-relaxed font-normal">
-                      Be part of our planned retail network expansion across Kerala, Tamil Nadu, and South India&apos;s fastest growing commercial districts.
-                    </p>
+              {/* Card 2B: Middle Teal Card with Big Number (350 - 750 sq. ft.) */}
+              <div className="rounded-[26px] bg-gradient-to-br from-[#1DA883] via-[#168A6A] to-[#0E634C] p-7 sm:p-8 flex flex-col justify-between flex-1 transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                      Compact Store Format
+                    </h3>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
+                      High Velocity
+                    </span>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-white/20 flex items-center justify-between text-xs font-bold font-manrope text-white/80">
-                    <span className="uppercase tracking-wider">South India Expansion</span>
-                    <span className="text-white flex items-center gap-1.5 font-bold">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" />
-                      Verified Model
-                    </span>
+                  <p className="text-sm text-white/90 leading-relaxed font-normal">
+                    Compact, high-velocity retail footprint optimized for fast inventory turnover and capital efficiency.
+                  </p>
+                </div>
+
+                {/* Big Number Specification */}
+                <div className="pt-6 mt-4">
+                  <div className="text-4xl sm:text-5xl font-black text-white font-sans tracking-tight drop-shadow-sm">
+                    350 – 750 <span className="text-lg sm:text-xl font-medium text-white/85">sq. ft.</span>
                   </div>
                 </div>
               </div>
 
+              {/* Card 2C: Bottom Card (Tailored Range) */}
+              <div className="rounded-[26px] bg-[#141414] border border-white/10 hover:border-cluster-teal/40 p-6 sm:p-7 transition-all duration-300 shadow-lg">
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <h3 className="text-lg sm:text-xl font-black text-white tracking-tight font-sans">
+                    Focused Assortment
+                  </h3>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-cluster-teal font-manrope bg-cluster-teal/15 px-3 py-1 rounded-full border border-cluster-teal/30 shrink-0">
+                    Curated Range
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  Serve daily fashion &amp; maternity wear with a curated collection designed for South Indian customer preferences.
+                </p>
+              </div>
             </div>
+
+            {/* ─── COLUMN 3: Cluster Blue Card (Right) ─── */}
+            <div className="flex flex-col">
+              <div className="rounded-[26px] bg-gradient-to-br from-[#0E7293] via-[#0B5C77] to-[#084257] p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 shadow-2xl group border border-white/10 hover:border-white/25">
+                {/* Big Number at Top Right with Small Text Next to It */}
+                <div>
+                  <div className="flex items-center gap-4 pb-8 mb-8 border-b border-white/20">
+                    <div className="text-5xl sm:text-6xl font-black text-white font-sans tracking-tight shrink-0 drop-shadow-sm">
+                      100%
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-white/90 leading-snug font-manrope">
+                      Breathable, combed cottons &amp; verified factory craftsmanship across all categories.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-sans">
+                      Growing Presence
+                    </h3>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-white font-manrope bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full border border-white/30 shrink-0">
+                      Regional Scale
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-white/90 leading-relaxed font-normal">
+                    Be part of our planned retail network expansion across Kerala, Tamil Nadu, and South India&apos;s fastest growing commercial districts.
+                  </p>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-white/20 flex items-center justify-between text-xs font-bold font-manrope text-white/80">
+                  <span className="uppercase tracking-wider">South India Expansion</span>
+                  <span className="text-white flex items-center gap-1.5 font-bold">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300" />
+                    Verified Model
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -525,7 +525,7 @@ export default function OurFranchisePage() {
           <Reveal direction="up" duration={0.6}>
             {/* Master Card with Split Layout - Max Width */}
             <div className="w-full rounded-[32px] sm:rounded-[40px] bg-white p-4 sm:p-6 lg:p-8 shadow-xl border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-stretch">
-              
+
               {/* Left Column: Vibrant Green Gradient Panel */}
               <div className="lg:col-span-7 bg-gradient-to-br from-[#22C195] via-[#1AA67F] to-[#0E7256] rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between relative overflow-hidden min-h-[540px]">
                 {/* Soft ambient lighting highlights */}
