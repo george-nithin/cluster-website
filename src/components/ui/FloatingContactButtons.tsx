@@ -40,13 +40,13 @@ export default function FloatingContactButtons() {
         <span
           className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-slate-900/95 backdrop-blur-md px-3 py-1.5 text-xs font-medium text-white shadow-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 hidden sm:block"
         >
-          Chat on WhatsApp
+          Chat on WhatsApp: +91 88484 83741
         </span>
         <a
-          href="https://wa.me/919995832016?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products%20and%20franchise%20opportunities."
+          href="https://wa.me/918848483741?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products%20and%20franchise%20opportunities."
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with Cluster Outfits on WhatsApp"
+          aria-label="Chat with Cluster Outfits on WhatsApp (+91 88484 83741)"
           className="relative flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:bg-[#20BD5A] hover:scale-110 active:scale-95 hover:shadow-[0_12px_28px_rgba(37,211,102,0.55)] focus:outline-none focus:ring-4 focus:ring-[#25D366]/30"
         >
           {/* Subtle pulse radar ring */}

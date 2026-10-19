@@ -86,7 +86,7 @@ const SOCIAL_LINKS = [
   {
     name: "WhatsApp",
     icon: WhatsAppIcon,
-    href: "https://wa.me/919995832016",
+    href: "https://wa.me/918848483741",
     label: "Chat with Cluster on WhatsApp",
     handle: "WhatsApp",
   },
@@ -145,13 +145,18 @@ export default function Footer() {
               </a>
 
               <a
-                href="tel:+918848483741"
-                className="inline-flex items-center gap-2.5 hover:text-cluster-coral transition-colors group"
+                href="https://wa.me/918848483741"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 hover:text-[#25D366] transition-colors group"
               >
-                <span className="w-6 h-6 rounded-md bg-neutral-100 flex items-center justify-center text-cluster-coral group-hover:bg-cluster-coral/10 transition-colors">
-                  <Phone className="w-3.5 h-3.5" />
+                <span className="w-6 h-6 rounded-md bg-neutral-100 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366]/10 transition-colors">
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
                 </span>
                 <span className="font-numbers font-semibold">+91 88484 83741</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100/80 text-emerald-800">
+                  WhatsApp
+                </span>
               </a>
 
               <div className="inline-flex items-center gap-2.5 text-neutral-600">

@@ -324,7 +324,8 @@ export default function PrivacyPolicyPage() {
                             +91 99958 32016
                           </a>
                           {" / "}
-                          <a href="tel:+918848483741" className="text-slate-800 hover:text-cluster-teal font-medium">
+                          <strong>WhatsApp:</strong>{" "}
+                          <a href="https://wa.me/918848483741" target="_blank" rel="noopener noreferrer" className="text-slate-800 hover:text-cluster-teal font-medium">
                             +91 88484 83741
                           </a>
                         </div>

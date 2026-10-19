@@ -94,14 +94,22 @@ export default function ContactPage() {
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4">
-                  Phone Number
+                  Phone &amp; WhatsApp
                 </h3>
-                <div className="flex flex-col gap-2 text-slate-600 text-sm sm:text-base mt-auto">
+                <div className="flex flex-col gap-2.5 text-slate-600 text-sm sm:text-base mt-auto">
                   <a href="tel:+919995832016" className="hover:text-cluster-coral transition-colors font-medium">
                     +91 99958 32016
                   </a>
-                  <a href="tel:+918848483741" className="hover:text-cluster-coral transition-colors font-medium">
-                    +91 88484 83741
+                  <a
+                    href="https://wa.me/918848483741?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20connect%20with%20you."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#25D366] transition-colors font-medium inline-flex items-center justify-center gap-1.5"
+                  >
+                    <span>+91 88484 83741</span>
+                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      WhatsApp
+                    </span>
                   </a>
                 </div>
               </div>
@@ -181,6 +189,16 @@ export default function ContactPage() {
                 >
                   <Instagram className="w-4 h-4 text-pink-600" />
                   <span>@crew.dfashion (Crew-D)</span>
+                </a>
+
+                <a
+                  href="https://wa.me/918848483741?text=Hello%20Cluster%20Outfits%2C%20I%20would%20like%20to%20know%20more."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:text-emerald-700 bg-slate-50/60 hover:bg-emerald-50/30 text-xs sm:text-sm font-semibold text-slate-700 transition-all shadow-2xs hover:scale-105"
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#25D366]" />
+                  <span>WhatsApp: +91 88484 83741</span>
                 </a>
 
                 <a
